@@ -1,12 +1,1 @@
-{
-  "name": "Мои финансы — учёт доходов и расходов",
-  "short_name": "Финансы",
-  "description": "Бесплатный личный учёт доходов, расходов, переводов и бюджета.",
-  "start_url": "./",
-  "scope": "./",
-  "display": "standalone",
-  "background_color": "#171A18",
-  "theme_color": "#171A18",
-  "lang": "ru",
-  "icons": []
-}
+{"name":"Мои финансы","short_name":"Финансы","start_url":"./","display":"standalone","background_color":"#171A18","theme_color":"#171A18","lang":"ru","icons":[]}
