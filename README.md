@@ -23,3 +23,9 @@
 
 ## Голосовой ввод
 Существующая логика кнопки микрофона и параметра `voiceText` сохранена. Настраивать заново Команды iOS не требуется, если текущая команда уже работала.
+
+
+## V10.6 icon update
+- Replaced the app icon artwork with four premium graphite-and-emerald concepts: wallet, money bag, chart, and bank.
+- Updated the web manifest and service-worker cache version.
+- Financial app logic and local-storage keys were left unchanged.
