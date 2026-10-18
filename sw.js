@@ -1,5 +1,5 @@
-const CACHE_NAME = 'my-finances-voice-row-v10-4-2026-10-18';
-const APP_FILES = ['./', './index.html', './manifest.json', './icons/icon-192.svg', './icons/icon-512.svg'];
+const CACHE_NAME = 'my-finances-v10-5-2026-10-18';
+const APP_FILES = ["./", "./index.html", "./manifest.json", "./icons/app-money-512.png", "./icons/app-bank-512.png", "./icons/app-wallet-512.png", "./icons/app-coins-512.png", "./icons/app-chart-512.png"];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_FILES)).then(() => self.skipWaiting()));
 });
