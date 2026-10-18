@@ -1,4 +1,4 @@
-const CACHE_NAME = 'my-finances-v10-10-emerald-platinum-controls-2026-10-19';
+const CACHE_NAME = 'my-finances-v10.19-single-cash-switch';
 const APP_FILES = ["./", "./index.html", "./manifest.json", "./icons/app-money-512.png", "./icons/app-bank-512.png", "./icons/app-wallet-512.png", "./icons/app-chart-512.png"];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_FILES)).then(() => self.skipWaiting()));
