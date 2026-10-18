@@ -1,4 +1,4 @@
-const CACHE_NAME = 'my-finances-refresh-2026-10-18-v1';
+const CACHE_NAME = 'my-finances-premium-v9-2026-10-18';
 const APP_FILES = ['./', './index.html', './manifest.json', './icons/icon-192.svg', './icons/icon-512.svg'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_FILES)).then(() => self.skipWaiting()));
