@@ -1,1 +1,15 @@
-{"name":"Мои финансы","short_name":"Финансы","start_url":"./","display":"standalone","background_color":"#171A18","theme_color":"#171A18","lang":"ru","icons":[]}
+{
+  "name": "Мои финансы",
+  "short_name": "Финансы",
+  "description": "Личный трекер расходов, доходов и касс",
+  "lang": "ru",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#15181D",
+  "theme_color": "#15181D",
+  "icons": [
+    {"src":"./icons/icon-192.svg","sizes":"192x192","type":"image/svg+xml","purpose":"any maskable"},
+    {"src":"./icons/icon-512.svg","sizes":"512x512","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
