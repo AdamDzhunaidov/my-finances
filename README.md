@@ -68,3 +68,19 @@
 В iOS схема `webapp://` может открыть установленное PWA, но не передать ему query-параметры. Надёжный обходной путь без платных сервисов: в Командах после «Диктовать текст» добавь действие «Скопировать в буфер обмена», затем открывай точный адрес установленного приложения через `webapp://` с завершающим `/` (без `?voiceText=...`). В открывшемся приложении нажми плавающую кнопку «Вставить диктовку». Приложение прочитает фразу из буфера и сохранит расход автоматически, если сумма распознана. Если сумма не распознана, откроется форма проверки.
 
 Важно: на iOS чтение буфера обмена может потребовать подтверждения/разрешения; поэтому полностью без касания экрана этот вариант не гарантируется.
+
+
+## v10.30 — account-scoped recent filters, category detail, compact dictation button
+- Independent recent-operation cash filters are stored per selected account.
+- Short tap on a category still opens a new transaction; press-and-hold opens category history with edit/delete access.
+- Removed the transfer tab from the main expense/income selector without deleting transfer records or the transfer capability in transaction forms/history.
+- Replaced the floating clipboard button with a compact icon next to the two main operation tabs; it changes to green after returning to the PWA from another app.
+- Clipboard read remains subject to iOS permission behavior.
+
+
+## v10.31 validation fix
+
+- Fixed initialization order for per-account recent-operation filters. The previous build referenced `selectedAccountId` before initialization, which could stop the application during startup.
+- Clipboard button readiness no longer turns green merely because the window receives focus.
+- Added a processing lock to prevent accidental duplicate clipboard handling from rapid repeated taps.
+- Existing storage key `my-finances-v1` is unchanged; no data migration or clearing is performed.
