@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0D1210"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Мои финансы"><link rel="apple-touch-icon" id="appTouchIcon" href="./icons/app-wallet-512.png"><link rel="manifest" href="manifest.json"><title>Мои финансы</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0D1210"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Мои финансы"><link rel="apple-touch-icon" id="appTouchIcon" href="./icons/app-wallet-180.png"><link rel="manifest" href="manifest.json"><title>Мои финансы</title>
 <style>
 :root{color-scheme:light dark;--bg:light-dark(#f4f6f8,#0b1020);--panel:light-dark(#fff,#151c2d);--panel2:light-dark(#eef1f5,#202a3e);--text:light-dark(#172033,#f3f5fa);--muted:light-dark(#697386,#a4aec1);--line:light-dark(#e0e5ec,#2c374c);--accent:light-dark(#2864e8,#7aa2ff);--green:light-dark(#13835c,#56d6a5);--red:light-dark(#d84c57,#ff828b);--shadow:0 8px 28px #0000000a}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:920px;margin:auto;padding:env(safe-area-inset-top) 16px calc(92px + env(safe-area-inset-bottom))}.top{display:flex;align-items:center;justify-content:space-between;padding:22px 2px 14px}.eyebrow{color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase}.top h1{margin:2px 0 0;font-size:25px;letter-spacing:-.04em}.iconbtn,.pillbtn{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:14px;padding:10px 13px}.balance{background:linear-gradient(135deg,#1f4fb8,#397de8);color:#fff;border-radius:24px;padding:22px;margin:8px 0 18px;box-shadow:var(--shadow)}.balance small{opacity:.78}.balance .big{font-size:32px;font-weight:750;letter-spacing:-.04em;margin:5px 0 17px}.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat{background:#ffffff18;border:1px solid #ffffff20;border-radius:16px;padding:12px}.stat span{font-size:12px;opacity:.78;display:block}.stat b{display:block;font-size:17px;margin-top:4px;overflow-wrap:anywhere}.sectionhead{display:flex;align-items:center;justify-content:space-between;margin:24px 2px 12px}.sectionhead h2{font-size:18px;margin:0}.muted{color:var(--muted)}.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.quick button{border:1px solid var(--line);border-radius:17px;background:var(--panel);color:var(--text);padding:15px 7px;box-shadow:var(--shadow)}.quick .symbol{display:grid;place-items:center;width:38px;height:38px;margin:0 auto 8px;border-radius:13px;background:var(--panel2);font-size:21px}.quick span{font-size:13px;font-weight:650}.card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:15px;box-shadow:var(--shadow)}.rowitem{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}.rowitem:last-child{border-bottom:0}.bubble{width:42px;height:42px;border-radius:14px;background:var(--panel2);display:grid;place-items:center;font-size:19px;flex-shrink:0}.grow{flex:1;min-width:0}.grow b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.grow small{display:block;color:var(--muted);font-size:12px;margin-top:3px}.amount{font-weight:750;white-space:nowrap}.income{color:var(--green)}.expense{color:var(--red)}.nav{position:fixed;z-index:5;bottom:0;left:0;right:0;padding:9px 12px calc(9px + env(safe-area-inset-bottom));background:light-dark(#ffffffed,#111827ed);backdrop-filter:blur(18px);border-top:1px solid var(--line);display:flex;justify-content:center}.navinner{display:grid;grid-template-columns:repeat(4,1fr);width:min(600px,100%);gap:5px}.nav button{background:transparent;border:0;color:var(--muted);padding:7px 2px;border-radius:13px;font-size:11px}.nav button.active{color:var(--accent);background:var(--panel2);font-weight:700}.nav .ni{display:block;font-size:19px;margin-bottom:2px}.view{display:none}.view.active{display:block}.field{display:grid;gap:6px;margin:13px 0}.field label{font-size:13px;color:var(--muted);font-weight:600}.field input,.field select,.field textarea,.toolbar input,.toolbar select{width:100%;min-width:0;border:1px solid var(--line);background:var(--bg);color:var(--text);border-radius:12px;padding:12px;outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.primary{background:var(--accent);color:white;border:0;border-radius:13px;padding:13px 16px;font-weight:700;width:100%}.secondary{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:12px;padding:10px 12px}.danger{color:var(--red)}.toolbar{display:flex;gap:8px;margin-bottom:12px}.toolbar>*{flex:1}.tabs{display:flex;gap:8px;margin:12px 0}.tabs button{flex:1}.tabs button.selected{background:var(--accent);color:white;border-color:var(--accent)}.empty{text-align:center;padding:30px 10px;color:var(--muted)}.barrow{margin:14px 0}.barlabel{display:flex;justify-content:space-between;gap:12px;font-size:13px;margin-bottom:6px}.bar{height:8px;background:var(--panel2);border-radius:99px;overflow:hidden}.bar span{height:100%;display:block;border-radius:99px;background:var(--accent)}.settingrow{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}.settingrow:last-child{border:0}.smallbtn{padding:7px 10px;font-size:12px}.hidden{display:none!important}.notice{padding:12px 14px;border-radius:13px;background:var(--panel2);font-size:13px;color:var(--muted);margin:12px 0}.toast{position:fixed;bottom:calc(90px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:11px 16px;border-radius:12px;z-index:20;max-width:90%;box-shadow:var(--shadow)}.modalback{position:fixed;inset:0;z-index:10;background:#0009;display:flex;align-items:flex-end;justify-content:center}.modal{width:min(620px,100%);max-height:92dvh;overflow:auto;background:var(--panel);border-radius:24px 24px 0 0;padding:20px 18px calc(20px + env(safe-area-inset-bottom))}.modal h2{margin:0 0 12px}.modalhead{display:flex;justify-content:space-between;align-items:center}.catline{display:flex;gap:8px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line)}.catline .grow{min-width:0}@media(min-width:700px){.app{padding-left:24px;padding-right:24px}.balance{padding:28px}.balance .big{font-size:38px}.modalback{align-items:center}.modal{border-radius:24px}}
@@ -895,6 +895,62 @@ input,textarea,select,[contenteditable="true"]{-webkit-user-select:none!importan
 /* Prevent horizontal overscroll without clipping vertical page scrolling. */
 @supports (overflow:clip){html,body{overflow-x:clip}}
 </style>
+<style id="v10-38-final-fixes">
+/* 1. Hide browser scrollbar rails without disabling native page scrolling. */
+html,body{scrollbar-width:none!important;-ms-overflow-style:none!important;overflow-x:clip!important;max-width:100%!important}
+html::-webkit-scrollbar,body::-webkit-scrollbar,*::-webkit-scrollbar{width:0!important;height:0!important;display:none!important}
+/* Keep layout elements inside the viewport; do not clip vertical content. */
+.app,main.app,.view,.toolbar,.custom-dates,.card,.period-summary{min-width:0;max-width:100%;}
+/* 2. Larger, centered cash switch inside the balance card. */
+.balance.balance-emerald-final .balance-account-row{justify-content:center!important;min-width:0!important;}
+.balance.balance-emerald-final .account-switch{flex:0 1 76%!important;width:76%!important;max-width:320px!important;min-width:0!important;min-height:42px!important;margin:0 auto!important;padding:6px 12px!important;gap:8px!important;border:1px solid #6DD9A0!important;border-radius:14px!important;background:linear-gradient(115deg,#1B5B3FEE,#12452FEF)!important;box-shadow:inset 0 1px #FFFFFF22,0 3px 12px #001A0E35!important;}
+.balance.balance-emerald-final .account-switch select{width:100%!important;max-width:100%!important;min-width:0!important;padding:4px 18px 4px 0!important;font-size:14px!important;}
+.balance.balance-emerald-final .account-switch .account-glyph{width:30px!important;height:30px!important;flex-basis:30px!important;border-radius:9px!important;}
+.balance.balance-emerald-final .balance-emblem{position:absolute!important;right:12px!important;top:10px!important;pointer-events:none!important;}
+@media(max-width:390px){.balance.balance-emerald-final .account-switch{flex-basis:78%!important;width:78%!important;min-height:40px!important}.balance.balance-emerald-final .account-switch select{font-size:13px!important}}
+/* 4–5. Restore luminous add/voice buttons and compact the period summary. */
+.period-summary{padding:14px!important;margin:0 0 12px!important;min-width:0!important;}
+.period-summary-bottom{display:flex!important;align-items:center!important;gap:10px!important;min-width:0!important;}
+#periodSummaryTotal{flex:1 1 auto!important;min-width:0!important;max-width:100%!important;white-space:normal!important;overflow-wrap:normal!important;word-break:normal!important;line-height:1.12!important;font-size:clamp(22px,6vw,29px)!important;letter-spacing:-.04em!important;font-variant-numeric:tabular-nums!important;}
+.period-action-stack{flex:0 0 104px!important;width:104px!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:5px!important;min-width:0!important;}
+.period-arrows{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:5px!important;width:100%!important;}
+.period-arrows>button:not(.add-main):not(.voice-main){width:calc(50% - 2px)!important;height:30px!important;min-height:30px!important;flex:1 1 0!important;border:1px solid #355443!important;border-radius:10px!important;background:#1A2B20!important;color:#D8F5E3!important;font-size:24px!important;line-height:1!important;box-shadow:inset 0 1px #FFFFFF0A!important;}
+.period-primary-actions{display:grid!important;grid-template-columns:1fr 1fr!important;gap:7px!important;}
+.period-primary-actions .add-main,.period-primary-actions .voice-main{width:100%!important;height:40px!important;min-width:0!important;min-height:40px!important;margin:0!important;padding:0!important;border-radius:12px!important;display:grid!important;place-items:center!important;background:linear-gradient(145deg,#BFFFF0 0%,#4CEBA4 50%,#18BF7A 100%)!important;color:#062315!important;border:1px solid #A9FFD5!important;box-shadow:0 0 17px #38EE9B36,inset 0 1px #FFFFFFB8!important;}
+.period-primary-actions .add-main svg{width:22px!important;height:22px!important;stroke:currentColor!important}
+.period-primary-actions .voice-main svg{width:20px!important;height:20px!important;stroke:currentColor!important;stroke-width:2.3!important}
+@media(max-width:420px){.period-summary{padding:13px!important}.period-summary-bottom{gap:7px!important}#periodSummaryTotal{font-size:clamp(21px,5.8vw,27px)!important}.period-action-stack{flex-basis:100px!important;width:100px!important}.period-arrows{gap:5px!important}.period-primary-actions{gap:6px!important}}
+/* 8. Description grows vertically as text is entered; no page zoom is introduced. */
+.tx-description-section{min-width:0!important;}
+#txNote.tx-description-input{display:block!important;width:100%!important;min-width:0!important;min-height:45px!important;height:auto;max-height:none!important;resize:none!important;overflow:hidden!important;white-space:pre-wrap!important;overflow-wrap:anywhere!important;line-height:1.45!important;padding:12px!important;font-size:16px!important;box-sizing:border-box!important;-webkit-user-select:text!important;user-select:text!important;-webkit-touch-callout:default!important;}
+/* 9. Match the custom-colour frame between account and category editors. */
+#accountCustomColor,#customCatColor{display:block!important;width:100%!important;max-width:100%!important;height:42px!important;min-height:42px!important;padding:3px!important;border:1px solid #304A38!important;border-radius:12px!important;background:#0E1711!important;box-sizing:border-box!important;appearance:none!important;-webkit-appearance:none!important;}
+#accountCustomColor::-webkit-color-swatch-wrapper,#customCatColor::-webkit-color-swatch-wrapper{padding:0!important}
+#accountCustomColor::-webkit-color-swatch,#customCatColor::-webkit-color-swatch{border:0!important;border-radius:8px!important}
+/* 11. Date ranges are two separate, equal fields with a real gap and no overflow. */
+.custom-dates{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;column-gap:10px!important;row-gap:8px!important;width:100%!important;min-width:0!important;margin:0 0 10px!important;padding:0!important;box-sizing:border-box!important;}
+.custom-dates.hidden{display:none!important}
+.custom-dates input{display:block!important;min-width:0!important;width:100%!important;max-width:100%!important;margin:0!important;box-sizing:border-box!important;border:1px solid #355747!important;border-radius:12px!important;}
+.toolbar:has(.date-filter){display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:10px!important;width:100%!important;min-width:0!important;max-width:100%!important;box-sizing:border-box!important;}
+.toolbar:has(.date-filter) .date-filter{display:flex!important;flex-direction:column!important;flex:initial!important;min-width:0!important;width:100%!important;max-width:100%!important;gap:4px!important;}
+.toolbar:has(.date-filter) .date-filter input{display:block!important;min-width:0!important;width:100%!important;max-width:100%!important;box-sizing:border-box!important;margin:0!important;border-radius:12px!important;}
+/* Category-detail search and single compact sort/date menu. */
+.category-detail-toolbar{display:grid;grid-template-columns:minmax(0,1fr) 42px;gap:8px;align-items:center;margin:12px 0 8px;min-width:0;}
+.category-detail-toolbar input{width:100%;min-width:0;max-width:100%;height:42px;box-sizing:border-box;padding:9px 12px;border:1px solid #304A38;border-radius:12px;background:#0E1711;color:#EFF9F2;font-size:16px;}
+.category-detail-menu-toggle{width:42px;height:42px;display:grid;place-items:center;padding:0;border:1px solid #355747;border-radius:12px;background:#193126;color:#8FE0AF;}
+.category-detail-menu-toggle svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.category-detail-menu{display:grid;gap:8px;padding:11px;margin:0 0 10px;border:1px solid #304A38;border-radius:14px;background:linear-gradient(145deg,#17271D,#101A14);}
+.category-detail-menu.hidden{display:none!important}
+.category-detail-menu-caption,.category-detail-date-label{font-size:11px;color:#9DB6A5;font-weight:650;}
+.category-detail-menu-sort{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;}
+.category-detail-menu-sort button,.category-detail-clear-date{min-width:0;padding:9px;border:1px solid #304A38;border-radius:10px;background:#18271E;color:#BBD7C4;font-size:12px;font-weight:650;}
+.category-detail-menu-sort button.active{background:#245C43;border-color:#58D99B;color:#F4FFF8;}
+.category-detail-menu input[type=date]{width:100%;min-width:0;max-width:100%;box-sizing:border-box;padding:9px;border:1px solid #304A38;border-radius:10px;background:#0E1711;color:#EFF9F2;font-size:16px;}
+.category-detail-clear-date{justify-self:start;color:#AEEBC7;}
+.category-detail-status{font-size:11px!important;line-height:1.45;margin:7px 0!important;}
+/* Avoid accidental text selection in display-only UI while preserving inputs. */
+body :not(input):not(textarea):not([contenteditable="true"]){-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;}
+</style>
 </head>
 <body><main class="app">
 
@@ -909,13 +965,31 @@ input,textarea,select,[contenteditable="true"]{-webkit-user-select:none!importan
 <div class="op-tabs-row"><div class="op-tabs" role="tablist" aria-label="Тип операции"><button class="op-tab active" type="button" data-op-type="expense" role="tab" aria-selected="true">Расходы</button><button class="op-tab" type="button" data-op-type="income" role="tab" aria-selected="false">Доходы</button></div><button type="button" id="clipboardShortcutButton" class="clipboard-shortcut" aria-label="Вставить диктовку" title="Вставить текст из диктовки"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5H6.5A2.5 2.5 0 0 0 4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2.5 2.5 0 0 0-2.5-2.5H16"/><rect x="8" y="3" width="8" height="5" rx="1.5"/><path d="m9 14 2 2 4-4"/></svg></button></div>
 <div class="period-tabs" id="periodTabs" aria-label="Период"><button data-period="day">День</button><button data-period="week">Неделя</button><button class="active" data-period="month">Месяц</button><button data-period="year">Год</button><button data-period="custom">Период</button></div>
 <div class="custom-dates hidden" id="customDates"><input type="date" id="customFrom" aria-label="Начало периода"><input type="date" id="customTo" aria-label="Конец периода"></div>
-<div class="card period-summary"><span class="muted" id="periodSummaryLabel">Расходы за месяц</span><div class="period-summary-bottom"><h2 id="periodSummaryTotal" style="margin:5px 0 0;font-size:25px">0 ₽</h2><div class="period-action-stack"><div class="period-arrows"><button type="button" id="periodPrev" aria-label="Предыдущий период">‹</button><button type="button" id="periodNext" aria-label="Следующий период">›</button></div><div class="period-primary-actions"><button class="add-main" id="addOperationMain" aria-label="Новая операция" title="Добавить вручную"><svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></button><button class="voice-main" id="voiceOperationMain" aria-label="Добавить голосом" title="Продиктовать расход"><svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.5" width="6" height="12" rx="3"></rect><path d="M5.5 10.5v1a6.5 6.5 0 0 0 13 0v-1M12 18v3M8.5 21h7"></path></svg></button></div></div></div></div>
+<div class="card period-summary">
+  <div class="period-summary-head">
+    <button type="button" id="periodPrev" class="period-prev" aria-label="Предыдущий период" title="Предыдущий период">‹</button>
+    <span class="muted" id="periodSummaryLabel">Расходы за месяц</span>
+    <div class="period-arrows">
+      <button type="button" id="periodNext" aria-label="Следующий период" title="Следующий период">›</button>
+      <button type="button" id="periodToday" class="period-today hidden" aria-label="Перейти к текущему периоду" title="Перейти к текущему периоду">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.2 10.3 12l-6.8 6.8zM11 5.2l6.8 6.8-6.8 6.8zM19.5 5h2v14h-2z"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="period-summary-bottom">
+    <h2 id="periodSummaryTotal" style="margin:0;font-size:25px">0 ₽</h2>
+    <div class="period-primary-actions">
+      <button class="add-main" id="addOperationMain" aria-label="Новая операция" title="Добавить вручную"><svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></button>
+      <button class="voice-main" id="voiceOperationMain" aria-label="Добавить голосом" title="Продиктовать расход"><svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.5" width="6" height="12" rx="3"></rect><path d="M5.5 10.5v1a6.5 6.5 0 0 0 13 0v-1M12 18v3M8.5 21h7"></path></svg></button>
+    </div>
+  </div>
+</div>
 <div id="operationPicker"></div>
 <div class="sectionhead recent-sectionhead"><div class="heading-with-filter"><h2>Последние операции</h2><button type="button" class="cash-filter-icon" id="recentFilterToggle" aria-label="Фильтр касс последних операций" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M7 12h10M10 17h4"/></svg></button></div><button class="pillbtn" data-go="history">Все операции →</button></div><div class="cash-filter-panel hidden" id="recentFilterPanel"><div class="cash-filter-title">Показывать операции</div><div id="recentFilterOptions"></div><div class="cash-filter-actions"><button type="button" class="cash-filter-reset" data-filter-all="recent">Все кассы</button><button type="button" class="cash-filter-done" data-filter-done="recent">Готово</button></div></div><div class="card" id="recentList"></div>
 </section>
 <section id="historyView" class="view"><div class="sectionhead history-sectionhead"><div class="heading-with-filter"><h2>История</h2><button type="button" class="cash-filter-icon" id="historyFilterToggle" aria-label="Фильтр касс истории" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M7 12h10M10 17h4"/></svg></button></div><button class="pillbtn" id="addFromHistory">＋ Добавить</button></div><div class="toolbar"><input id="searchTx" placeholder="Поиск по названию, сумме…" aria-label="Поиск"><select id="filterType" aria-label="Тип"><option value="all">Вся история</option><option value="expense">Расходы</option><option value="income">Доходы</option></select></div><div class="cash-filter-panel hidden" id="historyFilterPanel"><div class="cash-filter-title">Показывать историю</div><div id="historyFilterOptions"></div><div class="cash-filter-actions"><button type="button" class="cash-filter-reset" data-filter-all="history">Все кассы</button><button type="button" class="cash-filter-done" data-filter-done="history">Готово</button></div></div><div class="toolbar"><label class="date-filter"><span>С даты</span><input id="fromDate" type="date" aria-label="С даты"></label><label class="date-filter"><span>По дату</span><input id="toDate" type="date" aria-label="По дату"></label></div><div class="card" id="historyList"></div></section>
 <section id="analyticsView" class="view"><div class="sectionhead"><h2>Аналитика</h2></div><div class="analytics-filter"><label for="analyticsMonth">Период:</label><input id="analyticsMonth" type="month"><select id="analyticsAccount" aria-label="Касса"></select></div><div class="grid2" style="margin-top:12px"><div class="card"><span class="muted">Доходы</span><h2 class="income" id="analyticsIncome">0 ₽</h2></div><div class="card"><span class="muted">Расходы</span><h2 class="expense" id="analyticsExpense">0 ₽</h2></div></div><div class="card" style="margin-top:12px"><div class="muted">Разница за период</div><h2 id="analyticsNet">0 ₽</h2></div><div class="trend-card" id="trendCard"><div class="trend-top"><div><span class="trend-kicker">ДИНАМИКА</span><h3>Ритм расходов</h3><p id="trendCaption">Расходы по дням месяца</p></div><span class="trend-chip"><i></i> Расходы</span></div><div id="expenseTrend" class="expense-trend" aria-label="График расходов по дням месяца"></div><div class="trend-foot"><span>Начало месяца</span><span>Конец месяца</span></div></div><div class="sectionhead"><h2>Расходы по категориям</h2></div><div class="card" id="analyticsCategories"></div><div class="sectionhead"><h2>Расходы по подкатегориям</h2></div><div class="card" id="analyticsSubcategories"></div><div class="sectionhead"><h2>Отчёт о расходах</h2></div><div class="card"><div class="field"><label for="reportPeriod">Период отчёта</label><select id="reportPeriod"><option value="month">Текущий месяц</option><option value="today">Сегодня</option><option value="custom">Выбрать даты</option></select></div><div class="custom-dates hidden" id="reportDates"><input type="date" id="reportFrom" aria-label="Начало отчёта"><input type="date" id="reportTo" aria-label="Конец отчёта"></div><div class="field"><label for="reportAccount">Касса</label><select id="reportAccount"></select></div><div class="field"><label for="reportCategory">Категория</label><select id="reportCategory"></select></div><div class="grid2"><button class="primary" id="shareReport">Поделиться</button><button class="secondary" id="printReport">Печать / PDF</button></div></div></section>
-<section id="settingsView" class="view"><div class="sectionhead"><h2>Настройки</h2></div><div class="card"><div class="settingrow"><div><b>Кассы и счета</b><div class="muted">Названия и начальные остатки</div></div><button class="secondary" id="manageAccounts">Изменить</button></div><div class="settingrow"><div><b>Категории и подкатегории</b><div class="muted">Настройка списка операций</div></div><button class="secondary" id="manageCategories">Изменить</button></div></div><div class="sectionhead"><h2>Иконка приложения</h2></div><div class="card"><p class="muted" style="font-size:12px;margin:0 0 10px">Выбери один из четырёх доступных вариантов значка. На iPhone уже установленная иконка не меняется автоматически.</p><div class="app-icon-picker" id="appIconPicker"><button type="button" class="app-icon-option" data-app-icon="money" aria-pressed="false"><img src="./icons/app-money-512.png" alt=""><span>Мешок</span></button><button type="button" class="app-icon-option" data-app-icon="bank" aria-pressed="false"><img src="./icons/app-bank-512.png" alt=""><span>Банк</span></button><button type="button" class="app-icon-option" data-app-icon="wallet" aria-pressed="false"><img src="./icons/app-wallet-512.png" alt=""><span>Кошелёк</span></button><button type="button" class="app-icon-option" data-app-icon="chart" aria-pressed="false"><img src="./icons/app-chart-512.png" alt=""><span>График</span></button></div><p class="notice" id="appIconNotice" style="margin-bottom:0">Выбор сохраняется в приложении и меняет значок, который сайт предлагает при добавлении на экран «Домой». iPhone не меняет иконку уже установленного ярлыка автоматически. Перед удалением или повторным добавлением ярлыка обязательно сохрани резервную копию данных.</p></div><div class="sectionhead"><h2>Резервная копия и перенос</h2></div><div class="card"><div class="settingrow"><div><b>Сохранить копию</b><div class="muted">Все кассы, категории и операции в одном файле</div></div><button class="secondary" id="exportBtn">Сохранить</button></div><div class="settingrow"><div><b>Восстановить данные</b><div class="muted">Из JSON-копии приложения или подготовленного файла импорта</div></div><button class="secondary" id="importBtn">Выбрать файл</button><input type="file" id="importFile" accept="application/json,.json" class="hidden"></div></div><p class="notice">Перед импортом приложение покажет сводку операций и автоматически скачает резервную копию текущих данных. Для переноса истории из приложения «Финансы» выбери подготовленный файл my-finances-import-from-finance-app.json. Импорт заменяет текущие данные.</p><div class="sectionhead"><h2>Сохранение диктовки</h2></div><div class="card"><div class="settingrow"><div><b>Диктовка через боковую кнопку</b><div class="muted">Проверять распознанные поля перед сохранением или сохранять сразу</div></div><select id="voiceSaveMode" class="voice-save-mode" aria-label="Режим сохранения диктовки"><option value="review">С подтверждением</option><option value="instant">Сразу сохранять</option></select></div></div><div class="sectionhead"><h2>Другие функции</h2></div><div class="card"><div class="settingrow"><div><b>Отчёт о расходах</b><div class="muted">Текст для WhatsApp, Telegram или почты</div></div><button class="secondary" id="shareSettingsReport">Поделиться</button></div><div class="settingrow"><div><b>Голосовой ввод</b></div><button class="secondary" id="voiceHelp">Проверить</button></div></div><div class="sectionhead"><h2>О приложении</h2></div><p class="muted">Мои финансы · V10.37 · Данные хранятся на устройстве.</p></section>
+<section id="settingsView" class="view"><div class="sectionhead"><h2>Настройки</h2></div><div class="card"><div class="settingrow"><div><b>Кассы и счета</b><div class="muted">Названия и начальные остатки</div></div><button class="secondary" id="manageAccounts">Изменить</button></div><div class="settingrow"><div><b>Категории и подкатегории</b><div class="muted">Настройка списка операций</div></div><button class="secondary" id="manageCategories">Изменить</button></div></div><div class="sectionhead"><h2>Иконка приложения</h2></div><div class="card"><p class="muted" style="font-size:12px;margin:0 0 10px">Выбери один из четырёх доступных вариантов значка. На iPhone уже установленная иконка не меняется автоматически.</p><div class="app-icon-picker" id="appIconPicker"><button type="button" class="app-icon-option" data-app-icon="money" aria-pressed="false"><img src="./icons/app-money-512.png" alt=""><span>Мешок</span></button><button type="button" class="app-icon-option" data-app-icon="bank" aria-pressed="false"><img src="./icons/app-bank-512.png" alt=""><span>Банк</span></button><button type="button" class="app-icon-option" data-app-icon="wallet" aria-pressed="false"><img src="./icons/app-wallet-512.png" alt=""><span>Кошелёк</span></button><button type="button" class="app-icon-option" data-app-icon="chart" aria-pressed="false"><img src="./icons/app-chart-512.png" alt=""><span>График</span></button></div><p class="notice" id="appIconNotice" style="margin-bottom:0">Выбор сохраняется в приложении и меняет значок, который сайт предлагает при добавлении на экран «Домой». iPhone не меняет иконку уже установленного ярлыка автоматически. Перед удалением или повторным добавлением ярлыка обязательно сохрани резервную копию данных.</p></div><div class="sectionhead"><h2>Резервная копия и перенос</h2></div><div class="card"><div class="settingrow"><div><b>Сохранить копию</b><div class="muted">Все кассы, категории и операции в одном файле</div></div><button class="secondary" id="exportBtn">Сохранить</button></div><div class="settingrow"><div><b>Восстановить данные</b><div class="muted">Из JSON-копии приложения или подготовленного файла импорта</div></div><button class="secondary" id="importBtn">Выбрать файл</button><input type="file" id="importFile" accept="application/json,.json" class="hidden"></div></div><p class="notice">Перед импортом приложение покажет сводку операций и автоматически скачает резервную копию текущих данных. Для переноса истории из приложения «Финансы» выбери подготовленный файл my-finances-import-from-finance-app.json. Импорт заменяет текущие данные.</p><div class="sectionhead"><h2>Сохранение диктовки</h2></div><div class="card"><div class="settingrow"><div><b>Диктовка через боковую кнопку</b><div class="muted">Проверять распознанные поля перед сохранением или сохранять сразу</div></div><select id="voiceSaveMode" class="voice-save-mode" aria-label="Режим сохранения диктовки"><option value="review">С подтверждением</option><option value="instant">Сразу сохранять</option></select></div></div><div class="sectionhead"><h2>Другие функции</h2></div><div class="card"><div class="settingrow"><div><b>Отчёт о расходах</b><div class="muted">Текст для WhatsApp, Telegram или почты</div></div><button class="secondary" id="shareSettingsReport">Поделиться</button></div><div class="settingrow"><div><b>Голосовой ввод</b></div><button class="secondary" id="voiceHelp">Проверить</button></div></div><div class="sectionhead"><h2>О приложении</h2></div><p class="muted">Мои финансы · V10.38 · Данные хранятся на устройстве.</p></section>
 </main><nav class="nav"><div class="navinner"><button class="active" data-tab="home"><span class="ni" data-nav-icon="home"></span>Главная</button><button data-tab="history"><span class="ni" data-nav-icon="history"></span>История</button><button data-tab="analytics"><span class="ni" data-nav-icon="chart"></span>Аналитика</button><button data-tab="settings"><span class="ni" data-nav-icon="settings"></span>Настройки</button></div></nav>
 <div id="modalRoot"></div><div id="toast" class="toast hidden" role="status"></div>
 <script>
@@ -988,34 +1062,34 @@ function openLegacyTransferDetail(t){modalType='legacy-transfer-detail';openModa
 function openCategoryDetail(categoryId){
  const category=catById(categoryId);if(!category)return;
  const accountId=selectedAccountId;
- let sortMode='date';let selectedDate='';
+ let sortMode='date';let selectedDate='';let searchText='';
  const fmtDate=d=>{if(!d)return '';const dt=new Date(d+'T12:00:00');const weekday=dt.toLocaleDateString('ru-RU',{weekday:'short'}).replace(/\.$/,'');return `${dt.toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'})} (${weekday})`};
  const baseOps=()=>data.transactions.filter(t=>t.type===category.type&&t.categoryId===category.id&&String(t.accountId)===String(accountId));
  const amountText=t=>`${t.type==='income'?'+':'−'}${money(t.amount)}`;
  const detailCard=t=>{
   const c=catById(t.categoryId)||category;const pills=[];
   if(t.subcategory&&String(t.subcategory).trim())pills.push(t.subcategory);
-  (Array.isArray(t.tags)?t.tags:[]).forEach(tag=>{if(tag&& !pills.some(p=>p.toLowerCase()===String(tag).toLowerCase()))pills.push(tag)});
+  (Array.isArray(t.tags)?t.tags:[]).forEach(tag=>{if(tag&&!pills.some(p=>p.toLowerCase()===String(tag).toLowerCase()))pills.push(tag)});
   return `<div class="detail-tx" data-row-edit="${esc(t.id)}" role="button" tabindex="0" aria-label="Открыть операцию ${esc(t.note||c.name)}">${sortMode==='amount'?`<div class="detail-tx-date">${esc(fmtDate(t.date))}</div>`:''}<div class="detail-tx-top"><div class="detail-tx-icon" style="${categoryStyle(c)}">${categoryGlyph(c)}</div><div class="detail-tx-title"><b>${esc(c.name)}</b><small>${esc(accountName(t.accountId))}</small></div><strong class="detail-tx-amount" style="color:${t.type==='income'?'#78E5A4':'#F2A09B'}">${amountText(t)}</strong></div>${pills.length?`<div class="detail-tx-tags">${pills.map(p=>`<span>${esc(p)}</span>`).join('')}</div>`:''}${t.note?`<div class="detail-tx-note">${esc(t.note)}</div>`:''}</div>`;
  };
- const title=$('modalTitle');
  const total=baseOps().reduce((n,t)=>n+Number(t.amount||0),0);
  modalType='category-detail';
- openModal(`<div class="category-detail-header"><div class="muted" style="font-size:12px">Операции в кассе «${esc(accountName(accountId))}»</div><h3 style="margin:4px 0 0">${esc(category.name)}</h3><div class="muted" style="font-size:12px;margin-top:5px">${baseOps().length} операций · всего ${money(total)}</div></div><div class="category-detail-controls"><button type="button" data-detail-sort="date" class="active">По дате</button><button type="button" data-detail-sort="amount">По сумме</button></div><div class="category-detail-date-row"><input type="date" id="categoryDetailDate" aria-label="Выбрать дату"><button type="button" id="clearCategoryDetailDate">Все даты</button></div><div class="muted" id="categoryDetailDateHint" style="font-size:11px;margin-bottom:5px">Все операции категории в выбранной кассе</div><div id="categoryDetailContent"></div><button type="button" class="primary" id="addFromCategory" style="margin-top:12px">＋ ${category.type==='income'?'Новый доход':'Новый расход'}</button>`);
+ openModal(`<div class="category-detail-header"><div class="muted" style="font-size:12px">Операции в кассе «${esc(accountName(accountId))}»</div><h3 style="margin:4px 0 0">${esc(category.name)}</h3><div class="muted" style="font-size:12px;margin-top:5px">${baseOps().length} операций · всего ${money(total)}</div></div><div class="category-detail-toolbar"><input type="search" id="categoryDetailSearch" placeholder="Поиск по тегам и описанию…" aria-label="Поиск по операциям категории"><button type="button" id="categoryDetailMenuToggle" class="category-detail-menu-toggle" aria-label="Сортировка и выбор даты" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg></button></div><div class="category-detail-menu hidden" id="categoryDetailMenu"><div class="category-detail-menu-caption">Сортировка</div><div class="category-detail-menu-sort"><button type="button" data-detail-sort="date" class="active">По дате</button><button type="button" data-detail-sort="amount">По сумме</button></div><label class="category-detail-date-label" for="categoryDetailDate">Выбрать дату</label><input type="date" id="categoryDetailDate" aria-label="Выбрать дату"><button type="button" id="clearCategoryDetailDate" class="category-detail-clear-date">Все даты</button></div><div class="muted category-detail-status" id="categoryDetailDateHint">Сортировка: по дате · Все операции категории в выбранной кассе</div><div id="categoryDetailContent"></div><button type="button" class="primary" id="addFromCategory" style="margin-top:12px">＋ ${category.type==='income'?'Новый доход':'Новый расход'}</button>`);
  const renderContent=()=>{
   let all=baseOps().sort((a,b)=>String(a.date||'').localeCompare(String(b.date||'')));
+  if(searchText){const q=searchText.toLocaleLowerCase('ru-RU');all=all.filter(t=>[t.note,t.subcategory,...(Array.isArray(t.tags)?t.tags:[])].filter(Boolean).join(' ').toLocaleLowerCase('ru-RU').includes(q));}
   let limited=all;
   if(selectedDate){
    const exact=all.filter(t=>t.date===selectedDate);
    const before=all.filter(t=>t.date<selectedDate).slice(-5);
    const after=all.filter(t=>t.date>selectedDate).slice(0,5);
-   const set=new Set([...before,...exact,...after].map(t=>t.id));limited=all.filter(t=>set.has(t.id));
-   $('categoryDetailDateHint').textContent=`Дата ${fmtDate(selectedDate)} · ${exact.length} операций в этот день и до 5 ближайших до и после`;
-  }else $('categoryDetailDateHint').textContent='Все операции категории в выбранной кассе';
+   const set=new Set([...before,...exact,...after].map(t=>String(t.id)));limited=all.filter(t=>set.has(String(t.id)));
+   $('categoryDetailDateHint').textContent=`Сортировка: ${sortMode==='date'?'по дате':'по сумме'} · ${fmtDate(selectedDate)} · ${exact.length} операций за день и до 5 ближайших до и после`;
+  }else $('categoryDetailDateHint').textContent=`Сортировка: ${sortMode==='date'?'по дате':'по сумме'} · ${searchText?`Найдено ${all.length}`:'Все операции категории в выбранной кассе'}`;
   if(sortMode==='amount')limited=[...limited].sort((a,b)=>Number(b.amount||0)-Number(a.amount||0)||String(b.date||'').localeCompare(String(a.date||'')));
   else limited=[...limited].sort((a,b)=>String(b.date||'').localeCompare(String(a.date||'')));
   let markup='';
-  if(!limited.length)markup='<div class="category-detail-empty">В этой категории нет операций за выбранную дату и рядом с ней.</div>';
+  if(!limited.length)markup='<div class="category-detail-empty">Ничего не найдено в этой категории и выбранной кассе.</div>';
   else if(sortMode==='date'){
    const groups=new Map();limited.forEach(t=>{if(!groups.has(t.date))groups.set(t.date,[]);groups.get(t.date).push(t)});
    markup=[...groups.entries()].sort((a,b)=>String(b[0]).localeCompare(String(a[0]))).map(([d,items])=>`<section class="category-detail-day"><h4 class="category-detail-day-title">${esc(fmtDate(d))}</h4>${items.map(detailCard).join('')}</section>`).join('');
@@ -1023,6 +1097,8 @@ function openCategoryDetail(categoryId){
   $('categoryDetailContent').innerHTML=markup;
   document.querySelectorAll('[data-detail-sort]').forEach(b=>b.classList.toggle('active',b.dataset.detailSort===sortMode));
  };
+ $('categoryDetailSearch').addEventListener('input',e=>{searchText=e.target.value.trim();renderContent()});
+ $('categoryDetailMenuToggle').onclick=()=>{const menu=$('categoryDetailMenu');const opening=menu.classList.contains('hidden');menu.classList.toggle('hidden',!opening);$('categoryDetailMenuToggle').setAttribute('aria-expanded',String(opening));};
  $('categoryDetailDate').onchange=()=>{selectedDate=$('categoryDetailDate').value||'';renderContent()};
  $('clearCategoryDetailDate').onclick=()=>{$('categoryDetailDate').value='';selectedDate='';renderContent()};
  document.querySelectorAll('[data-detail-sort]').forEach(b=>b.onclick=()=>{sortMode=b.dataset.detailSort;renderContent()});
@@ -1030,7 +1106,7 @@ function openCategoryDetail(categoryId){
  if($('modalTitle'))$('modalTitle').textContent='Операции категории';
  renderContent();
 }
-function renderOperationPicker(){const host=$('operationPicker');if(!host)return;document.querySelectorAll('[data-op-type]').forEach(b=>{const active=b.dataset.opType===activeOperationType;b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active))});const ats=scopedTransactions();const cats=data.categories.filter(c=>c.type===activeOperationType);const iconClass=c=>{const x=(c.id+' '+c.name).toLowerCase();if(activeOperationType==='income')return 'income';if(/food|продукт|еда|кафе/.test(x))return 'food';if(/shop|покуп|одеж/.test(x))return 'shopping';if(/transport|транспорт|авто|такси|топлив/.test(x))return 'transport';if(/health|здоров|аптек|врач/.test(x))return 'health';if(/home|дом|ремонт/.test(x))return 'home';return ''};const categoryIcon=c=>{const x=((c.id||'')+' '+c.name).toLowerCase();if(activeOperationType==='income')return /зарп|salary/.test(x)?'salary':'income';if(/продукт|еда|food|кафе/.test(x))return 'food';if(/покуп|shop|одеж/.test(x))return 'shopping';if(/транспорт|авто|такси|топлив|transport/.test(x))return 'transport';if(/здоров|аптек|врач|health/.test(x))return 'health';if(/дом|home|ремонт/.test(x))return 'homecat';return 'other'};const visibleCats=cats.filter(c=>ats.some(t=>t.type===activeOperationType&&t.categoryId===c.id));const allCats=visibleCats.map(c=>{const ops=ats.filter(t=>t.type===activeOperationType&&t.categoryId===c.id);const total=ops.reduce((n,t)=>n+Number(t.amount||0),0);const subs={};ops.forEach(t=>{const sub=t.subcategory||'Без подкатегории';subs[sub]=(subs[sub]||0)+Number(t.amount||0)});const hasSubs=(c.subs||[]).length>0;const expanded=expandedCategories.has(c.id);return `<div class="category-row ${expanded?'expanded':''}" data-category-row="${esc(c.id)}" role="button" tabindex="0" aria-label="Открыть историю категории ${esc(c.name)}; удержать для новой операции"><div class="category-icon ${iconClass(c)}" style="${categoryStyle(c)}">${categoryGlyph(c)}</div><div class="category-info"><strong>${esc(c.name)}</strong></div><div class="category-amount">${money(total)}</div>${hasSubs?`<button class="category-toggle" data-cat-toggle="${esc(c.id)}" aria-label="${expanded?'Свернуть':'Раскрыть'} подкатегории">${iconSvg('chevron')}</button>`:'<span class="category-toggle placeholder"></span>'}${expanded&&hasSubs?`<div class="category-sublist">${[...(c.subs||[]).map(sub=>[sub,subs[sub]||0]),...Object.keys(subs).filter(sub=>sub!=='Без подкатегории'&&!(c.subs||[]).includes(sub)).map(sub=>[sub,subs[sub]]),['Без подкатегории',subs['Без подкатегории']||0]].map(([sub,val])=>`<div class="subcategory-row"><span>${esc(sub)}</span><strong>${money(val)}</strong></div>`).join('')}</div>`:''}</div>`}).join('');host.innerHTML=`<div class="category-list">${allCats||`<div class="category-empty"><b>Пока нет операций за этот период</b><br><span>Здесь появятся только категории, которыми ты воспользовался. Добавь расход или доход кнопкой +.</span></div>`}</div>`}
+function renderOperationPicker(){const host=$('operationPicker');if(!host)return;document.querySelectorAll('[data-op-type]').forEach(b=>{const active=b.dataset.opType===activeOperationType;b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active))});const ats=scopedTransactions();const cats=data.categories.filter(c=>c.type===activeOperationType);const iconClass=c=>{const x=(c.id+' '+c.name).toLowerCase();if(activeOperationType==='income')return 'income';if(/food|продукт|еда|кафе/.test(x))return 'food';if(/shop|покуп|одеж/.test(x))return 'shopping';if(/transport|транспорт|авто|такси|топлив/.test(x))return 'transport';if(/health|здоров|аптек|врач/.test(x))return 'health';if(/home|дом|ремонт/.test(x))return 'home';return ''};const categoryIcon=c=>{const x=((c.id||'')+' '+c.name).toLowerCase();if(activeOperationType==='income')return /зарп|salary/.test(x)?'salary':'income';if(/продукт|еда|food|кафе/.test(x))return 'food';if(/покуп|shop|одеж/.test(x))return 'shopping';if(/транспорт|авто|такси|топлив|transport/.test(x))return 'transport';if(/здоров|аптек|врач|health/.test(x))return 'health';if(/дом|home|ремонт/.test(x))return 'homecat';return 'other'};const visibleCats=cats.filter(c=>ats.some(t=>t.type===activeOperationType&&t.categoryId===c.id));const allCats=visibleCats.map(c=>{const ops=ats.filter(t=>t.type===activeOperationType&&t.categoryId===c.id);const total=ops.reduce((n,t)=>n+Number(t.amount||0),0);const tagTotals={};ops.forEach(t=>(Array.isArray(t.tags)?t.tags:[]).forEach(tag=>{const name=String(tag||'').trim();if(name)tagTotals[name]=(tagTotals[name]||0)+Number(t.amount||0)}));const tagNames=Object.keys(tagTotals).sort((a,b)=>tagTotals[b]-tagTotals[a]);const hasSubs=tagNames.length>0;const expanded=expandedCategories.has(c.id);return `<div class="category-row ${expanded?'expanded':''}" data-category-row="${esc(c.id)}" role="button" tabindex="0" aria-label="Открыть историю категории ${esc(c.name)}; удержать для новой операции"><div class="category-icon ${iconClass(c)}" style="${categoryStyle(c)}">${categoryGlyph(c)}</div><div class="category-info"><strong>${esc(c.name)}</strong></div><div class="category-amount">${money(total)}</div>${hasSubs?`<button class="category-toggle" data-cat-toggle="${esc(c.id)}" aria-label="${expanded?'Свернуть':'Раскрыть'} подкатегории">${iconSvg('chevron')}</button>`:'<span class="category-toggle placeholder"></span>'}${expanded&&hasSubs?`<div class="category-sublist">${tagNames.map(tag=>[tag,tagTotals[tag]]).map(([tag,val])=>`<div class="subcategory-row"><span>${esc(tag)}</span><strong>${money(val)}</strong></div>`).join('')}</div>`:''}</div>`}).join('');host.innerHTML=`<div class="category-list">${allCats||`<div class="category-empty"><b>Пока нет операций за этот период</b><br><span>Здесь появятся только категории, которыми ты воспользовался. Добавь расход или доход кнопкой +.</span></div>`}</div>`}
 function switchTab(tab){activeTab=tab;document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===tab+'View'));document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));if(tab==='history'||tab==='analytics')render()}
 function openModal(html){const txLabel=modalTxType==='income'?'доход':modalTxType==='transfer'?'перевод':'расход';$('modalRoot').innerHTML=`<div class="modalback" id="modalBack"><section class="modal"><div class="modalhead"><h2 id="modalTitle">${modalType==='tx'?(editingId?'Изменить '+txLabel:'Новый '+txLabel):modalType==='accounts'?'Счета':modalType==='categories'?'Категории':(modalType==='favorite-replace'||modalType==='favorite-replace-choice')?'Быстрые категории':modalType==='category-detail'?'Категория':'Подтверждение'}</h2><button class="iconbtn" id="closeModal">✕</button></div>${html}</section></div>`;$('closeModal').onclick=closeModal;$('modalBack').addEventListener('click',e=>{if(e.target.id==='modalBack')closeModal()})}
 function closeModal(){if((modalType==='favorite-replace'||modalType==='favorite-replace-choice')&&txReopenDraft){const draft=txReopenDraft;txReopenDraft=null;if(activeVoiceRecognition){try{activeVoiceRecognition.abort()}catch(e){}activeVoiceRecognition=null}openTx(draft.type,draft,draft.categoryId||'');return}if(activeVoiceRecognition){try{activeVoiceRecognition.abort()}catch(e){}activeVoiceRecognition=null}$('modalRoot').innerHTML='';modalType='';editingId=null}
@@ -1050,7 +1126,7 @@ function openTx(type='expense',tx=null,categoryId=''){
   <div class="tx-section ${isTransfer?'hidden':''}"><div class="tx-section-head"><h3>Категория</h3></div><div class="tx-category-grid" id="txCategoryGrid">${catHtml()}</div><input type="hidden" id="txCategory" value="${esc(t.categoryId||'')}"></div>
   <div class="tx-section"><div class="tx-section-head"><h3>Дата операции</h3></div><div class="tx-date-choices"><button type="button" class="tx-date-chip ${chosenDate===today()?'active':''}" data-quick-date="today"><strong>Сегодня</strong><small>${pretty(today())}</small></button><button type="button" class="tx-date-chip ${chosenDate===offsetDate(-1)?'active':''}" data-quick-date="yesterday"><strong>Вчера</strong><small>${pretty(offsetDate(-1))}</small></button><button type="button" class="tx-date-chip ${chosenDate!==today()&&chosenDate!==offsetDate(-1)?'active':''}" id="txChosenDate"><strong>Выбрана</strong><small id="txChosenDateLabel">${pretty(chosenDate)}</small></button><label class="tx-calendar-btn" aria-label="Открыть календарь"><span>${iconSvg('calendar')}</span><small>Календарь</small><input type="date" id="txDate" value="${esc(chosenDate)}" required aria-label="Дата операции"></label></div></div>
   ${isTransfer?`<div class="field tx-transfer-to" id="toAccountWrap"><label for="txToAccount">На какой счёт</label><select id="txToAccount">${data.accounts.map(a=>`<option value="${esc(a.id)}" ${a.id===t.toAccountId?'selected':''}>${esc(a.name)}</option>`).join('')}</select></div>`:''}
-  <div class="tx-section"><label class="tx-field-label" for="txNote">Описание</label><input class="tx-text-input" id="txNote" maxlength="120" placeholder="Например, чистка автомобиля" value="${esc(t.note||'')}"></div>
+  <div class="tx-section tx-description-section"><label class="tx-field-label" for="txNote">Описание</label><textarea class="tx-text-input tx-description-input" id="txNote" rows="1" maxlength="4000" placeholder="Например, чистка автомобиля">${esc(t.note||'')}</textarea></div>
   <div class="tx-section ${isTransfer?'hidden':''}"><div class="tx-section-head"><h3>Теги</h3><span class="tx-section-caption">По желанию</span></div><div id="txTagsList" class="tx-tags-list">${tagsHtml()}</div><div class="tx-add-tag-row"><input id="txTagInput" maxlength="32" placeholder="Например, Дом или Здоровье" aria-label="Название нового тега"><button type="button" id="txAddTag" aria-label="Добавить тег">＋</button></div></div>
   <div class="tx-form-actions"><button type="button" class="secondary voice-button" id="voiceBtn" aria-pressed="false"><span aria-hidden="true">🎙️</span><span id="voiceBtnLabel">Сказать голосом</span></button><button class="primary tx-save-button" type="submit">${editingId?'Сохранить изменения':'Сохранить'}</button></div><div class="voice-panel notice hidden" id="voiceStatus" role="status" aria-live="polite"></div>${editingId?'<button type="button" class="secondary danger" id="deleteTx" style="width:100%;margin-top:10px">Удалить операцию</button>':''}
  </form>`;
@@ -1220,7 +1296,35 @@ $('operationPicker').addEventListener('pointerdown',e=>{const row=e.target.close
 ['pointerup','pointercancel','pointerleave'].forEach(ev=>$('operationPicker').addEventListener(ev,()=>clearTimeout(categoryHoldTimer)));
 document.addEventListener('pointerup',()=>{if(categoryHoldTriggered){clearTimeout(categoryHoldResetTimer);categoryHoldResetTimer=setTimeout(()=>{categoryHoldTriggered=false},800)}},true);document.addEventListener('pointercancel',()=>{clearTimeout(categoryHoldTimer);if(categoryHoldTriggered){clearTimeout(categoryHoldResetTimer);categoryHoldResetTimer=setTimeout(()=>{categoryHoldTriggered=false},800)}},true);
 $('operationPicker').addEventListener('click',e=>{if(categoryHoldTriggered){categoryHoldTriggered=false;e.preventDefault();e.stopPropagation();return}if(e.target.closest('[data-show-all-categories]')){showAllCategories=!showAllCategories;renderOperationPicker();return}const toggle=e.target.closest('[data-cat-toggle]');if(toggle){const cid=toggle.dataset.catToggle;expandedCategories.has(cid)?expandedCategories.delete(cid):expandedCategories.add(cid);renderOperationPicker();return}if(e.target.closest('.category-sublist'))return;const row=e.target.closest('[data-category-row]');if(row){openCategoryDetail(row.dataset.categoryRow);return}const add=e.target.closest('[data-op-new]');if(add)openTx(add.dataset.opNew)});
-document.querySelectorAll('[data-period]').forEach(b=>b.onclick=()=>{selectedPeriod=b.dataset.period;document.querySelectorAll('[data-period]').forEach(x=>x.classList.toggle('active',x===b));$('customDates').classList.toggle('hidden',selectedPeriod!=='custom');render()});$('customFrom').onchange=render;$('customTo').onchange=render;function shiftPeriod(direction){const d=new Date(periodCursor);if(selectedPeriod==='day')d.setDate(d.getDate()+direction);else if(selectedPeriod==='week')d.setDate(d.getDate()+7*direction);else if(selectedPeriod==='month')d.setMonth(d.getMonth()+direction,1);else if(selectedPeriod==='year')d.setFullYear(d.getFullYear()+direction,0,1);else if(selectedPeriod==='custom'){const f=$('customFrom').value,t=$('customTo').value;if(f&&t){const span=Math.max(1,Math.round((new Date(t+'T12:00:00')-new Date(f+'T12:00:00'))/86400000)+1);const nf=new Date(f+'T12:00:00');nf.setDate(nf.getDate()+span*direction);const nt=new Date(t+'T12:00:00');nt.setDate(nt.getDate()+span*direction);$('customFrom').value=nf.toISOString().slice(0,10);$('customTo').value=nt.toISOString().slice(0,10)}}periodCursor=d;if(selectedPeriod==='custom'){render();return}render()}$('periodPrev').onclick=()=>shiftPeriod(-1);$('periodNext').onclick=()=>shiftPeriod(1);$('accountSelect').onchange=()=>{selectedAccountId=$('accountSelect').value;localStorage.setItem('my-finances-selected-account',selectedAccountId);if(!Object.prototype.hasOwnProperty.call(recentFilterByAccount,selectedAccountId)){recentFilterByAccount[selectedAccountId]=[];localStorage.setItem('my-finances-recent-filters-by-account',JSON.stringify(recentFilterByAccount));}recentSelectedAccounts=validSelection(recentFilterByAccount[selectedAccountId]||[]);recentDraftAccounts=[...recentSelectedAccounts];render()};document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>switchTab(b.dataset.tab));document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>switchTab(b.dataset.go));document.querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>openTx(b.dataset.add));$('addFromHistory').onclick=()=>openTx();['searchTx','filterType','fromDate','toDate','analyticsMonth','analyticsAccount'].forEach(k=>$(k).addEventListener('input',render));$('recentFilterToggle').onclick=()=>{const panel=$('recentFilterPanel');if(!panel.classList.contains('hidden')){panel.classList.add('hidden');$('recentFilterToggle').setAttribute('aria-expanded','false')}else{recentDraftAccounts=[...recentSelectedAccounts];drawFilterMenu('recent')}};$('historyFilterToggle').onclick=()=>{const panel=$('historyFilterPanel');if(!panel.classList.contains('hidden')){panel.classList.add('hidden');$('historyFilterToggle').setAttribute('aria-expanded','false')}else{historyDraftAccounts=[...historySelectedAccounts];drawFilterMenu('history')}};document.addEventListener('change',e=>{const input=e.target.closest('[data-cash-all],[data-cash-id]');if(!input)return;const panel=input.closest('.cash-filter-panel');if(!panel)return;updateDraftFromCheckbox(panel.id.startsWith('recent')?'recent':'history',input)});document.querySelectorAll('[data-filter-all]').forEach(b=>b.onclick=()=>{const kind=b.dataset.filterAll;if(kind==='recent')recentDraftAccounts=[];else historyDraftAccounts=[];const host=$(kind+'FilterOptions');if(host)host.innerHTML=filterOptionsHtml([])});document.querySelectorAll('[data-filter-done]').forEach(b=>b.onclick=()=>closeFilterMenu(b.dataset.filterDone,true));document.addEventListener('click',e=>{for(const kind of ['recent','history']){const panel=$(kind+'FilterPanel'),toggle=$(kind+'FilterToggle');if(panel&&!panel.classList.contains('hidden')&&!panel.contains(e.target)&&!toggle.contains(e.target))closeFilterMenu(kind,false)}});
+document.querySelectorAll('[data-period]').forEach(b=>b.onclick=()=>{selectedPeriod=b.dataset.period;document.querySelectorAll('[data-period]').forEach(x=>x.classList.toggle('active',x===b));$('customDates').classList.toggle('hidden',selectedPeriod!=='custom');render();updatePeriodTodayButton()});$('customFrom').onchange=()=>{render();updatePeriodTodayButton()};$('customTo').onchange=()=>{render();updatePeriodTodayButton()};function shiftPeriod(direction){const d=new Date(periodCursor);if(selectedPeriod==='day')d.setDate(d.getDate()+direction);else if(selectedPeriod==='week')d.setDate(d.getDate()+7*direction);else if(selectedPeriod==='month')d.setMonth(d.getMonth()+direction,1);else if(selectedPeriod==='year')d.setFullYear(d.getFullYear()+direction,0,1);else if(selectedPeriod==='custom'){const f=$('customFrom').value,t=$('customTo').value;if(f&&t){const span=Math.max(1,Math.round((new Date(t+'T12:00:00')-new Date(f+'T12:00:00'))/86400000)+1);const nf=new Date(f+'T12:00:00');nf.setDate(nf.getDate()+span*direction);const nt=new Date(t+'T12:00:00');nt.setDate(nt.getDate()+span*direction);$('customFrom').value=nf.toISOString().slice(0,10);$('customTo').value=nt.toISOString().slice(0,10)}}periodCursor=d;if(selectedPeriod==='custom'){render();return}render()}function isCurrentSelectedPeriod(){
+ const now=new Date(), c=new Date(periodCursor);
+ if(selectedPeriod==='day') return c.getFullYear()===now.getFullYear()&&c.getMonth()===now.getMonth()&&c.getDate()===now.getDate();
+ if(selectedPeriod==='week'){
+   const start=d=>{const x=new Date(d);x.setHours(0,0,0,0);const day=(x.getDay()+6)%7;x.setDate(x.getDate()-day);return x};
+   return start(c).getTime()===start(now).getTime();
+ }
+ if(selectedPeriod==='month') return c.getFullYear()===now.getFullYear()&&c.getMonth()===now.getMonth();
+ if(selectedPeriod==='year') return c.getFullYear()===now.getFullYear();
+ if(selectedPeriod==='custom'){
+   const from=$('customFrom').value,to=$('customTo').value;
+   const today=now.toISOString().slice(0,10);
+   return !!from&&!!to&&from<=today&&to>=today;
+ }
+ return true;
+}
+function updatePeriodTodayButton(){
+ const b=$('periodToday');if(!b)return;
+ b.classList.toggle('hidden',isCurrentSelectedPeriod());
+}
+$('periodPrev').onclick=()=>shiftPeriod(-1);$('periodNext').onclick=()=>shiftPeriod(1);
+if($('periodToday'))$('periodToday').onclick=()=>{
+ const now=new Date();now.setHours(12,0,0,0);periodCursor=now;
+ if(selectedPeriod==='custom'){
+   $('customFrom').value=now.toISOString().slice(0,10);
+   $('customTo').value=now.toISOString().slice(0,10);
+ }
+ render();updatePeriodTodayButton();
+};$('accountSelect').onchange=()=>{selectedAccountId=$('accountSelect').value;localStorage.setItem('my-finances-selected-account',selectedAccountId);if(!Object.prototype.hasOwnProperty.call(recentFilterByAccount,selectedAccountId)){recentFilterByAccount[selectedAccountId]=[];localStorage.setItem('my-finances-recent-filters-by-account',JSON.stringify(recentFilterByAccount));}recentSelectedAccounts=validSelection(recentFilterByAccount[selectedAccountId]||[]);recentDraftAccounts=[...recentSelectedAccounts];render()};document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>switchTab(b.dataset.tab));document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>switchTab(b.dataset.go));document.querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>openTx(b.dataset.add));$('addFromHistory').onclick=()=>openTx();['searchTx','filterType','fromDate','toDate','analyticsMonth','analyticsAccount'].forEach(k=>$(k).addEventListener('input',render));$('recentFilterToggle').onclick=()=>{const panel=$('recentFilterPanel');if(!panel.classList.contains('hidden')){panel.classList.add('hidden');$('recentFilterToggle').setAttribute('aria-expanded','false')}else{recentDraftAccounts=[...recentSelectedAccounts];drawFilterMenu('recent')}};$('historyFilterToggle').onclick=()=>{const panel=$('historyFilterPanel');if(!panel.classList.contains('hidden')){panel.classList.add('hidden');$('historyFilterToggle').setAttribute('aria-expanded','false')}else{historyDraftAccounts=[...historySelectedAccounts];drawFilterMenu('history')}};document.addEventListener('change',e=>{const input=e.target.closest('[data-cash-all],[data-cash-id]');if(!input)return;const panel=input.closest('.cash-filter-panel');if(!panel)return;updateDraftFromCheckbox(panel.id.startsWith('recent')?'recent':'history',input)});document.querySelectorAll('[data-filter-all]').forEach(b=>b.onclick=()=>{const kind=b.dataset.filterAll;if(kind==='recent')recentDraftAccounts=[];else historyDraftAccounts=[];const host=$(kind+'FilterOptions');if(host)host.innerHTML=filterOptionsHtml([])});document.querySelectorAll('[data-filter-done]').forEach(b=>b.onclick=()=>closeFilterMenu(b.dataset.filterDone,true));document.addEventListener('click',e=>{for(const kind of ['recent','history']){const panel=$(kind+'FilterPanel'),toggle=$(kind+'FilterToggle');if(panel&&!panel.classList.contains('hidden')&&!panel.contains(e.target)&&!toggle.contains(e.target))closeFilterMenu(kind,false)}});
 $('voiceSaveMode').value=voiceSaveMode;$('voiceSaveMode').onchange=()=>{voiceSaveMode=$('voiceSaveMode').value==='instant'?'instant':'review';localStorage.setItem('my-finances-voice-save-mode',voiceSaveMode);toast(voiceSaveMode==='review'?'Диктовка будет сохраняться после проверки':'Диктовка будет сохраняться сразу')};$('manageAccounts').onclick=manageAccounts;$('manageCategories').onclick=manageCategories;$('exportBtn').onclick=exportData;$('importBtn').onclick=()=>$('importFile').click();$('importFile').onchange=e=>{if(e.target.files[0])importData(e.target.files[0]);e.target.value=''};$('voiceHelp').onclick=()=>{const SR=window.SpeechRecognition||window.webkitSpeechRecognition;toast(SR?'Распознавание доступно в браузере.':'Голосовое распознавание недоступно — вводи вручную.')};$('shareReport').onclick=shareReport;$('shareSettingsReport').onclick=shareReport;$('printReport').onclick=printReport;$('reportPeriod').onchange=()=>{$('reportDates').classList.toggle('hidden',$('reportPeriod').value!=='custom')};document.addEventListener('click',e=>{const row=e.target.closest('[data-row-edit]');if(row){if(e.target.closest('button,input,select,textarea,a'))return;const tx=data.transactions.find(t=>String(t.id)===String(row.dataset.rowEdit));if(!tx)return;if(tx.type==='transfer'){openLegacyTransferDetail(tx);return}openTx(tx.type,tx);return}const b=e.target.closest('[data-edit]');if(b){const tx=data.transactions.find(t=>t.id===b.dataset.edit);if(tx)openTx(tx.type,tx)}});
 document.addEventListener('keydown',e=>{if(!['Enter',' '].includes(e.key))return;const row=e.target.closest('[data-row-edit]');if(row){e.preventDefault();row.click();return}const cat=e.target.closest('#operationPicker [data-category-row]');if(cat&&!e.target.closest('button,input,select,textarea')){e.preventDefault();openCategoryDetail(cat.dataset.categoryRow)}});$('analyticsMonth').value=monthNow();$('reportFrom').value=monthNow()+'-01';$('reportTo').value=today();$('reportAccount').innerHTML='<option value="all">Все кассы</option>'+data.accounts.map(a=>`<option value="${esc(a.id)}">${esc(a.name)}</option>`).join('');$('reportCategory').innerHTML='<option value="all">Все категории</option>'+data.categories.filter(c=>c.type==='expense').map(c=>`<option value="${esc(c.id)}">${esc(c.name)}</option>`).join('');render();
 // iOS workaround: webapp:// can open the installed PWA while dropping query parameters.
@@ -1250,7 +1354,7 @@ const shortcutParams=new URLSearchParams(location.search);const shortcutText=sho
   const picker=document.getElementById('appIconPicker');
   function applyAppIcon(name,saveChoice){
     if(!choices.includes(name))name='wallet';
-    if(touch)touch.href='./icons/app-'+name+'-512.png';
+    if(touch)touch.href='./icons/app-'+name+'-180.png';
     if(picker)picker.querySelectorAll('[data-app-icon]').forEach(btn=>{
       const active=btn.dataset.appIcon===name;
       btn.setAttribute('aria-pressed',active?'true':'false');
@@ -1263,5 +1367,139 @@ const shortcutParams=new URLSearchParams(location.search);const shortcutText=sho
 })();
 
 
-</script></body>
+</script><script id="v10-38-description-autosize">
+(function(){
+ function fit(el){if(!el||el.id!=='txNote')return;el.style.height='auto';el.style.height=Math.max(45,el.scrollHeight)+'px';}
+ document.addEventListener('input',function(e){if(e.target&&e.target.id==='txNote')fit(e.target);},true);
+ document.addEventListener('focusin',function(e){if(e.target&&e.target.id==='txNote')fit(e.target);},true);
+ const observer=new MutationObserver(function(){const el=document.getElementById('txNote');if(el)fit(el);});
+ const root=document.getElementById('modalRoot');if(root)observer.observe(root,{childList:true,subtree:true});
+ document.addEventListener('click',function(e){if(e.target.closest('#txForm')){const el=document.getElementById('txNote');if(el)fit(el);}},true);
+})();
+</script>
+
+<style id="v10-39-period-polish">
+/* Period arrows are plain icons at rest; the outline appears only during interaction. */
+.period-arrows{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:12px!important;width:100%!important}
+.period-arrows>button:not(.add-main):not(.voice-main){
+  appearance:none!important;-webkit-appearance:none!important;
+  display:grid!important;place-items:center!important;
+  flex:0 0 30px!important;width:30px!important;min-width:30px!important;
+  height:34px!important;min-height:34px!important;padding:0!important;
+  border:1px solid transparent!important;border-radius:10px!important;
+  background:transparent!important;color:#D7E8DC!important;
+  box-shadow:none!important;line-height:1!important;
+  transition:background .15s ease,border-color .15s ease,transform .12s ease!important;
+}
+.period-arrows>button:not(.add-main):not(.voice-main):active,
+.period-arrows>button:not(.add-main):not(.voice-main):focus-visible{
+  border-color:#5DCB91!important;background:#203B2B!important;
+  box-shadow:inset 0 1px #FFFFFF16!important;outline:none!important;
+}
+.period-arrows .period-today{font-size:16px!important;color:#80DFA9!important}
+.period-arrows .period-today.hidden{display:none!important}
+@media(max-width:390px){.period-arrows{gap:8px!important}.period-arrows>button:not(.add-main):not(.voice-main){flex-basis:27px!important;width:27px!important;min-width:27px!important}}
+/* Keep the cash selector centered and leave visual clearance around the coin emblem. */
+.balance.balance-emerald-final .balance-account-row{padding-right:10px!important;padding-left:10px!important}
+.balance.balance-emerald-final .account-switch{max-width:290px!important;flex-basis:72%!important;width:72%!important}
+@media(max-width:390px){.balance.balance-emerald-final .account-switch{flex-basis:70%!important;width:70%!important}}
+</style>
+
+
+<script id="v10-39-period-sync">
+(function(){
+ const sync=()=>{try{if(typeof updatePeriodTodayButton==='function')updatePeriodTodayButton()}catch(e){}};
+ document.addEventListener('click',e=>{if(e.target.closest('.period-tabs,#periodPrev,#periodNext,#periodToday'))setTimeout(sync,0)},true);
+ window.addEventListener('pageshow',sync);
+ setTimeout(sync,0);
+})();
+</script>
+
+
+<style id="v10-40-period-card-fix">
+/* Period summary rebuilt to match the agreed two-row layout. */
+.period-summary{
+  box-sizing:border-box!important;min-width:0!important;overflow:hidden!important;
+  padding:11px 14px!important;margin:0 0 8px!important;
+}
+.period-summary-head{
+  display:flex!important;align-items:center!important;gap:7px!important;
+  width:100%!important;min-width:0!important;min-height:32px!important;
+}
+.period-summary-head #periodSummaryLabel{
+  display:block!important;flex:1 1 auto!important;min-width:0!important;
+  margin:0!important;padding:0!important;font-size:clamp(12px,3.7vw,15px)!important;
+  line-height:1.2!important;letter-spacing:0!important;font-weight:600!important;
+  white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;
+}
+.period-summary-head #periodPrev,
+.period-summary-head .period-arrows>button{
+  appearance:none!important;-webkit-appearance:none!important;
+  display:grid!important;place-items:center!important;box-sizing:border-box!important;
+  flex:0 0 29px!important;width:29px!important;min-width:29px!important;
+  height:32px!important;min-height:32px!important;padding:0!important;margin:0!important;
+  border:1px solid transparent!important;border-radius:10px!important;
+  background:transparent!important;color:#D7EDE0!important;box-shadow:none!important;
+  font-size:27px!important;font-weight:400!important;line-height:1!important;
+  transition:background .12s ease,border-color .12s ease,transform .12s ease!important;
+}
+.period-summary-head #periodPrev{margin-left:-4px!important;}
+.period-summary-head .period-arrows{
+  display:flex!important;align-items:center!important;justify-content:flex-end!important;
+  flex:0 0 auto!important;width:auto!important;gap:3px!important;margin-left:auto!important;
+}
+.period-summary-head .period-arrows #periodToday svg{
+  display:block!important;width:18px!important;height:18px!important;
+  fill:currentColor!important;stroke:none!important;
+}
+.period-summary-head #periodToday.hidden{display:none!important;}
+.period-summary-head #periodPrev:active,
+.period-summary-head .period-arrows>button:active{
+  border-color:#5DCB91!important;background:#203B2B!important;
+  box-shadow:inset 0 1px #FFFFFF16!important;transform:scale(.96)!important;
+}
+.period-summary-head #periodPrev:focus-visible,
+.period-summary-head .period-arrows>button:focus-visible{
+  outline:1px solid #5DCB91!important;outline-offset:-1px!important;
+  border-color:#5DCB91!important;background:#203B2B!important;
+}
+.period-summary-bottom{
+  display:flex!important;align-items:center!important;justify-content:space-between!important;
+  gap:10px!important;width:100%!important;min-width:0!important;margin-top:7px!important;
+}
+#periodSummaryTotal{
+  display:block!important;flex:1 1 auto!important;min-width:0!important;max-width:100%!important;
+  margin:0!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;
+  overflow-wrap:normal!important;word-break:normal!important;line-height:1.12!important;
+  font-size:clamp(23px,6.8vw,29px)!important;letter-spacing:-.04em!important;
+  font-variant-numeric:tabular-nums!important;
+}
+.period-primary-actions{
+  display:grid!important;flex:0 0 104px!important;width:104px!important;min-width:104px!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:7px!important;margin:0!important;
+}
+/* Preserve the existing vivid mint buttons and their current touch size. */
+.period-primary-actions .add-main,.period-primary-actions .voice-main{
+  width:100%!important;height:40px!important;min-width:0!important;min-height:40px!important;
+  margin:0!important;padding:0!important;border-radius:12px!important;
+  display:grid!important;place-items:center!important;
+  background:linear-gradient(145deg,#BFFFF0 0%,#4CEBA4 50%,#18BF7A 100%)!important;
+  color:#062315!important;border:1px solid #A9FFD5!important;
+  box-shadow:0 0 17px #38EE9B36,inset 0 1px #FFFFFFB8!important;
+}
+.period-primary-actions .add-main svg{width:22px!important;height:22px!important;stroke:currentColor!important;}
+.period-primary-actions .voice-main svg{width:20px!important;height:20px!important;stroke:currentColor!important;stroke-width:2.3!important;}
+@media(max-width:360px){
+  .period-summary{padding:10px 11px!important;}
+  .period-summary-head{gap:5px!important;}
+  .period-summary-head #periodSummaryLabel{font-size:12px!important;}
+  .period-summary-head #periodPrev,.period-summary-head .period-arrows>button{flex-basis:26px!important;width:26px!important;min-width:26px!important;}
+  .period-primary-actions{flex-basis:96px!important;width:96px!important;min-width:96px!important;gap:6px!important;}
+  .period-summary-bottom{gap:7px!important;}
+  #periodSummaryTotal{font-size:clamp(21px,6.2vw,25px)!important;}
+}
+@media(prefers-reduced-motion:reduce){.period-summary-head button{transition:none!important;}}
+</style>
+
+</body>
 </html>
