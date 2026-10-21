@@ -1,10 +1,10 @@
-const CACHE_NAME = 'my-finances-v10.43-design-system';
+const CACHE_NAME = 'my-finances-v10.44-planning-history';
 const APP_FILES = ["./", "./index.html", "./manifest.json", "./icons/app-money-512.png", "./icons/app-bank-512.png", "./icons/app-wallet-512.png", "./icons/app-chart-512.png", "./icons/app-money-180.png", "./icons/app-bank-180.png", "./icons/app-wallet-180.png", "./icons/app-chart-180.png", "./icons/app-wallet-192.png", "./icons/app-money-192.png", "./icons/app-bank-192.png", "./icons/app-chart-192.png"];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_FILES)).then(() => self.skipWaiting()));
 });
 self.addEventListener('activate', event => {
-  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))).then(() => self.clients.claim()));
+  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key.startsWith('my-finances-') && key !== CACHE_NAME).map(key => caches.delete(key)))).then(() => self.clients.claim()));
 });
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET' || new URL(event.request.url).origin !== self.location.origin) return;
