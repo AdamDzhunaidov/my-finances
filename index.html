@@ -1010,7 +1010,7 @@ body :not(input):not(textarea):not([contenteditable="true"]){-webkit-user-select
    <div class="settingrow settings-action-row"><div><b>Регулярные операции</b><div class="muted">Подписки, зарплата, аренда и другие расписания</div></div><button type="button" class="secondary settings-action" id="manageRecurringRules">Управлять</button></div>
    <div class="settingrow settings-action-row"><div><b>Бюджеты</b><div class="muted">Лимиты по категориям и контроль остатка</div></div><button type="button" class="secondary settings-action" id="settingsOpenBudgets">Открыть</button></div>
   </div>
-  <div class="settings-about"><div class="sectionhead settings-subhead"><h2>О приложении</h2></div><p>Мои финансы · V10.47 · Данные хранятся на устройстве.</p></div>
+  <div class="settings-about"><div class="sectionhead settings-subhead"><h2>О приложении</h2></div><p>Мои финансы · V10.48 · Данные хранятся на устройстве.</p></div>
  </div>
 </section>
 </main><nav class="nav"><div class="navinner"><button class="active" data-tab="home"><span class="ni" data-nav-icon="home"></span>Главная</button><button data-tab="history"><span class="ni" data-nav-icon="history"></span>История</button><button data-tab="analytics"><span class="ni" data-nav-icon="chart"></span>Аналитика</button><button data-tab="settings"><span class="ni" data-nav-icon="settings"></span>Настройки</button></div></nav>
@@ -2288,7 +2288,7 @@ body.history-filter-open:before{content:"";position:fixed;inset:0;z-index:9;back
 </html>
 
 
-/* V10.47 interaction polish: prevent iOS focus zoom on form controls without disabling page zoom. */
+/* V10.46 interaction polish: prevent iOS focus zoom on form controls without disabling page zoom. */
 @media(max-width:767px){
  #modalRoot input:not([type="checkbox"]):not([type="radio"]):not([type="color"]),
  #modalRoot textarea,
@@ -2324,5 +2324,5 @@ body.history-filter-open:before{content:"";position:fixed;inset:0;z-index:9;back
 #categoryPerAccountMode input{flex:0 0 18px;margin-top:3px}
 #transferFeatureMode{min-width:108px;max-width:45%}
 
-/* V10.47: avoid accidental category-type changes when creating a category from a transaction draft. */
+/* V10.46: avoid accidental category-type changes when creating a category from a transaction draft. */
 .readonly-field{min-height:42px;display:flex;align-items:center;padding:10px 12px;border:1px solid var(--control-border);border-radius:12px;background:var(--panel2);color:var(--text);font-size:14px}
