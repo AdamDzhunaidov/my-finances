@@ -937,30 +937,113 @@ html::-webkit-scrollbar,body::-webkit-scrollbar,*::-webkit-scrollbar{width:0!imp
 body :not(input):not(textarea):not([contenteditable="true"]){-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;}
 </style>
 
+
+<style id="v10-55-home-hero-open-layout">
+/* V10.55: open full-bleed hero; centered cash name and balance, no inner frame. */
+#homeView .balance.balance-platinum.balance-emerald-final{
+  width:calc(100% + 32px)!important;max-width:none!important;
+  margin:calc(-1 * env(safe-area-inset-top)) -16px 12px!important;
+  padding:calc(8px + env(safe-area-inset-top)) 16px 20px!important;
+  min-height:0!important;height:auto!important;aspect-ratio:auto!important;
+  border:0!important;border-radius:0 0 38px 38px!important;
+  overflow:hidden!important;box-shadow:none!important;
+  background:linear-gradient(145deg,#285D53 0%,#1C5047 55%,#16453D 100%)!important;
+}
+#homeView .balance.balance-platinum.balance-emerald-final:before,
+#homeView .balance.balance-platinum.balance-emerald-final:after,
+#homeView .balance .balance-art,
+#homeView .balance .balance-emblem,
+#homeView .balance .balance-magstripe,
+#homeView .balance .balance-caption,
+#homeView .balance .balance-motto-sticker{display:none!important;content:none!important;}
+#homeView .balance-topline.balance-account-row{
+  display:grid!important;grid-template-columns:38px minmax(0,1fr) 38px!important;
+  align-items:start!important;justify-content:stretch!important;gap:8px!important;
+  width:100%!important;min-height:0!important;margin:0!important;padding:0!important;
+}
+#homeView .home-hero-icon{
+  display:grid!important;place-items:center!important;align-self:start!important;
+  width:38px!important;height:38px!important;min-height:38px!important;
+  margin:4px 0 0!important;padding:0!important;border:0!important;border-radius:10px!important;
+  background:transparent!important;color:#F1FAF5!important;box-shadow:none!important;
+}
+#homeView .home-hero-icon svg{width:25px!important;height:25px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.7!important;stroke-linecap:round!important;stroke-linejoin:round!important;}
+#homeView .balance-main-selector{
+  display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:flex-start!important;
+  width:100%!important;max-width:500px!important;min-width:0!important;justify-self:center!important;align-self:start!important;
+  padding:0!important;margin:0 auto!important;border:0!important;border-radius:0!important;
+  background:transparent!important;box-shadow:none!important;
+}
+#homeView .balance-main-selector .account-switch{
+  position:relative!important;display:block!important;width:100%!important;max-width:100%!important;min-width:0!important;
+  margin:0!important;padding:0 23px!important;border:0!important;border-radius:0!important;
+  background:transparent!important;box-shadow:none!important;
+}
+#homeView .balance-main-selector #accountSelect{
+  display:block!important;width:100%!important;max-width:100%!important;min-width:0!important;
+  height:36px!important;min-height:36px!important;margin:0!important;padding:2px 0!important;
+  border:0!important;border-radius:0!important;appearance:none!important;-webkit-appearance:none!important;
+  background:transparent!important;color:#F5FBF6!important;text-align:center!important;text-align-last:center!important;
+  font-size:clamp(17px,4.4vw,21px)!important;font-weight:750!important;line-height:1.25!important;box-shadow:none!important;
+}
+#homeView .balance-select-caret{right:0!important;top:50%!important;transform:translateY(-50%)!important;width:22px!important;height:24px!important;color:#F6FFF8!important;}
+#homeView .balance-select-caret svg{width:21px!important;height:21px!important;fill:currentColor!important;stroke:none!important;}
+#homeView .balance-main-selector .big,#homeView #totalBalance{
+  display:block!important;width:100%!important;max-width:100%!important;margin:1px 0 0!important;padding:0!important;
+  text-align:center!important;color:#FFFFFF!important;font-size:clamp(29px,7.8vw,36px)!important;
+  font-weight:820!important;line-height:1.14!important;letter-spacing:-.045em!important;
+  white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;font-variant-numeric:tabular-nums!important;
+}
+/* Keep the add action clearly filled, as in the approved reference. */
+#homeView .period-primary-actions .add-main{
+  background:#63CFC0!important;color:#123D36!important;border:1px solid #63CFC0!important;
+  box-shadow:none!important;border-radius:13px!important;
+}
+#homeView .period-primary-actions .add-main svg{stroke:currentColor!important;}
+@media(min-width:700px){
+ #homeView .balance.balance-platinum.balance-emerald-final{width:calc(100% + 48px)!important;margin-left:-24px!important;margin-right:-24px!important;padding-left:24px!important;padding-right:24px!important;border-radius:0 0 42px 42px!important;}
+ #homeView .balance-topline.balance-account-row{grid-template-columns:44px minmax(0,520px) 44px!important;gap:12px!important;}
+ #homeView .home-hero-icon{width:44px!important;height:44px!important;}
+ #homeView .balance-main-selector{max-width:520px!important;}
+}
+@media(max-width:380px){
+ #homeView .balance.balance-platinum.balance-emerald-final{padding-left:13px!important;padding-right:13px!important;border-radius:0 0 32px 32px!important;}
+ #homeView .balance-topline.balance-account-row{grid-template-columns:34px minmax(0,1fr) 34px!important;gap:5px!important;}
+ #homeView .home-hero-icon{width:34px!important;height:36px!important;}
+ #homeView .balance-main-selector .account-switch{padding-left:18px!important;padding-right:18px!important;}
+}
+</style>
+
 </head>
-<body><main class="app">
+<body class="home-view-active"><main class="app">
+<header class="app-nav-header" aria-label="Навигация приложения">
+ <button type="button" class="app-nav-icon" id="appMenuToggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="appMenuPanel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+ <div class="app-nav-title">Мои финансы</div>
+ <button type="button" class="app-nav-icon" id="appHistoryButton" data-tab="history" aria-label="История операций" title="История операций"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h11"/><circle cx="19" cy="18" r="3"/></svg></button>
+</header>
+
 
 <section id="homeView" class="view active">
 <div class="balance balance-platinum balance-emerald-final" aria-label="Карта выбранной кассы">
  <div class="balance-art" aria-hidden="true"><svg viewBox="0 0 360 210" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="platinumStroke" x1="24" y1="12" x2="324" y2="190" gradientUnits="userSpaceOnUse"><stop stop-color="#F3FFF8" stop-opacity=".96"/><stop offset=".38" stop-color="#75EAB4" stop-opacity=".66"/><stop offset=".72" stop-color="#B7C9C1" stop-opacity=".25"/><stop offset="1" stop-color="#55E6A4" stop-opacity=".8"/></linearGradient><radialGradient id="emeraldGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(284 46) rotate(135) scale(180 130)"><stop stop-color="#45F3A8" stop-opacity=".62"/><stop offset="1" stop-color="#45F3A8" stop-opacity="0"/></radialGradient></defs><circle cx="286" cy="42" r="120" fill="url(#emeraldGlow)"/><path d="M208 18C154 44 133 86 148 118C161 145 204 150 224 171C242 190 236 207 214 219" stroke="url(#platinumStroke)" stroke-width="1.8"/><path d="M246 -6C198 25 180 61 192 87C203 111 240 121 257 141C271 157 270 179 251 197" stroke="url(#platinumStroke)" stroke-width="1.1"/><path d="M286 6C252 33 241 58 251 77C261 96 291 102 306 119" stroke="url(#platinumStroke)" stroke-width="1.1"/><circle cx="286" cy="42" r="3.5" fill="#E5FFF0"/><circle cx="286" cy="42" r="9" stroke="#B8F8D6" stroke-opacity=".65"/></svg></div>
- <div class="balance-topline balance-account-row"><label class="account-switch" aria-label="Выбрать кассу"><select id="accountSelect" aria-label="Выбранная касса"></select></label><span class="balance-emblem" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20"/><circle cx="24" cy="24" r="15"/><path d="M29 15c-1.7-1.6-4-2.1-6.3-1.4-4.5 1.3-4.8 6.2-.2 8l3.4 1.3c5 1.9 4.4 6.8-.3 8.2-2.7.8-5.7.1-7.7-1.9M24 10v28"/></svg></span></div>
+ <div class="balance-topline balance-account-row">
+  <button type="button" class="home-hero-icon" id="homeMenuToggle" aria-label="Открыть меню"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <div class="balance-main-selector"><label class="account-switch" aria-label="Выбрать кассу"><select id="accountSelect" aria-label="Выбранная касса"></select><span class="balance-select-caret" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></label><div class="big" id="totalBalance">0 ₽</div></div>
+  <button type="button" class="home-hero-icon" id="homeHistoryButton" aria-label="История операций" title="История операций"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h14a1 1 0 0 1 1 1v16l-3.4-2-3.6 2-3.4-2-3.6 2-2-1.2V4.5a1 1 0 0 1 1-1Z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></button>
+ </div>
  <div class="balance-magstripe" aria-hidden="true"><span></span></div>
- <div class="balance-caption">Остаток в кассе</div><div class="big" id="totalBalance">0 ₽</div>
+ <div class="balance-caption hidden">Остаток в кассе</div>
  <div class="balance-motto-sticker"><span class="sticker-spark" aria-hidden="true">✦</span><span>Деньги любят<br><strong>ясность</strong></span><span class="sticker-line" aria-hidden="true"></span></div>
 </div>
+<div class="home-period-workspace" id="homePeriodWorkspace">
 <div class="op-tabs-row"><div class="op-tabs" role="tablist" aria-label="Тип операции"><button class="op-tab active" type="button" data-op-type="expense" role="tab" aria-selected="true">Расходы</button><button class="op-tab" type="button" data-op-type="income" role="tab" aria-selected="false">Доходы</button></div><button type="button" id="clipboardShortcutButton" class="clipboard-shortcut" aria-label="Вставить диктовку" title="Вставить текст из диктовки"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5H6.5A2.5 2.5 0 0 0 4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2.5 2.5 0 0 0-2.5-2.5H16"/><rect x="8" y="3" width="8" height="5" rx="1.5"/><path d="m9 14 2 2 4-4"/></svg></button></div>
-<div class="period-tabs" id="periodTabs" aria-label="Период"><button data-period="day">День</button><button data-period="week">Неделя</button><button class="active" data-period="month">Месяц</button><button data-period="year">Год</button><button data-period="custom">Период</button></div>
-<div class="custom-dates hidden" id="customDates"><input type="date" id="customFrom" aria-label="Начало периода"><input type="date" id="customTo" aria-label="Конец периода"></div>
-<div class="card period-summary">
+<div class="card period-summary" id="homePeriodCard">
+  <div class="period-tabs" id="periodTabs" aria-label="Период"><button type="button" data-period="day">День</button><button type="button" data-period="week">Неделя</button><button type="button" data-period="month">Месяц</button><button type="button" data-period="year">Год</button><button type="button" data-period="custom">Период</button></div>
+  <div class="custom-dates hidden" id="customDates" aria-hidden="true"><input type="date" id="customFrom" aria-label="Начало периода"><input type="date" id="customTo" aria-label="Конец периода"></div>
   <div class="period-summary-head">
     <button type="button" id="periodPrev" class="period-prev" aria-label="Предыдущий период" title="Предыдущий период">‹</button>
-    <span class="muted" id="periodSummaryLabel">Расходы за месяц</span>
-    <div class="period-arrows">
-      <button type="button" id="periodToday" class="period-today hidden" aria-label="Перейти к текущему периоду" title="Перейти к текущему периоду">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6l6 6-6 6M11 6l6 6-6 6M21 5v14"/></svg>
-      </button>
-      <button type="button" id="periodNext" aria-label="Следующий период" title="Следующий период">›</button>
-    </div>
+    <button type="button" class="muted" id="periodSummaryLabel" aria-label="Выбрать дату периода">Октябрь 2026</button>
+    <div class="period-arrows"><button type="button" id="periodNext" aria-label="Следующий период" title="Следующий период">›</button></div>
   </div>
   <div class="period-summary-bottom">
     <h2 id="periodSummaryTotal" style="margin:0;font-size:25px">0 ₽</h2>
@@ -971,18 +1054,49 @@ body :not(input):not(textarea):not([contenteditable="true"]){-webkit-user-select
     </div>
   </div>
 </div>
+</div><!-- /homePeriodWorkspace -->
 <div id="operationPicker"></div><div id="homePlanPanels"><div id="homeBudgetPanel" class="home-feature-card hidden"></div><div id="homeRecurringPanel" class="home-feature-card hidden"></div></div>
 <div class="sectionhead recent-sectionhead"><div class="heading-with-filter"><h2>Последние операции</h2><button type="button" class="cash-filter-icon" id="recentFilterToggle" aria-label="Фильтр касс последних операций" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M7 12h10M10 17h4"/></svg></button></div><button class="pillbtn" data-go="history">Все операции →</button></div><div class="cash-filter-panel hidden" id="recentFilterPanel"><div class="cash-filter-title">Показывать операции</div><div id="recentFilterOptions"></div><div class="cash-filter-actions"><button type="button" class="cash-filter-reset" data-filter-all="recent">Все кассы</button><button type="button" class="cash-filter-done" data-filter-done="recent">Готово</button></div></div><div class="card" id="recentList"></div>
 </section>
-<section id="historyView" class="view"><div class="sectionhead history-sectionhead"><div class="heading-with-filter"><h2>История</h2><button type="button" class="cash-filter-icon" id="historyFilterToggle" aria-label="Открыть фильтры истории" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M7 12h10M10 17h4"/></svg></button></div><button class="pillbtn" id="addFromHistory">＋ Добавить</button></div><div class="toolbar"><input id="searchTx" placeholder="По описанию, категории, тегу или сумме…" aria-label="Поиск по истории"><select id="filterType" aria-label="Тип"><option value="all">Вся история</option><option value="expense">Расходы</option><option value="income">Доходы</option><option value="transfer">Переводы</option></select></div><div class="cash-filter-panel hidden" id="historyFilterPanel"><div class="cash-filter-title">Фильтры истории</div><div class="history-filter-block-title">Счета</div><div id="historyFilterOptions"></div><div class="history-extra-filters"><label>Категория<select id="historyCategoryFilter"><option value="all">Все категории</option></select></label><label>Тег<select id="historyTagFilter"><option value="all">Все теги</option></select></label></div><div class="history-filter-summary" id="historyFilterSummary">Без дополнительных фильтров</div><div class="cash-filter-actions"><button type="button" class="cash-filter-reset" data-filter-all="history">Все счета</button><button type="button" class="cash-filter-done" data-filter-done="history">Готово</button></div><div class="history-filter-actions-extra"><button type="button" class="small-quiet" id="historyResetAll">Сбросить все фильтры</button></div></div><div class="toolbar date-range-grid history-date-grid"><label class="date-filter"><span>С даты</span><input id="fromDate" type="date" aria-label="С даты"></label><label class="date-filter"><span>По дату</span><input id="toDate" type="date" aria-label="По дату"></label></div><div class="card" id="historyList"></div></section>
-<section id="analyticsView" class="view"><div class="sectionhead"><h2>Аналитика</h2></div><div class="analytics-filter"><label for="analyticsMonth">Период:</label><input id="analyticsMonth" type="month"><select id="analyticsAccount" aria-label="Касса"></select></div><div class="grid2" style="margin-top:12px"><div class="card"><span class="muted">Доходы</span><h2 class="income" id="analyticsIncome">0 ₽</h2></div><div class="card"><span class="muted">Расходы</span><h2 class="expense" id="analyticsExpense">0 ₽</h2></div></div><div class="card" style="margin-top:12px"><div class="muted">Разница за период</div><h2 id="analyticsNet">0 ₽</h2></div><div class="trend-card" id="trendCard"><div class="trend-top"><div><span class="trend-kicker">ДИНАМИКА</span><h3>Ритм расходов</h3><p id="trendCaption">Расходы по дням месяца</p></div><span class="trend-chip"><i></i> Расходы</span></div><div id="expenseTrend" class="expense-trend" aria-label="График расходов по дням месяца"></div><div class="trend-foot"><span>Начало месяца</span><span>Конец месяца</span></div></div><section class="feature-section"><div class="sectionhead"><h2>Сравнение периодов</h2></div><div class="card feature-card" id="periodCompareContent"></div></section><section class="feature-section"><div class="sectionhead"><h2>Бюджеты</h2><button type="button" class="small-primary" id="addBudgetButton">＋ Создать</button></div><div class="feature-card-stack" id="analyticsBudgetsContent"></div></section><section class="feature-section"><div class="sectionhead"><h2>Что изменилось</h2></div><div class="card feature-card" id="analyticsInsightsContent"></div></section><section class="feature-section"><div class="sectionhead"><h2>Регулярные операции</h2><button type="button" class="small-quiet" data-open-recurring>Управлять →</button></div><div class="card feature-card" id="analyticsRecurringPreview"></div></section><div class="sectionhead"><h2>Расходы по категориям</h2></div><div class="card" id="analyticsCategories"></div><div class="sectionhead"><h2>Расходы по подкатегориям</h2></div><div class="card" id="analyticsSubcategories"></div><div class="sectionhead"><h2>Отчёт о расходах</h2></div><div class="card"><div class="field"><label for="reportPeriod">Период отчёта</label><select id="reportPeriod"><option value="month">Текущий месяц</option><option value="today">Сегодня</option><option value="custom">Выбрать даты</option></select></div><div class="custom-dates hidden" id="reportDates"><input type="date" id="reportFrom" aria-label="Начало отчёта"><input type="date" id="reportTo" aria-label="Конец отчёта"></div><div class="field"><label for="reportAccount">Касса</label><select id="reportAccount"></select></div><div class="field"><label for="reportCategory">Категория</label><select id="reportCategory"></select></div><div class="grid2"><button class="primary" id="shareReport">Поделиться</button><button class="secondary" id="printReport">Печать / PDF</button></div></div></section>
+<section id="historyView" class="view history-screen">
+ <div class="history-hero">
+ <div class="history-titlebar"><h1 id="historyTitle">Операции</h1></div>
+ <div class="history-topbar">
+  <button type="button" class="history-back" id="historyBackButton" aria-label="На главный экран"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+  <div class="history-account-wrap">
+   <button type="button" class="history-account-button" id="historyAccountButton" aria-expanded="false" aria-controls="historyAccountMenu"><span class="history-account-symbol" id="historyAccountIcon">▤</span><span class="history-account-name" id="historyAccountName">Все</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+   <div class="history-account-menu hidden" id="historyAccountMenu" role="listbox" aria-label="Выбрать счёт"></div>
+  </div>
+  <button type="button" class="history-top-icon" id="historySearchToggle" aria-label="Поиск" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></button>
+  <button type="button" class="history-top-icon" id="historyExportButton" aria-label="Экспортировать операции" title="Экспортировать"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></svg></button>
+ </div>
+ <div class="history-search-row hidden" id="historySearchRow"><button type="button" id="historySearchClose" aria-label="Закрыть поиск">‹</button><input id="searchTx" type="search" placeholder="Описание, категория, тег или сумма" aria-label="Поиск по операциям"><button type="button" id="historySearchClear" aria-label="Очистить поиск">×</button></div>
+ <div class="history-type-tabs" role="tablist" aria-label="Тип операций"><button type="button" class="active" data-history-type="expense" role="tab" aria-selected="true">Расходы</button><button type="button" data-history-type="income" role="tab" aria-selected="false">Доходы</button></div>
+ </div>
+ <div class="history-period-card" id="historyPeriodCard">
+  <div class="period-tabs" id="historyPeriodTabs" aria-label="Период"><button type="button" data-period="day">День</button><button type="button" data-period="week">Неделя</button><button type="button" data-period="month">Месяц</button><button type="button" data-period="year">Год</button><button type="button" data-period="custom">Период</button></div>
+  <div class="period-summary-head history-period-head"><button type="button" id="historyPeriodPrev" aria-label="Предыдущий период">‹</button><button type="button" id="historyPeriodLabel" aria-label="Выбрать дату периода">24 октября</button><button type="button" id="historyPeriodNext" aria-label="Следующий период">›</button></div>
+ <div class="history-results-toolbar"><strong id="historyTotalText">Всего: 0 ₽</strong><div class="history-result-actions"><button type="button" class="history-filter-button" id="historyFilterToggle" aria-label="Фильтр по категориям" aria-expanded="false" title="Категории"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5h17l-6.5 7.4v5.1l-4 2v-7.1z"/></svg></button><button type="button" class="history-filter-button" id="historySortToggle" aria-label="Сортировка операций" aria-expanded="false" title="Сортировка"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h11M4 11h8M4 16h5M17 5v14m-3-3 3 3 3-3"/></svg></button></div></div>
+ </div><!-- /historyPeriodCard -->
+ <div class="history-popup-menu hidden" id="historyCategoryMenu" aria-label="Фильтр по категориям"></div>
+ <div class="history-popup-menu history-sort-menu hidden" id="historySortMenu" aria-label="Сортировка"><button type="button" data-history-sort="date" class="active"><span>По дате</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h13M4 11h10M4 16h7M18 5v14m-3-3 3 3 3-3"/></svg></button><button type="button" data-history-sort="amount"><span>По сумме</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h9M4 11h6M4 16h3M17 5v14m-3-3 3 3 3-3"/></svg></button></div>
+ <div class="card history-list-card" id="historyList"></div>
+ <button type="button" class="history-floating-add" id="addFromHistory" aria-label="Добавить операцию" title="Добавить операцию">＋</button>
+ <!-- Hidden compatibility controls; the redesigned screen exposes account, period and category controls above. -->
+ <div class="history-legacy-controls hidden" aria-hidden="true"><select id="filterType" aria-label="Тип"><option value="expense">Расходы</option><option value="income">Доходы</option><option value="all">Вся история</option><option value="transfer">Переводы</option></select><input id="fromDate" type="date"><input id="toDate" type="date"><button type="button" id="historyResetAll">Сбросить фильтры</button><div id="historyFilterPanel" class="cash-filter-panel hidden"><div id="historyFilterOptions"></div><select id="historyCategoryFilter"><option value="all">Все категории</option></select><select id="historyTagFilter"><option value="all">Все теги</option></select><div id="historyFilterSummary"></div></div></div>
+</section>
+<section id="analyticsView" class="view"><div class="sectionhead"><h2>Аналитика</h2></div><div class="analytics-filter"><label for="analyticsMonth">Период:</label><input id="analyticsMonth" type="month"><select id="analyticsAccount" aria-label="Касса"></select></div><div class="grid2" style="margin-top:12px"><div class="card"><span class="muted">Доходы</span><h2 class="income" id="analyticsIncome">0 ₽</h2></div><div class="card"><span class="muted">Расходы</span><h2 class="expense" id="analyticsExpense">0 ₽</h2></div></div><div class="card" style="margin-top:12px"><div class="muted">Разница за период</div><h2 id="analyticsNet">0 ₽</h2></div><div class="trend-card" id="trendCard"><div class="trend-top"><div><span class="trend-kicker">ДИНАМИКА</span><h3>Ритм расходов</h3><p id="trendCaption">Расходы по дням месяца</p></div><span class="trend-chip"><i></i> Расходы</span></div><div id="expenseTrend" class="expense-trend" aria-label="График расходов по дням месяца"></div><div class="trend-foot"><span>Начало месяца</span><span>Конец месяца</span></div></div><section class="feature-section"><div class="sectionhead"><h2>Сравнение периодов</h2></div><div class="card feature-card" id="periodCompareContent"></div></section><section class="feature-section"><div class="sectionhead"><h2>Бюджеты</h2><button type="button" class="small-primary" id="addBudgetButton">＋ Создать</button></div><div class="feature-card-stack" id="analyticsBudgetsContent"></div></section><section class="feature-section"><div class="sectionhead"><h2>Что изменилось</h2></div><div class="card feature-card" id="analyticsInsightsContent"></div></section><div class="sectionhead"><h2>Расходы по категориям</h2></div><div class="card" id="analyticsCategories"></div><div class="sectionhead"><h2>Расходы по подкатегориям</h2></div><div class="card" id="analyticsSubcategories"></div><div class="sectionhead"><h2>Отчёт о расходах</h2></div><div class="card"><div class="field"><label for="reportPeriod">Период отчёта</label><select id="reportPeriod"><option value="month">Текущий месяц</option><option value="today">Сегодня</option><option value="custom">Выбрать даты</option></select></div><div class="custom-dates hidden" id="reportDates"><input type="date" id="reportFrom" aria-label="Начало отчёта"><input type="date" id="reportTo" aria-label="Конец отчёта"></div><div class="field"><label for="reportAccount">Касса</label><select id="reportAccount"></select></div><div class="field"><label for="reportCategory">Категория</label><select id="reportCategory"></select></div><div class="grid2"><button class="primary" id="shareReport">Поделиться</button><button class="secondary" id="printReport">Печать / PDF</button></div></div></section>
+<section id="voiceView" class="view"><div class="sectionhead"><h2>Голосовой ввод</h2></div><p class="muted voice-view-intro">Основной микрофон, способ сохранения и дополнительные инструменты голосового ввода.</p><div class="card settings-group">
+   <div class="settingrow settings-control-row"><div><b>Основной микрофон в форме операции</b><div class="muted">Вручную или автоматически после паузы</div></div><select id="voiceInputMode" class="settings-select" aria-label="Режим остановки микрофона"><option value="manual">Кнопкой «Остановить»</option><option value="pause">После паузы</option></select></div>
+   <div class="settingrow settings-control-row"><div><b>Подтверждение сохранения</b><div class="muted">Автосохранение — только при уверенном распознавании</div></div><select id="voiceMicSaveMode" class="settings-select" aria-label="Сохранение операции через микрофон"><option value="review">С подтверждением</option><option value="instant">Сразу сохранять</option></select></div>
+   <div class="settingrow settings-control-row"><div><b>Диктовка через боковую кнопку</b><div class="muted">Режим сохранения для запуска через приложение «Команды»</div></div><select id="voiceSaveMode" class="voice-save-mode" aria-label="Режим сохранения диктовки"><option value="review">С подтверждением</option><option value="instant">Сразу сохранять</option></select></div>
+   <div class="settings-utility-row"><div><b>Проверить доступность распознавания</b><div class="muted">Проверяет поддержку распознавания и доступность микрофона</div></div><button type="button" class="secondary settings-action" id="voiceHelp">Проверить</button></div>
+  </div></section>
 <section id="settingsView" class="view">
  <div class="sectionhead"><h2>Настройки</h2></div>
  <div class="settings-group-wrap">
-  <div class="sectionhead settings-subhead"><h2>Счета и категории</h2></div>
+  <div class="sectionhead settings-subhead"><h2>Функции приложения</h2></div>
   <div class="card settings-group">
-   <div class="settingrow settings-action-row"><div><b>Кассы и счета</b><div class="muted">Названия, порядок и начальные остатки</div></div><button type="button" class="secondary settings-action" id="manageAccounts">Изменить</button></div>
-   <div class="settingrow settings-action-row"><div><b>Категории и быстрый доступ</b><div class="muted">Название, оформление, порядок и категории в форме операции</div></div><button type="button" class="secondary settings-action" id="manageCategories">Настроить</button></div>
    <div class="settingrow settings-control-row"><div><b>Переводы между счетами</b><div class="muted">Добавляет отдельную кнопку на главную. Переводы не считаются доходами или расходами.</div></div><select id="transferFeatureMode" class="settings-select" aria-label="Переводы между счетами"><option value="off">Выключены</option><option value="on">Включены</option></select></div>
   </div>
   <div class="sectionhead settings-subhead"><h2>Внешний вид</h2></div>
@@ -998,26 +1112,27 @@ body :not(input):not(textarea):not([contenteditable="true"]){-webkit-user-select
    <div class="settingrow settings-action-row"><div><b>Поделиться отчётом о расходах</b><div class="muted">Текст для сообщений или почты</div></div><button type="button" class="secondary settings-action" id="shareSettingsReport">Поделиться</button></div>
    <div class="settings-recovery-row hidden" id="importRecoveryBackupRow"><div class="settings-recovery-copy"><b>Копия перед последним импортом</b><p class="muted">Дополнительная копия в этом браузере. Её можно скачать перед очисткой места.</p></div><div class="settings-recovery-actions"><button type="button" class="secondary settings-action" id="downloadImportRecoveryBackup">Скачать</button><button type="button" class="small-quiet" id="deleteImportRecoveryBackup">Удалить копию</button></div></div>
   </div>
-  <div class="sectionhead settings-subhead"><h2>Голосовой ввод</h2></div>
-  <div class="card settings-group">
-   <div class="settingrow settings-control-row"><div><b>Диктовка через боковую кнопку</b><div class="muted">Проверить поля перед сохранением или сохранить сразу</div></div><select id="voiceSaveMode" class="voice-save-mode" aria-label="Режим сохранения диктовки"><option value="review">С подтверждением</option><option value="instant">Сразу сохранять</option></select></div>
-   <div class="settingrow settings-control-row"><div><b>Остановка микрофона в форме</b><div class="muted">Вручную или автоматически после паузы</div></div><select id="voiceInputMode" class="settings-select" aria-label="Режим остановки микрофона"><option value="manual">Кнопкой «Остановить»</option><option value="pause">После паузы</option></select></div>
-   <div class="settingrow settings-control-row"><div><b>Сохранение через микрофон</b><div class="muted">Автосохранение — только при уверенном распознавании</div></div><select id="voiceMicSaveMode" class="settings-select" aria-label="Сохранение операции через микрофон"><option value="review">С подтверждением</option><option value="instant">Сразу сохранять</option></select></div>
-   <div class="settings-utility-row"><div><b>Проверить доступность распознавания</b><div class="muted">Проверка поддержки браузером, не тест записи</div></div><button type="button" class="secondary settings-action" id="voiceHelp">Проверить</button></div>
-  </div>
-  <div class="sectionhead settings-subhead"><h2>Планирование</h2></div>
-  <div class="card settings-group">
-   <div class="settingrow settings-action-row"><div><b>Регулярные операции</b><div class="muted">Подписки, зарплата, аренда и другие расписания</div></div><button type="button" class="secondary settings-action" id="manageRecurringRules">Управлять</button></div>
-   <div class="settingrow settings-action-row"><div><b>Бюджеты</b><div class="muted">Лимиты по категориям и контроль остатка</div></div><button type="button" class="secondary settings-action" id="settingsOpenBudgets">Открыть</button></div>
-  </div>
-  <div class="settings-about"><div class="sectionhead settings-subhead"><h2>О приложении</h2></div><p>Мои финансы · V10.50 · Данные хранятся на устройстве.</p></div>
+  <div class="settings-about"><div class="sectionhead settings-subhead"><h2>О приложении</h2></div><p>Мои финансы · V10.53 · Данные хранятся на устройстве.</p></div>
  </div>
 </section>
-</main><nav class="nav"><div class="navinner"><button class="active" data-tab="home"><span class="ni" data-nav-icon="home"></span>Главная</button><button data-tab="history"><span class="ni" data-nav-icon="history"></span>История</button><button data-tab="analytics"><span class="ni" data-nav-icon="chart"></span>Аналитика</button><button data-tab="settings"><span class="ni" data-nav-icon="settings"></span>Настройки</button></div></nav>
+</main>
+<div id="appMenuBackdrop" class="app-menu-backdrop" aria-hidden="true"></div>
+<aside id="appMenuPanel" class="app-menu-panel" aria-label="Меню приложения" aria-hidden="true">
+ <div class="app-menu-head"><div><span class="app-menu-eyebrow">MYFINANCES</span><h2>Разделы</h2></div><button type="button" class="app-menu-close" id="appMenuClose" aria-label="Закрыть меню">×</button></div>
+ <nav class="app-menu-list">
+  <button type="button" data-tab="home" class="app-menu-item"><span data-menu-icon="home"></span><span>Главная</span></button>
+  <button type="button" data-menu-action="accounts" class="app-menu-item"><span data-menu-icon="wallet"></span><span>Счета</span></button>
+  <button type="button" data-tab="analytics" class="app-menu-item"><span data-menu-icon="chart"></span><span>Аналитика</span></button>
+  <button type="button" data-menu-action="categories" class="app-menu-item"><span data-menu-icon="layers"></span><span>Категории</span></button>
+  <button type="button" data-menu-action="recurring" class="app-menu-item"><span data-menu-icon="calendar"></span><span>Регулярные платежи</span></button>
+  <button type="button" data-tab="voice" class="app-menu-item"><span data-menu-icon="mic"></span><span>Голосовой ввод</span></button>
+  <button type="button" data-tab="settings" class="app-menu-item"><span data-menu-icon="settings"></span><span>Настройки</span></button>
+ </nav>
+</aside>
 <div id="modalRoot"></div><div id="toast" class="toast hidden" role="status"></div>
 <script>
 (()=>{'use strict';
-const KEY='my-finances-v1';const APP_VERSION='10.50';const BACKUP_FORMAT_VERSION=3;const APPEARANCE_KEY='my-finances-appearance-mode';function readOptionalStorage(key){try{return localStorage.getItem(key)}catch(e){console.warn('Не удалось прочитать настройку из локального хранилища',e);return null}}let appearanceMode=readOptionalStorage(APPEARANCE_KEY)||'system';if(!['system','light','dark'].includes(appearanceMode))appearanceMode='system';function updateThemeColorMeta(){const meta=document.querySelector('meta[name="theme-color"]');if(!meta)return;const dark=appearanceMode==='dark'||(appearanceMode==='system'&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);meta.setAttribute('content',dark?'#101512':'#F3F6F3')}function applyAppearanceMode(mode,persist=true){appearanceMode=['system','light','dark'].includes(mode)?mode:'system';if(appearanceMode==='system')document.documentElement.removeAttribute('data-theme');else document.documentElement.setAttribute('data-theme',appearanceMode);if(persist){try{localStorage.setItem(APPEARANCE_KEY,appearanceMode)}catch(e){console.warn('Не удалось сохранить предпочтение темы',e);toast('Тема переключена, но сохранить выбор не удалось')}}updateThemeColorMeta()}applyAppearanceMode(appearanceMode,false);if(window.matchMedia){const themeMedia=window.matchMedia('(prefers-color-scheme: dark)');const onThemeChange=()=>{if(appearanceMode==='system')updateThemeColorMeta()};if(themeMedia.addEventListener)themeMedia.addEventListener('change',onThemeChange);else if(themeMedia.addListener)themeMedia.addListener(onThemeChange)};
+const KEY='my-finances-v1';const APP_VERSION='10.54';const HAD_SAVED_DATA=!!readOptionalStorage(KEY);const FRESH_INSTALL=!HAD_SAVED_DATA&&!readOptionalStorage('my-finances-onboarding-complete');const BACKUP_FORMAT_VERSION=3;const APPEARANCE_KEY='my-finances-appearance-mode';function readOptionalStorage(key){try{return localStorage.getItem(key)}catch(e){console.warn('Не удалось прочитать настройку из локального хранилища',e);return null}}let appearanceMode=readOptionalStorage(APPEARANCE_KEY)||'system';if(!['system','light','dark'].includes(appearanceMode))appearanceMode='system';function updateThemeColorMeta(){const meta=document.querySelector('meta[name="theme-color"]');if(!meta)return;const dark=appearanceMode==='dark'||(appearanceMode==='system'&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);meta.setAttribute('content',dark?'#101512':'#F3F6F3')}function applyAppearanceMode(mode,persist=true){appearanceMode=['system','light','dark'].includes(mode)?mode:'system';if(appearanceMode==='system')document.documentElement.removeAttribute('data-theme');else document.documentElement.setAttribute('data-theme',appearanceMode);if(persist){try{localStorage.setItem(APPEARANCE_KEY,appearanceMode)}catch(e){console.warn('Не удалось сохранить предпочтение темы',e);toast('Тема переключена, но сохранить выбор не удалось')}}updateThemeColorMeta()}applyAppearanceMode(appearanceMode,false);if(window.matchMedia){const themeMedia=window.matchMedia('(prefers-color-scheme: dark)');const onThemeChange=()=>{if(appearanceMode==='system')updateThemeColorMeta()};if(themeMedia.addEventListener)themeMedia.addEventListener('change',onThemeChange);else if(themeMedia.addListener)themeMedia.addListener(onThemeChange)};
 const defaultData={accounts:[{id:'cash',name:'Наличные',opening:0,icon:'👛',color:'#43A047'},{id:'card',name:'Банковская карта',opening:0,icon:'💳',color:'#039BE5'}],categories:[
 {id:'home',name:'Дом',type:'expense',icon:'🏠',color:'#FB8C00',favorite:true,favoriteOrder:0,subs:['Коммунальные услуги','Покупки для дома']},
 {id:'investments',name:'Инвестиции',type:'expense',icon:'📈',color:'#039BE5',favorite:true,favoriteOrder:1,subs:[]},
@@ -1037,7 +1152,7 @@ const defaultData={accounts:[{id:'cash',name:'Наличные',opening:0,icon:'
 {id:'interestincome',name:'Проценты',type:'income',icon:'🪙',color:'#26B8A7',favorite:true,favoriteOrder:6,subs:[]},
 {id:'otherincome2',name:'Прочие поступления',type:'income',icon:'🧾',color:'#D9C3A0',favorite:false,subs:[]}
 ],transactions:[]};
-let data=load();if(!Array.isArray(data.recurringRules))data.recurringRules=[];if(!Array.isArray(data.pendingRecurring))data.pendingRecurring=[];if(!Array.isArray(data.budgets))data.budgets=[];data.categories.forEach(c=>{if(!c.icon)c.icon=c.type==='income'?'💰':(/транспорт|transport|авто|такси|топлив/i.test(c.name)?'🚗':/здоров|аптек|врач|health/i.test(c.name)?'💊':/дом|home|ремонт/i.test(c.name)?'🏠':/покуп|одеж|shop/i.test(c.name)?'🛍️':/продукт|еда|food|кафе/i.test(c.name)?'🛒':'🧾');if(!c.color)c.color=c.type==='income'?'#25C985':(/транспорт|transport|авто|такси|топлив/i.test(c.name)?'#35A7FF':/здоров|аптек|врач|health/i.test(c.name)?'#FF5C93':/дом|home|ремонт/i.test(c.name)?'#9A7BFF':/покуп|одеж|shop/i.test(c.name)?'#F5B942':'#25C985')});let activeTab='home';let activeOperationType='expense';let modalType='';let editingId=null;let modalTxType='expense';let txReopenDraft=null;let selectedAccountId=readOptionalStorage('my-finances-selected-account')||data.accounts[0]?.id||'';
+let data=load();const CATEGORY_QA_NEEDS_MIGRATION=Number(data.categoryQuickAccess?.schemaVersion||0)<3;if(!Array.isArray(data.recurringRules))data.recurringRules=[];if(!Array.isArray(data.pendingRecurring))data.pendingRecurring=[];if(!Array.isArray(data.budgets))data.budgets=[];data.categories.forEach(c=>{if(!c.icon)c.icon=c.type==='income'?'💰':(/транспорт|transport|авто|такси|топлив/i.test(c.name)?'🚗':/здоров|аптек|врач|health/i.test(c.name)?'💊':/дом|home|ремонт/i.test(c.name)?'🏠':/покуп|одеж|shop/i.test(c.name)?'🛍️':/продукт|еда|food|кафе/i.test(c.name)?'🛒':'🧾');if(!c.color)c.color=c.type==='income'?'#25C985':(/транспорт|transport|авто|такси|топлив/i.test(c.name)?'#35A7FF':/здоров|аптек|врач|health/i.test(c.name)?'#FF5C93':/дом|home|ремонт/i.test(c.name)?'#9A7BFF':/покуп|одеж|shop/i.test(c.name)?'#F5B942':'#25C985')});let activeTab='home';let activeOperationType='expense';let modalType='';let editingId=null;let modalTxType='expense';let txReopenDraft=null;let selectedAccountId=readOptionalStorage('my-finances-selected-account')||data.accounts[0]?.id||'';
 
 // Account appearance is additive: existing backups and transactions remain compatible.
 const accountIconDefaults=[['лич','👛','#43A047'],['дом','🏠','#039BE5'],['врем','🗂️','#8E24AA'],['налич','💵','#FB8C00'],['карт','💳','#3949AB'],['банк','🏦','#039BE5'],['копил','🐷','#D9C3A0']];
@@ -1056,8 +1171,8 @@ function categoryQuickAccessDefaultProfile(){const profile={expense:[],income:[]
 function normalizeCategoryQuickAccess(){
  data.preferences=data.preferences&&typeof data.preferences==='object'&&!Array.isArray(data.preferences)?data.preferences:{};
  if(typeof data.preferences.transfersEnabled!=='boolean')data.preferences.transfersEnabled=false;
- if(!data.categoryQuickAccess||typeof data.categoryQuickAccess!=='object'||Array.isArray(data.categoryQuickAccess))data.categoryQuickAccess={schemaVersion:2,mode:'smart',perAccount:false,profiles:{global:categoryQuickAccessDefaultProfile()},recent:{global:{expense:[],income:[]}},historySeeded:false};
- const qa=data.categoryQuickAccess;qa.schemaVersion=2;qa.mode=qa.mode==='manual'?'manual':'smart';qa.perAccount=!!qa.perAccount;if(typeof qa.hasPerAccountConfig!=='boolean')qa.hasPerAccountConfig=false;
+ if(!data.categoryQuickAccess||typeof data.categoryQuickAccess!=='object'||Array.isArray(data.categoryQuickAccess))data.categoryQuickAccess={schemaVersion:3,mode:'smart',perAccount:false,profiles:{global:categoryQuickAccessDefaultProfile()},recent:{global:{expense:[],income:[]}},historySeeded:false};
+ const qa=data.categoryQuickAccess;const previousSchema=Number(qa.schemaVersion||0);qa.mode=qa.mode==='manual'?'manual':'smart';qa.perAccount=!!qa.perAccount;if(typeof qa.hasPerAccountConfig!=='boolean')qa.hasPerAccountConfig=false;
  if(!qa.profiles||typeof qa.profiles!=='object'||Array.isArray(qa.profiles))qa.profiles={};
  if(!qa.recent||typeof qa.recent!=='object'||Array.isArray(qa.recent))qa.recent={};
  if(!qa.profiles.global||typeof qa.profiles.global!=='object')qa.profiles.global=categoryQuickAccessDefaultProfile();
@@ -1074,13 +1189,32 @@ function normalizeCategoryQuickAccess(){
   const seed=(key,accountId)=>{const rec=qa.recent[key]||(qa.recent[key]={expense:[],income:[]});for(const type of ['expense','income']){const existing=Array.isArray(rec[type])?rec[type].map(String):[],historic=[];for(const item of ordered){const t=item.t;if(!t||t.type!==type||!t.categoryId||(accountId&&String(t.accountId)!==String(accountId))||!validForType(type,t.categoryId))continue;const cid=String(t.categoryId);if(!historic.includes(cid))historic.push(cid)}rec[type]=[...new Set([...existing,...historic])].filter(cid=>validForType(type,cid)).slice(0,100)}};
   seed('global','');for(const a of data.accounts)seed('account:'+String(a.id),String(a.id));qa.historySeeded=true;
  }
- // Keep legacy flags synced to the manual fallback list so older backup readers still see a consistent favourite set.
+ // Schema 3: the profile is the explicit membership list. Smart mode may reorder only these chosen categories;
+ // it must never refill a slot with an excluded category just because that category was used recently.
+ if(previousSchema<3){
+  const keys=[...new Set(['global',...data.accounts.map(a=>'account:'+String(a.id))])];
+  for(const key of keys){
+   const profile=qa.profiles[key]||(qa.profiles[key]=JSON.parse(JSON.stringify(qa.profiles.global||categoryQuickAccessDefaultProfile())));
+   const recent=qa.recent[key]||qa.recent.global||{expense:[],income:[]};
+   for(const type of ['expense','income']){
+    const current=Array.isArray(profile[type])?profile[type].map(String):[];
+    const latest=(Array.isArray(recent[type])?recent[type]:[]).map(String);
+    const all=data.categories.filter(c=>c.type===type&&!c.archived).map(c=>String(c.id));
+    // Manual profiles already encode the user's chosen membership and ordering. Preserve them exactly;
+    // only migrate smart mode by snapshotting the legacy automatic list the user would have seen.
+    profile[type]=(qa.mode==='manual'?current:[...new Set([...latest,...current,...all])]).filter(id=>validForType(type,id)).slice(0,7);
+    if(!profile[type].length){const first=data.categories.find(c=>c.type===type&&!c.archived);if(first)profile[type]=[String(first.id)]}
+   }
+  }
+ }
+ qa.schemaVersion=3;
+ // Keep legacy flags synced with the global chosen set for older backup readers.
  for(const type of ['expense','income']){const arr=qa.profiles.global[type]||[];data.categories.filter(c=>c.type===type).forEach(c=>{const index=arr.indexOf(String(c.id));c.favorite=index>=0;if(index>=0)c.favoriteOrder=index;else delete c.favoriteOrder;});}
  return qa;
 }
 function quickAccessProfileKey(accountId=selectedAccountId){const qa=normalizeCategoryQuickAccess();return qa.perAccount?'account:'+String(accountId||data.accounts[0]?.id||''):'global'}
 function configuredQuickAccessIds(type,accountId=selectedAccountId){const qa=normalizeCategoryQuickAccess(),key=quickAccessProfileKey(accountId),profile=qa.profiles[key]||qa.profiles.global;return (profile[type]||[]).map(String).filter(id=>data.categories.some(c=>String(c.id)===id&&c.type===type&&!c.archived)).slice(0,7)}
-function quickAccessIds(type,accountId=selectedAccountId){const qa=normalizeCategoryQuickAccess();if(qa.mode==='manual')return configuredQuickAccessIds(type,accountId);const key=quickAccessProfileKey(accountId),recent=(qa.recent[key]?.[type]||[]).map(String),fallback=configuredQuickAccessIds(type,accountId),all=data.categories.filter(c=>c.type===type&&!c.archived).map(c=>String(c.id));return [...new Set([...recent,...fallback,...all])].filter(id=>data.categories.some(c=>String(c.id)===id&&c.type===type&&!c.archived)).slice(0,7)}
+function quickAccessIds(type,accountId=selectedAccountId){const qa=normalizeCategoryQuickAccess(),chosen=configuredQuickAccessIds(type,accountId);if(qa.mode==='manual')return chosen;const key=quickAccessProfileKey(accountId),allowed=new Set(chosen),recent=(qa.recent[key]?.[type]||[]).map(String).filter(id=>allowed.has(id));return [...new Set([...recent,...chosen])].filter(id=>data.categories.some(c=>String(c.id)===id&&c.type===type&&!c.archived)).slice(0,7)}
 function getOperationFavoriteCategories(type,accountId=selectedAccountId){return quickAccessIds(type,accountId).map(id=>data.categories.find(c=>String(c.id)===String(id)&&c.type===type&&!c.archived)).filter(Boolean)}
 function recordCategoryUse(type,categoryId,accountId){if(!['expense','income'].includes(type)||!categoryId)return;const qa=normalizeCategoryQuickAccess(),cid=String(categoryId),keys=[...new Set(['global',accountId?'account:'+String(accountId):''].filter(Boolean))];for(const key of keys){const rec=qa.recent[key]||(qa.recent[key]={expense:[],income:[]});rec[type]=[cid,...(rec[type]||[]).map(String).filter(id=>id!==cid)].filter(id=>data.categories.some(c=>String(c.id)===id&&c.type===type&&!c.archived)).slice(0,100)}}
 function setQuickAccessMode(mode){const qa=normalizeCategoryQuickAccess(),next=mode==='manual'?'manual':'smart';if(qa.mode===next)return;if(next==='manual'&&qa.mode==='smart'){const scoped=qa.perAccount?data.accounts.map(a=>({key:'account:'+String(a.id),accountId:String(a.id)})):[{key:'global',accountId:selectedAccountId}];for(const scope of scoped){qa.profiles[scope.key]=qa.profiles[scope.key]||JSON.parse(JSON.stringify(qa.profiles.global));for(const type of ['expense','income'])qa.profiles[scope.key][type]=getOperationFavoriteCategories(type,scope.accountId).map(c=>String(c.id)).slice(0,7)}}qa.mode=next}
@@ -1108,7 +1242,7 @@ const initialPeriodCursor=new Date();initialPeriodCursor.setHours(12,0,0,0);
 const periodCursors={day:new Date(initialPeriodCursor),week:new Date(initialPeriodCursor),month:new Date(initialPeriodCursor),year:new Date(initialPeriodCursor)};
 let periodCursor=new Date(periodCursors.month);
 let expandedCategories=new Set();let showAllCategories=false;
-const svgPaths={wallet:'<rect x="3" y="6" width="18" height="14" rx="3"/><path d="M3 10h18M16 14h2"/>',home:'<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',history:'<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/>',chart:'<path d="M4 19V5M4 19h17"/><rect x="7" y="11" width="3" height="5" rx=".5"/><rect x="13" y="7" width="3" height="9" rx=".5"/><rect x="19" y="4" width="2" height="12" rx=".5"/>',settings:'<circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.4 1.1-1.4 2.4-1.7-.6a8 8 0 0 1-1.8 1l-.3 1.8h-2.8l-.3-1.8a8 8 0 0 1-1.8-1l-1.7.6-1.4-2.4 1.4-1.1a7 7 0 0 1 0-2l-1.4-1.1 1.4-2.4 1.7.6a8 8 0 0 1 1.8-1l.3-1.8h2.8l.3 1.8a8 8 0 0 1 1.8 1l1.7-.6 1.4 2.4-1.4 1.1a7 7 0 0 1 0 2Z"/>',food:'<path d="M4 3v7M7 3v7M4 6h3M5.5 10v11M16 3v18M16 3c4 2 4 7 0 9"/>',shopping:'<path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>',transport:'<path d="M5 17h14l-1-8H6l-1 8ZM7 9l1-4h8l1 4M7 17v2m10-2v2M7 13h.01M17 13h.01"/>',health:'<path d="M12 21s-8-4.5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.5-8 11-8 11Z"/><path d="M9 12h6m-3-3v6"/>',homecat:'<path d="m3 10 9-7 9 7v10h-6v-6H9v6H3z"/>',income:'<path d="M4 16l6-6 4 4 6-8"/><path d="M14 6h6v6"/>',transfer:'<path d="M4 8h15l-3-3M20 16H5l3 3"/>',chevron:'<path d="m6 9 6 6 6-6"/>',salary:'<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5h8v2M12 11v5m-2-2 2 2 2-2"/>',calculator:'<rect x="4" y="2" width="16" height="20" rx="3"/><rect x="7" y="5" width="10" height="4" rx="1"/><path d="M8 13h.01M12 13h.01M16 13h.01M8 17h.01M12 17h.01M16 17h.01"/>',calendar:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 17h.01M12 17h.01"/>',other:'<circle cx="12" cy="12" r="8"/><path d="M12 8v8m-4-4h8"/>'};function iconSvg(name){return `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${svgPaths[name]||svgPaths.other}</svg>`;}document.querySelectorAll('[data-nav-icon]').forEach(el=>el.innerHTML=iconSvg(el.dataset.navIcon));
+const svgPaths={wallet:'<rect x="3" y="6" width="18" height="14" rx="3"/><path d="M3 10h18M16 14h2"/>',home:'<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',history:'<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/>',chart:'<path d="M4 19V5M4 19h17"/><rect x="7" y="11" width="3" height="5" rx=".5"/><rect x="13" y="7" width="3" height="9" rx=".5"/><rect x="19" y="4" width="2" height="12" rx=".5"/>',layers:'<path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/>',mic:'<rect x="9" y="2" width="6" height="13" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8"/>',settings:'<circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.4 1.1-1.4 2.4-1.7-.6a8 8 0 0 1-1.8 1l-.3 1.8h-2.8l-.3-1.8a8 8 0 0 1-1.8-1l-1.7.6-1.4-2.4 1.4-1.1a7 7 0 0 1 0-2l-1.4-1.1 1.4-2.4 1.7.6a8 8 0 0 1 1.8-1l.3-1.8h2.8l.3 1.8a8 8 0 0 1 1.8 1l1.7-.6 1.4 2.4-1.4 1.1a7 7 0 0 1 0 2Z"/>',food:'<path d="M4 3v7M7 3v7M4 6h3M5.5 10v11M16 3v18M16 3c4 2 4 7 0 9"/>',shopping:'<path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>',transport:'<path d="M5 17h14l-1-8H6l-1 8ZM7 9l1-4h8l1 4M7 17v2m10-2v2M7 13h.01M17 13h.01"/>',health:'<path d="M12 21s-8-4.5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.5-8 11-8 11Z"/><path d="M9 12h6m-3-3v6"/>',homecat:'<path d="m3 10 9-7 9 7v10h-6v-6H9v6H3z"/>',income:'<path d="M4 16l6-6 4 4 6-8"/><path d="M14 6h6v6"/>',transfer:'<path d="M4 8h15l-3-3M20 16H5l3 3"/>',chevron:'<path d="m6 9 6 6 6-6"/>',salary:'<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5h8v2M12 11v5m-2-2 2 2 2-2"/>',calculator:'<rect x="4" y="2" width="16" height="20" rx="3"/><rect x="7" y="5" width="10" height="4" rx="1"/><path d="M8 13h.01M12 13h.01M16 13h.01M8 17h.01M12 17h.01M16 17h.01"/>',calendar:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 17h.01M12 17h.01"/>',other:'<circle cx="12" cy="12" r="8"/><path d="M12 8v8m-4-4h8"/>'};function iconSvg(name){return `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${svgPaths[name]||svgPaths.other}</svg>`;}document.querySelectorAll('[data-nav-icon]').forEach(el=>el.innerHTML=iconSvg(el.dataset.navIcon));document.querySelectorAll('[data-menu-icon]').forEach(el=>el.innerHTML=iconSvg(el.dataset.menuIcon));
 function load(){try{const x=JSON.parse(localStorage.getItem(KEY)||'null');if(x&&Array.isArray(x.accounts)&&Array.isArray(x.categories)&&Array.isArray(x.transactions))return x;}catch(e){}return structuredClone(defaultData)}
 let lastCommittedDataJSON=(()=>{try{return localStorage.getItem(KEY)||JSON.stringify(data)}catch(e){return JSON.stringify(data)}})();let pendingPersistenceError='';
 function save(){normalizeCategoryQuickAccess();normalizeCategoryTags();let serialized;try{serialized=JSON.stringify(data);localStorage.setItem(KEY,serialized);lastCommittedDataJSON=serialized}catch(e){console.error('Не удалось сохранить финансовые данные',e);try{data=JSON.parse(lastCommittedDataJSON||'{}')}catch(restoreError){console.error('Не удалось вернуть сохранённое состояние',restoreError)}pendingPersistenceError='Не удалось сохранить изменения. Они не были записаны: освободи место в хранилище и повтори действие.';try{render()}catch(renderError){console.error('Не удалось обновить экран после сбоя сохранения',renderError)}setTimeout(()=>{if(pendingPersistenceError){const message=pendingPersistenceError;pendingPersistenceError='';toast(message)}},0);return false}try{render()}catch(renderError){console.error('Данные сохранены, но обновление экрана завершилось с ошибкой',renderError);toast('Данные сохранены. Перезагрузи приложение, если экран отображается неправильно.')}return true}
@@ -1148,7 +1282,7 @@ function syncPeriodLabelMask(){
 function selectedPeriodRange(){const now=new Date(periodCursor);const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;let from=iso(now),to=from;if(selectedPeriod==='week'){const d=new Date(now);const day=(d.getDay()+6)%7;d.setDate(d.getDate()-day);from=iso(d);const e=new Date(d);e.setDate(e.getDate()+6);to=iso(e)}else if(selectedPeriod==='month'){from=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-01`;to=iso(new Date(now.getFullYear(),now.getMonth()+1,0))}else if(selectedPeriod==='year'){from=now.getFullYear()+'-01-01';to=now.getFullYear()+'-12-31'}else if(selectedPeriod==='custom'){from=$('customFrom').value||monthNow()+'-01';to=$('customTo').value||today()}return {from,to}}
 function scopedTransactions(){const {from,to}=selectedPeriodRange();return data.transactions.filter(t=>t.date>=from&&t.date<=to&&(t.type==='transfer'?(t.accountId===selectedAccountId||t.toAccountId===selectedAccountId):t.accountId===selectedAccountId))}
 function renderTransferShortcut(){const b=$('transferOperationMain'),actions=document.querySelector('.period-primary-actions');if(!b||!actions)return;const show=!!transferFeatureEnabled&&data.accounts.length>=2;b.classList.toggle('hidden',!show);actions.classList.toggle('has-transfer',show);b.setAttribute('aria-hidden',String(!show));b.tabIndex=show?0:-1;}
-function render(){renderTransferShortcut();if(!data.accounts.some(a=>a.id===selectedAccountId))selectedAccountId=data.accounts[0]?.id||'';const sel=$('accountSelect');if(sel){const old=sel.value;sel.innerHTML=data.accounts.map(a=>`<option value="${esc(a.id)}">${esc(a.icon||'👛')} ${esc(a.name)}</option>`).join('');sel.value=data.accounts.some(a=>a.id===selectedAccountId)?selectedAccountId:data.accounts[0]?.id||'';selectedAccountId=sel.value;try{localStorage.setItem('my-finances-selected-account',selectedAccountId)}catch(e){console.warn('Не удалось сохранить выбранную кассу',e)};}const ra=$('reportAccount'),rc=$('reportCategory');if(ra){const prev=ra.value||'all';ra.innerHTML='<option value="all">Все кассы</option>'+data.accounts.map(a=>`<option value="${esc(a.id)}">${esc(a.name)}</option>`).join('');ra.value=[...data.accounts.map(a=>a.id),'all'].includes(prev)?prev:'all'}if(rc){const prev=rc.value||'all';rc.innerHTML='<option value="all">Все категории</option>'+data.categories.filter(c=>c.type==='expense').map(c=>`<option value="${esc(c.id)}">${esc(c.name)}</option>`).join('');rc.value=[...data.categories.filter(c=>c.type==='expense').map(c=>c.id),'all'].includes(prev)?prev:'all'}const a=data.accounts.find(x=>x.id===selectedAccountId);$('totalBalance').textContent=money(balance(selectedAccountId));const ats=scopedTransactions();const {from,to}=selectedPeriodRange();const cursorDate=new Date(periodCursor);const monthLabel=cursorDate.toLocaleDateString('ru-RU',{month:'long',year:'numeric'});const dayLabel=cursorDate.toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'});const labelPeriod=selectedPeriod==='day'?`за ${dayLabel}`:selectedPeriod==='week'?`за ${formatWeekRange(from,to)}`:selectedPeriod==='month'?`за ${monthLabel}`:selectedPeriod==='year'?`за ${cursorDate.getFullYear()} год`:'за период';const typLabel=activeOperationType==='income'?'Доходы':'Расходы';const total=ats.filter(t=>t.type===activeOperationType).reduce((n,t)=>n+Number(t.amount||0),0);$('periodSummaryLabel').textContent=`${typLabel} ${labelPeriod}`;updatePeriodTodayButton();syncPeriodLabelMask();$('periodSummaryTotal').textContent=money(total);$('periodSummaryTotal').style.color=activeOperationType==='expense'?'#E58A8A':activeOperationType==='income'?'#83C99B':'#F4F7F4';recentSelectedAccounts=validSelection(recentSelectedAccounts);recentDraftAccounts=validSelection(recentDraftAccounts);const recentTransactions=data.transactions.filter(t=>filterAccountMatch(t,recentSelectedAccounts)).sort(compareTransactionsNewestFirst).slice(0,3);$('recentList').innerHTML=listHtml(recentTransactions,isAllSelected(recentSelectedAccounts)?'':recentSelectedAccounts.length===1?recentSelectedAccounts[0]:'');const recentToggle=$('recentFilterToggle');if(recentToggle)recentToggle.classList.toggle('filter-active',!isAllSelected(recentSelectedAccounts));renderOperationPicker();
+function render(){renderTransferShortcut();if(!data.accounts.some(a=>a.id===selectedAccountId))selectedAccountId=data.accounts[0]?.id||'';const sel=$('accountSelect');if(sel){const old=sel.value;sel.innerHTML=data.accounts.map(a=>`<option value="${esc(a.id)}">${esc(a.icon||'👛')} ${esc(a.name)}</option>`).join('');sel.value=data.accounts.some(a=>a.id===selectedAccountId)?selectedAccountId:data.accounts[0]?.id||'';selectedAccountId=sel.value;try{localStorage.setItem('my-finances-selected-account',selectedAccountId)}catch(e){console.warn('Не удалось сохранить выбранную кассу',e)};}const ra=$('reportAccount'),rc=$('reportCategory');if(ra){const prev=ra.value||'all';ra.innerHTML='<option value="all">Все кассы</option>'+data.accounts.map(a=>`<option value="${esc(a.id)}">${esc(a.name)}</option>`).join('');ra.value=[...data.accounts.map(a=>a.id),'all'].includes(prev)?prev:'all'}if(rc){const prev=rc.value||'all';rc.innerHTML='<option value="all">Все категории</option>'+data.categories.filter(c=>c.type==='expense').map(c=>`<option value="${esc(c.id)}">${esc(c.name)}</option>`).join('');rc.value=[...data.categories.filter(c=>c.type==='expense').map(c=>c.id),'all'].includes(prev)?prev:'all'}const a=data.accounts.find(x=>x.id===selectedAccountId);$('totalBalance').textContent=money(balance(selectedAccountId));const ats=scopedTransactions();const {from,to}=selectedPeriodRange();const cursorDate=new Date(periodCursor);const monthLabel=cursorDate.toLocaleDateString('ru-RU',{month:'long',year:'numeric'});const dayLabel=cursorDate.toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'});const labelPeriod=selectedPeriod==='day'?dayLabel:selectedPeriod==='week'?formatWeekRange(from,to):selectedPeriod==='month'?monthLabel:selectedPeriod==='year'?`${cursorDate.getFullYear()} год`:from===to?prettyDate(from):`${prettyDate(from)} – ${prettyDate(to)}`;const total=ats.filter(t=>t.type===activeOperationType).reduce((n,t)=>n+Number(t.amount||0),0);$('periodSummaryLabel').textContent=labelPeriod;updatePeriodTodayButton();syncPeriodLabelMask();$('periodSummaryTotal').textContent=money(total);$('periodSummaryTotal').style.color=activeOperationType==='expense'?'#E58A8A':activeOperationType==='income'?'#83C99B':'#F4F7F4';recentSelectedAccounts=validSelection(recentSelectedAccounts);recentDraftAccounts=validSelection(recentDraftAccounts);const recentTransactions=data.transactions.filter(t=>filterAccountMatch(t,recentSelectedAccounts)).sort(compareTransactionsNewestFirst).slice(0,3);$('recentList').innerHTML=listHtml(recentTransactions,isAllSelected(recentSelectedAccounts)?'':recentSelectedAccounts.length===1?recentSelectedAccounts[0]:'');const recentToggle=$('recentFilterToggle');if(recentToggle)recentToggle.classList.toggle('filter-active',!isAllSelected(recentSelectedAccounts));renderOperationPicker();
 historySelectedAccounts=validSelection(historySelectedAccounts);historyDraftAccounts=validSelection(historyDraftAccounts);let list=[...data.transactions].sort(compareTransactionsNewestFirst);const q=($('searchTx').value||'').toLowerCase().trim(),typ=$('filterType').value,fromH=$('fromDate').value,toH=$('toDate').value;list=list.filter(t=>filterAccountMatch(t,historySelectedAccounts)&&(typ==='all'||t.type===typ)&&(!fromH||t.date>=fromH)&&(!toH||t.date<=toH)&&(!q||[t.note,t.subcategory,Array.isArray(t.tags)?t.tags.join(' '):'',txCategory(t),accountName(t.accountId),accountName(t.toAccountId),String(t.amount),txTitle(t)].join(' ').toLowerCase().includes(q)));$('historyList').innerHTML=historyHtml(list);const historyToggle=$('historyFilterToggle');if(historyToggle){const hasHistoryCriteria=!isAllSelected(historySelectedAccounts)||typ!=='all'||($('historyCategoryFilter')?.value||'all')!=='all'||($('historyTagFilter')?.value||'all')!=='all'||Boolean(fromH||toH);historyToggle.classList.toggle('filter-active',hasHistoryCriteria)}
 const m=$('analyticsMonth').value||monthNow(),acc=$('analyticsAccount');let analyticsAccount=acc?.value||'all';if(acc){acc.innerHTML='<option value="all">Все кассы</option>'+data.accounts.map(a=>`<option value="${esc(a.id)}">${esc(a.name)}</option>`).join('');if(![...data.accounts.map(a=>a.id),'all'].includes(analyticsAccount))analyticsAccount='all';acc.value=analyticsAccount}const ats2=monthTx(m).filter(t=>analyticsAccount==='all'||(t.type==='transfer'?(t.accountId===analyticsAccount||t.toAccountId===analyticsAccount):t.accountId===analyticsAccount));const inc=sum(ats2,'income'),exp=sum(ats2,'expense');$('analyticsIncome').textContent=money(inc);$('analyticsExpense').textContent=money(exp);$('analyticsNet').textContent=(inc-exp<0?'−':'')+money(Math.abs(inc-exp));$('analyticsCategories').innerHTML=statsHtml(categoryStats(ats2));const subs={};for(const t of ats2.filter(t=>t.type==='expense')){const parent=txCategory(t),key=parent+' · '+(t.subcategory||'Без подкатегории');subs[key]=(subs[key]||0)+Number(t.amount)}$('analyticsSubcategories').innerHTML=statsHtml(Object.entries(subs).sort((a,b)=>b[1]-a[1]));renderExpenseTrend(ats2,m);}
 function renderExpenseTrend(transactions,month){const host=$('expenseTrend');if(!host)return;const [yy,mm]=String(month||monthNow()).split('-').map(Number);const days=new Date(yy,mm,0).getDate();const vals=Array(days).fill(0);for(const t of transactions||[]){if(t.type!=='expense'||!String(t.date||'').startsWith(`${month}-`))continue;const d=Number(String(t.date).slice(8,10));if(d>=1&&d<=days)vals[d-1]+=Number(t.amount||0)}const max=Math.max(...vals,1);const W=320,H=112,pad=8;const pts=vals.map((v,i)=>[pad+(W-2*pad)*(i/Math.max(1,days-1)),H-pad-(H-2*pad)*(v/max)]);const line=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(2)+' '+p[1].toFixed(2)).join(' ');const area=line+` L ${pts[pts.length-1][0]} ${H-pad} L ${pts[0][0]} ${H-pad} Z`;const total=vals.reduce((a,b)=>a+b,0);const active=vals.filter(v=>v>0).length;$('trendCaption').textContent=active?`${active} ${active===1?'день с расходами':'дн. с расходами'} · ${money(total)} за месяц`:'Пока нет расходов за этот месяц';host.innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Динамика расходов за месяц" preserveAspectRatio="none"><defs><linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#39F5A0" stop-opacity=".30"/><stop offset="100%" stop-color="#39F5A0" stop-opacity="0"/></linearGradient><linearGradient id="trendStroke" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#42F5AA"/><stop offset="100%" stop-color="#B7FFD9"/></linearGradient><filter id="trendGlow" x="-30%" y="-50%" width="160%" height="200%"><feGaussianBlur stdDeviation="2.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path d="M ${pad} ${H-22} H ${W-pad}" class="trend-baseline"/><path d="${area}" fill="url(#trendFill)"/><path d="${line}" fill="none" stroke="url(#trendStroke)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#trendGlow)"/>${vals.map((v,i)=>v>0?`<circle cx="${pts[i][0]}" cy="${pts[i][1]}" r="3" fill="var(--accent-strong)"><title>${esc(String(i+1)+' '+dateAtNoon(`${month}-${String(i+1).padStart(2,'0')}`).toLocaleDateString('ru-RU',{month:'short'}))}: ${esc(money(v))}</title></circle>`:'' ).join('')}</svg>`}
@@ -1200,7 +1334,32 @@ function openCategoryDetail(categoryId){
  if($('modalTitle'))$('modalTitle').textContent='Операции категории';
  renderContent();
 }
-function renderOperationPicker(){const host=$('operationPicker');if(!host)return;document.querySelectorAll('[data-op-type]').forEach(b=>{const active=b.dataset.opType===activeOperationType;b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active))});const ats=scopedTransactions();const cats=data.categories.filter(c=>c.type===activeOperationType&&!c.archived);const iconClass=c=>{const x=(c.id+' '+c.name).toLowerCase();if(activeOperationType==='income')return 'income';if(/food|продукт|еда|кафе/.test(x))return 'food';if(/shop|покуп|одеж/.test(x))return 'shopping';if(/transport|транспорт|авто|такси|топлив/.test(x))return 'transport';if(/health|здоров|аптек|врач/.test(x))return 'health';if(/home|дом|ремонт/.test(x))return 'home';return ''};const categoryIcon=c=>{const x=((c.id||'')+' '+c.name).toLowerCase();if(activeOperationType==='income')return /зарп|salary/.test(x)?'salary':'income';if(/продукт|еда|food|кафе/.test(x))return 'food';if(/покуп|shop|одеж/.test(x))return 'shopping';if(/транспорт|авто|такси|топлив|transport/.test(x))return 'transport';if(/здоров|аптек|врач|health/.test(x))return 'health';if(/дом|home|ремонт/.test(x))return 'homecat';return 'other'};const visibleCats=cats.filter(c=>ats.some(t=>t.type===activeOperationType&&t.categoryId===c.id));const allCats=visibleCats.map(c=>{const ops=ats.filter(t=>t.type===activeOperationType&&t.categoryId===c.id);const total=ops.reduce((n,t)=>n+Number(t.amount||0),0);const tagTotals={};ops.forEach(t=>(Array.isArray(t.tags)?t.tags:[]).forEach(tag=>{const name=String(tag||'').trim();if(name)tagTotals[name]=(tagTotals[name]||0)+Number(t.amount||0)}));const tagNames=Object.keys(tagTotals).sort((a,b)=>tagTotals[b]-tagTotals[a]);const hasSubs=tagNames.length>0;const expanded=expandedCategories.has(c.id);return `<div class="category-row ${expanded?'expanded':''}" data-category-row="${esc(c.id)}" role="button" tabindex="0" aria-label="Открыть историю категории ${esc(c.name)}; удержать для новой операции"><div class="category-icon ${iconClass(c)}" style="${categoryStyle(c)}">${categoryGlyph(c)}</div><div class="category-info"><strong>${esc(c.name)}</strong></div><div class="category-amount">${money(total)}</div>${hasSubs?`<button type="button" class="category-toggle" data-cat-toggle="${esc(c.id)}" aria-expanded="${expanded?'true':'false'}" aria-label="${expanded?'Свернуть':'Раскрыть'} подкатегории">${iconSvg('chevron')}</button>`:'<span class="category-toggle placeholder"></span>'}${expanded&&hasSubs?`<div class="category-sublist">${tagNames.map(tag=>[tag,tagTotals[tag]]).map(([tag,val])=>`<div class="subcategory-row"><span>${esc(tag)}</span><strong>${money(val)}</strong></div>`).join('')}</div>`:''}</div>`}).join('');host.innerHTML=`<div class="category-list">${allCats||`<div class="category-empty"><b>Пока нет операций за этот период</b><br><span>Здесь появятся только категории, которыми ты воспользовался. Добавь расход или доход кнопкой +.</span></div>`}</div>`}
+function renderOperationPicker(){
+ const host=$('operationPicker');if(!host)return;
+ document.querySelectorAll('[data-op-type]').forEach(b=>{const active=b.dataset.opType===activeOperationType;b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active));});
+ const ats=scopedTransactions();
+ const cats=data.categories.filter(c=>c.type===activeOperationType&&!c.archived);
+ const iconClass=c=>{const x=(c.id+' '+c.name).toLowerCase();if(activeOperationType==='income')return 'income';if(/food|продукт|еда|кафе/.test(x))return 'food';if(/shop|покуп|одеж/.test(x))return 'shopping';if(/transport|транспорт|авто|такси|топлив/.test(x))return 'transport';if(/health|здоров|аптек|врач/.test(x))return 'health';if(/home|дом|ремонт/.test(x))return 'home';return ''};
+ const visibleCats=cats.filter(c=>ats.some(t=>t.type===activeOperationType&&t.categoryId===c.id));
+ const allCats=visibleCats.map(c=>{
+  const ops=ats.filter(t=>t.type===activeOperationType&&t.categoryId===c.id);
+  const total=ops.reduce((n,t)=>n+Number(t.amount||0),0);
+  const tagTotals={};let noTagTotal=0,noTagCount=0;
+  ops.forEach(t=>{
+   const names=[...new Set((Array.isArray(t.tags)?t.tags:[]).map(tag=>String(tag||'').trim()).filter(Boolean))];
+   if(!names.length){noTagTotal+=Number(t.amount||0);noTagCount++;return;}
+   names.forEach(name=>{tagTotals[name]=(tagTotals[name]||0)+Number(t.amount||0)});
+  });
+  const tagNames=Object.keys(tagTotals).sort((a,b)=>tagTotals[b]-tagTotals[a]||a.localeCompare(b,'ru'));
+  const hasSubs=tagNames.length>0||noTagCount>0;
+  const expanded=expandedCategories.has(c.id);
+  const tagRows=tagNames.map(tag=>`<div class="subcategory-row"><span class="subcategory-name">${esc(tag)}</span><strong>${money(tagTotals[tag])}</strong></div>`).join('');
+  const noTagRow=noTagCount?`<div class="subcategory-row subcategory-no-tags"><span class="subcategory-name">Без тегов</span><strong>${money(noTagTotal)}</strong></div>`:'';
+  const subList=expanded&&hasSubs?`<div class="category-sublist">${tagNames.length?`<div class="subcategory-scroll ${tagNames.length>10?'has-many':''}" ${tagNames.length>10?'aria-label="Прокручиваемый список тегов"':''}>${tagRows}</div>`:''}${noTagRow}</div>`:'';
+  return `<div class="category-row ${expanded?'expanded':''}" data-category-row="${esc(c.id)}" role="button" tabindex="0" aria-label="Открыть историю категории ${esc(c.name)}; удержать для новой операции"><div class="category-icon ${iconClass(c)}" style="${categoryStyle(c)}">${categoryGlyph(c)}</div><div class="category-info"><strong>${esc(c.name)}</strong></div><div class="category-amount">${money(total)}</div>${hasSubs?`<button type="button" class="category-toggle" data-cat-toggle="${esc(c.id)}" aria-expanded="${expanded?'true':'false'}" aria-label="${expanded?'Свернуть':'Раскрыть'} теги">${iconSvg('chevron')}</button>`:'<span class="category-toggle placeholder"></span>'}${subList}</div>`;
+ }).join('');
+ host.innerHTML=`<div class="category-list ${allCats?'':'is-empty-period'}">${allCats||`<div class="category-empty home-empty-period"><b>Пока нет операций за этот период</b></div>`}</div>`;
+}
 function switchTab(tab){activeTab=tab;document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===tab+'View'));document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));if(tab==='history'||tab==='analytics')render();if(tab==='home')syncPeriodLabelMask()}
 let modalScrollLockState=null;
 function lockModalBackgroundScroll(){
@@ -1271,16 +1430,18 @@ function showQuickCategoryChooser(type,query=''){
  modalType='quick-category-chooser';
  const categories=data.categories.filter(c=>c.type===type&&!c.archived).sort((a,b)=>String(a.name||'').localeCompare(String(b.name||''),'ru'));
  const initialQuery=String(query||'').trim().toLocaleLowerCase('ru-RU');
- const body=`<p class="muted" style="font-size:12px;margin:0 0 10px">Выбери существующую категорию для этой операции или создай новую. Если быстрый список заполнен, выбор всё равно доступен для текущей операции.</p><div class="field"><label for="quickCategorySearch">Поиск категории</label><input id="quickCategorySearch" type="search" placeholder="Название категории" value="${esc(query)}" autocomplete="off" inputmode="search"></div><div class="favorite-choice-list" id="quickCategoryChoiceList">${categories.map(c=>`<button type="button" class="favorite-choice-row" data-quick-pick-category="${esc(c.id)}" data-quick-search="${esc(String(c.name||'').toLocaleLowerCase('ru-RU'))}"><span class="tx-category-icon" style="${categoryStyle(c)}">${categoryGlyph(c)}</span><span class="favorite-choice-name">${esc(c.name)}</span><span class="favorite-slot-action">Выбрать</span></button>`).join('')||'<div class="category-empty">Пока нет категорий этого типа. Можно создать новую.</div>'}</div><div id="quickCategoryNoResults" class="category-empty hidden">Совпадений нет. Можно создать новую категорию.</div><div class="grid2" style="margin-top:12px"><button type="button" class="secondary" id="cancelQuickCategory">Назад к операции</button><button type="button" class="primary" id="createQuickCategory">＋ Создать категорию</button></div>`;
- openModal(body);$('modalTitle').textContent='Категория операции';
+ const body=`<p class="muted quick-chooser-help">Выбери категорию для этой операции. Если в быстром доступе есть место, категория добавится туда; при 7/7 выбор будет временным.</p><div class="field quick-chooser-search"><label for="quickCategorySearch">Поиск категории</label><input id="quickCategorySearch" type="search" placeholder="Название категории" value="${esc(query)}" autocomplete="off" inputmode="search"></div><div class="quick-category-grid" id="quickCategoryChoiceList">${categories.map(c=>`<button type="button" class="quick-category-card" data-quick-pick-category="${esc(c.id)}" data-quick-search="${esc(String(c.name||'').toLocaleLowerCase('ru-RU'))}" title="${esc(c.name)}"><span class="tx-category-icon" style="${categoryStyle(c)}">${categoryGlyph(c)}</span><span class="quick-category-name" title="${esc(c.name)}">${esc(c.name)}</span></button>`).join('')||'<div class="category-empty">Пока нет категорий этого типа. Можно создать новую.</div>'}</div><div id="quickCategoryNoResults" class="category-empty hidden">Совпадений нет. Можно создать новую категорию.</div><div class="grid2 quick-chooser-actions"><button type="button" class="secondary" id="cancelQuickCategory">Назад к операции</button><button type="button" class="primary" id="createQuickCategory">＋ Создать категорию</button></div>`;
+ openModal(body);$('modalTitle').textContent='Выбрать категорию';
  $('cancelQuickCategory').onclick=restoreFavoriteOperation;
  $('createQuickCategory').onclick=()=>editCategory(null);
  const search=$('quickCategorySearch'),rows=[...document.querySelectorAll('[data-quick-pick-category]')],empty=$('quickCategoryNoResults');
- const filterRows=value=>{const q=String(value||'').trim().toLocaleLowerCase('ru-RU');let visible=0;rows.forEach(row=>{const match=String(row.dataset.quickSearch||'').includes(q);row.classList.toggle('hidden',!match);if(match)visible++});if(empty)empty.classList.toggle('hidden',visible>0||rows.length===0);};
+ const filterRows=value=>{const q=String(value||'').trim().toLocaleLowerCase('ru-RU');let visible=0;rows.forEach(row=>{const match=String(row.dataset.quickSearch||'').includes(q);row.classList.toggle('hidden',!match);if(match)visible++});if(empty)empty.classList.toggle('hidden',visible>0||rows.length===0)};
  search.oninput=e=>filterRows(e.target.value);filterRows(initialQuery);
  rows.forEach(b=>b.onclick=()=>{
   const cid=b.dataset.quickPickCategory,draft=txReopenDraft;if(!draft||!catById(cid))return;
-  // Choosing a category for this transaction must not silently change the user's manual quick-access list.
+  const accountId=draft.accountId||selectedAccountId,chosen=getOperationFavoriteCategories(type,accountId).map(c=>String(c.id));
+  if(!chosen.includes(String(cid))&&chosen.length<7){const result=addQuickAccessCategory(type,cid,accountId);if(result.ok)save();}
+  // At 7/7, do not persist this category: openTx will display it first and temporarily displace slot seven.
   draft.categoryId=cid;txReopenDraft=null;openTx(draft.type,draft,cid);
  });
 }
@@ -1437,17 +1598,25 @@ $('cancelCatEdit').onclick=()=>{if(txReopenDraft){const draft=txReopenDraft;txRe
 $('categoryEditor').onsubmit=e=>{e.preventDefault();const name=$('editCatName').value.trim();if(!name)return;const updated={id:c?.id||id(),name,type:$('editCatType').value,icon:chosenIcon,color:chosenColor,subs:$('editCatSubs')? $('editCatSubs').value.split(',').map(s=>s.trim()).filter(Boolean):(c?.subs||[])};if(c){const index=data.categories.findIndex(x=>x.id===c.id);if(index>=0)data.categories[index]={...data.categories[index],...updated}}else data.categories.push(updated);if(!c&&txReopenDraft&&$('newCategoryQuickPin')?.checked&&data.categoryQuickAccess?.mode==='manual'){const result=addQuickAccessCategory(updated.type,updated.id,txReopenDraft.accountId);if(!result.ok){toast(result.reason==='full'?'Быстрый список заполнен — категория создана, но не закреплена.':'Не удалось закрепить категорию.');}}if(!save())return;if(!c&&txReopenDraft){const draft=txReopenDraft;txReopenDraft=null;openTx(draft.type,{...draft,categoryId:updated.id,tags:draft.tags||[]},updated.id)}else{manageCategories()}toast(c?'Категория обновлена':'Категория создана')};
 }
 function categoryManagerCurrentAccount(){return categoryManagerAccountId||selectedAccountId||data.accounts[0]?.id||''}
+
+function rerenderCategoryManagerPreservingScroll(){
+ const modal=$('modalRoot')?.querySelector('.modal');const scrollY=window.scrollY||0;const modalY=modal?.scrollTop||0;
+ const favoriteY=$('favoriteCategoryList')?.scrollTop||0;const catalogY=$('categoriesList')?.scrollTop||0;
+ manageCategories();
+ requestAnimationFrame(()=>{const next=$('modalRoot')?.querySelector('.modal');if(next)next.scrollTop=modalY;const f=$('favoriteCategoryList');if(f)f.scrollTop=favoriteY;const c=$('categoriesList');if(c)c.scrollTop=catalogY;window.scrollTo(0,scrollY)});
+}
+
 function manageCategories(){
  normalizeCategoryQuickAccess();const qa=data.categoryQuickAccess;
  categoryManagerType=['expense','income'].includes(categoryManagerType)?categoryManagerType:'expense';
  if(!data.accounts.some(a=>String(a.id)===String(categoryManagerAccountId)))categoryManagerAccountId=selectedAccountId||data.accounts[0]?.id||'';
- const type=categoryManagerType,accountId=categoryManagerCurrentAccount(),key=quickAccessProfileKey(accountId),profile=qa.profiles[key]||qa.profiles.global,storedQuickIds=(profile[type]||[]).map(String),quickIds=qa.mode==='smart'?getOperationFavoriteCategories(type,accountId).map(c=>String(c.id)):storedQuickIds;
+ const type=categoryManagerType,accountId=categoryManagerCurrentAccount(),key=quickAccessProfileKey(accountId),profile=qa.profiles[key]||qa.profiles.global,storedQuickIds=(profile[type]||[]).map(String),quickIds=getOperationFavoriteCategories(type,accountId).map(c=>String(c.id));
  const active=data.categories.filter(c=>!c.archived),listType=active.filter(c=>c.type===type),archived=data.categories.filter(c=>c.archived&&c.type===type);
  const accountSelect=qa.perAccount?`<div class="field"><label for="categoryManagerAccount">Настройки кассы</label><select id="categoryManagerAccount">${data.accounts.map(a=>`<option value="${esc(a.id)}" ${String(a.id)===String(accountId)?'selected':''}>${esc(a.icon||'👛')} ${esc(a.name)}</option>`).join('')}</select></div>`:'<p class="muted" style="font-size:12px;margin:0 0 10px">Используются общие настройки быстрого доступа для всех касс.</p>';
- const recentIds=new Set((qa.recent[key]?.[type]||[]).map(String));const favoritesHtml=quickIds.map((id,i)=>{const c=catById(id);if(!c||c.archived||c.type!==type)return '';const sortable=qa.mode==='manual'?`data-sortable-item="favorite" data-sort-id="${esc(c.id)}"`:'';const canRemove=quickIds.length>1;return `<div class="catline favorite-manager-row ${qa.mode==='manual'?'reorderable-item':''}" ${sortable}><div class="cat-preview" style="${categoryStyle(c)}">${categoryGlyph(c)}</div><div class="grow"><b>${esc(c.name)}</b><small>${qa.mode==='manual'?'Место '+(i+1):(recentIds.has(String(c.id))?'По последнему использованию':'Запасная категория')}</small></div>${qa.mode==='manual'?'<span class="reorder-grip" aria-hidden="true">⠿</span>':'<span class="muted" style="font-size:11px">Авто</span>'}${canRemove?`<button type="button" class="quick-remove-btn" data-remove-quick="${esc(c.id)}" aria-label="Убрать ${esc(c.name)} только из быстрого доступа" title="Убрать из быстрого доступа">×</button>`:''}</div>`}).join('');
- const catalogHtml=listType.map(c=>{const isQuick=quickIds.includes(String(c.id));return `<div class="catline reorderable-item" data-sortable-item="category" data-sort-id="${esc(c.id)}"><div class="cat-preview" style="${categoryStyle(c)}">${categoryGlyph(c)}</div><div class="grow"><b>${esc(c.name)}</b><small>${isQuick?'В быстром доступе':'В библиотеке'} · ${(c.subs||[]).length?esc(c.subs.join(', ')):'без подкатегорий'}</small></div><span class="reorder-grip" aria-hidden="true">⠿</span><button type="button" class="secondary smallbtn" data-cat-edit="${esc(c.id)}">Настроить</button><button type="button" class="secondary smallbtn danger" data-cat-del="${esc(c.id)}" aria-label="Архивировать ${esc(c.name)}">×</button></div>`}).join('');
+ const favoritesHtml=quickIds.map((id,i)=>{const c=catById(id);if(!c||c.archived||c.type!==type)return '';const sortable=qa.mode==='manual'?`data-sortable-item="favorite" data-sort-id="${esc(c.id)}"`:'';const canRemove=quickIds.length>1;return `<div class="catline favorite-manager-row ${qa.mode==='manual'?'reorderable-item':''}" ${sortable}><div class="cat-preview" style="${categoryStyle(c)}">${categoryGlyph(c)}</div><div class="grow"><b class="one-line-category-name" title="${esc(c.name)}">${esc(c.name)}</b></div>${qa.mode==='manual'?'<span class="reorder-grip" aria-hidden="true">⠿</span>':''}${canRemove?`<button type="button" class="quick-remove-btn" data-remove-quick="${esc(c.id)}" aria-label="Убрать ${esc(c.name)} только из быстрого доступа" title="Убрать из быстрого доступа">×</button>`:''}</div>`}).join('');
+ const catalogHtml=listType.map(c=>{const isQuick=quickIds.includes(String(c.id)),full=quickIds.length>=7;const quickAction=isQuick?`<button type="button" class="quick-library-action is-selected" disabled aria-label="${esc(c.name)} уже в быстром доступе" title="Уже в быстром доступе">✓</button>`:`<button type="button" class="quick-library-action" data-add-library-quick="${esc(c.id)}" ${full?'disabled':''} aria-label="Добавить ${esc(c.name)} в быстрый доступ" title="${full?'Быстрый доступ заполнен (7/7)':'Добавить в быстрый доступ'}">＋</button>`;return `<div class="catline reorderable-item" data-sortable-item="category" data-sort-id="${esc(c.id)}"><div class="cat-preview" style="${categoryStyle(c)}">${categoryGlyph(c)}</div><div class="grow"><b class="one-line-category-name" title="${esc(c.name)}">${esc(c.name)}</b></div>${quickAction}<button type="button" class="secondary smallbtn" data-cat-edit="${esc(c.id)}">Настроить</button><button type="button" class="secondary smallbtn danger" data-cat-del="${esc(c.id)}" aria-label="Архивировать ${esc(c.name)}">×</button></div>`}).join('');
  const archivedHtml=archived.map(c=>`<div class="catline"><div class="cat-preview" style="${categoryStyle(c)}">${categoryGlyph(c)}</div><div class="grow"><b>${esc(c.name)}</b><small>В архиве · старые операции сохранены</small></div><button type="button" class="secondary smallbtn" data-cat-edit="${esc(c.id)}">Настроить</button><button type="button" class="secondary smallbtn" data-restore-category="${esc(c.id)}">Вернуть</button></div>`).join('');
- openModal(`<div class="category-manager-controls"><div class="tabs"><button type="button" class="secondary ${type==='expense'?'selected':''}" data-manager-type="expense">Расходы</button><button type="button" class="secondary ${type==='income'?'selected':''}" data-manager-type="income">Доходы</button></div>${accountSelect}<div class="settingrow settings-control-row"><div><b>Порядок быстрого доступа</b><div class="muted">Умный — меняется по использованию. Ручной — остаётся в выбранном порядке.</div></div><select id="categoryQuickOrderMode" class="settings-select" aria-label="Порядок быстрого доступа"><option value="smart" ${qa.mode==='smart'?'selected':''}>Умный</option><option value="manual" ${qa.mode==='manual'?'selected':''}>Ручной</option></select></div><label class="tx-favorite-setting" style="margin:10px 0"><input id="categoryPerAccountMode" type="checkbox" ${qa.perAccount?'checked':''}><span><b>Настраивать отдельно для каждой кассы</b><small>Отдельный быстрый список для каждой кассы и для расходов/доходов. По умолчанию настройки общие.</small></span></label></div><div class="sectionhead"><h3>${qa.mode==='manual'?'Избранные категории':'Быстрый доступ сейчас'} <span class="muted">${quickIds.length}/7</span></h3></div><p class="reorder-hint">${qa.mode==='manual'?'В форме показываются только эти категории. Удерживай строку, чтобы менять порядок; крестик убирает категорию только из быстрого доступа.':'Список формируется по последнему использованию. Чтобы выбрать постоянный состав и порядок, переключи режим на «Ручной».'}</p><div id="favoriteCategoryList" class="favorite-slot-list" data-favorite-list="1" data-favorite-type="${type}" data-favorite-account="${esc(accountId)}">${favoritesHtml||'<div class="category-empty">Быстрый доступ пуст. Добавь категории из библиотеки ниже.</div>'}</div>${quickIds.length<7?`<button type="button" class="favorite-add-inline" id="addCategoryToQuickAccess">＋ Добавить категорию (${quickIds.length}/7)</button>`:''}<div class="sectionhead"><h3>Все категории</h3><button type="button" class="small-primary" id="addCategoryBtn">＋ Создать</button></div><p class="reorder-hint">Здесь можно редактировать и менять общий порядок категорий. Изменение порядка библиотеки не меняет ручной порядок быстрого доступа.</p><div id="categoriesList" class="category-manager-list">${catalogHtml||'<div class="category-empty">Пока нет категорий этого типа.</div>'}</div>${archived.length?`<div class="sectionhead"><h3>Архив категорий</h3></div><div class="category-manager-list">${archivedHtml}</div>`:''}`);
+ openModal(`<div class="category-manager-controls"><div class="tabs"><button type="button" class="secondary ${type==='expense'?'selected':''}" data-manager-type="expense">Расходы</button><button type="button" class="secondary ${type==='income'?'selected':''}" data-manager-type="income">Доходы</button></div>${accountSelect}<div class="settingrow settings-control-row"><div><b>Порядок быстрого доступа</b><div class="muted">Умный — меняется по использованию. Ручной — остаётся в выбранном порядке.</div></div><select id="categoryQuickOrderMode" class="settings-select" aria-label="Порядок быстрого доступа"><option value="smart" ${qa.mode==='smart'?'selected':''}>Умный</option><option value="manual" ${qa.mode==='manual'?'selected':''}>Ручной</option></select></div><label class="tx-favorite-setting" style="margin:10px 0"><input id="categoryPerAccountMode" type="checkbox" ${qa.perAccount?'checked':''}><span><b>Настраивать отдельно для каждой кассы</b><small>Отдельный быстрый список для каждой кассы и для расходов/доходов. По умолчанию настройки общие.</small></span></label></div><div class="sectionhead"><h3>Быстрый доступ <span class="muted">${quickIds.length}/7</span></h3></div><p class="reorder-hint">${qa.mode==='manual'?'В форме показываются только выбранные категории. Удерживай строку, чтобы менять порядок.':'Умный режим меняет порядок выбранных категорий по последнему использованию; удалённые категории сами не возвращаются.'}</p><div id="favoriteCategoryList" class="favorite-slot-list" data-favorite-list="1" data-favorite-type="${type}" data-favorite-account="${esc(accountId)}">${favoritesHtml||'<div class="category-empty">Быстрый доступ пуст. Добавь категории из библиотеки ниже.</div>'}</div><div class="sectionhead"><h3>Все категории</h3><button type="button" class="small-primary" id="addCategoryBtn">＋ Создать</button></div><p class="reorder-hint">Здесь можно редактировать и менять общий порядок категорий. Изменение порядка библиотеки не меняет ручной порядок быстрого доступа.</p><div id="categoriesList" class="category-manager-list">${catalogHtml||'<div class="category-empty">Пока нет категорий этого типа.</div>'}</div>${archived.length?`<div class="sectionhead"><h3>Архив категорий</h3></div><div class="category-manager-list">${archivedHtml}</div>`:''}`);
  $('modalTitle').textContent='Категории и быстрый доступ';
  document.querySelectorAll('[data-manager-type]').forEach(b=>b.onclick=()=>{categoryManagerType=b.dataset.managerType;manageCategories()});
  $('categoryManagerAccount')?.addEventListener('change',e=>{categoryManagerAccountId=e.target.value;manageCategories()});
@@ -1455,8 +1624,8 @@ function manageCategories(){
  $('categoryPerAccountMode').onchange=e=>{const previous=qa.perAccount,turnOn=e.target.checked;if(turnOn&&!previous){if(!qa.hasPerAccountConfig){for(const a of data.accounts){const k='account:'+String(a.id);qa.profiles[k]=JSON.parse(JSON.stringify(qa.profiles.global))}qa.hasPerAccountConfig=true}else{for(const a of data.accounts){const k='account:'+String(a.id);if(!qa.profiles[k])qa.profiles[k]=JSON.parse(JSON.stringify(qa.profiles.global))}}for(const a of data.accounts){const k='account:'+String(a.id);if(!qa.recent[k])qa.recent[k]={expense:[],income:[]}}}else if(!turnOn&&previous){const current=String(accountId),currentProfile=qa.profiles['account:'+current];if(!confirm(`Отключить индивидуальные настройки? Категории быстрого доступа кассы «${accountName(current)}» станут общими для всех касс. Индивидуальные наборы сохранятся, и их можно будет вернуть при повторном включении.`)){e.target.checked=true;return}if(currentProfile)qa.profiles.global=JSON.parse(JSON.stringify(currentProfile))}qa.perAccount=turnOn;if(!save()){e.target.checked=previous;return}manageCategories()};
  $('addCategoryBtn').onclick=()=>editCategory(null);
  document.querySelectorAll('[data-cat-edit]').forEach(b=>b.onclick=()=>editCategory(b.dataset.catEdit));
- document.querySelectorAll('[data-remove-quick]').forEach(b=>b.onclick=()=>{removeQuickAccessCategory(type,b.dataset.removeQuick,accountId);if(!save())return;manageCategories()});
- const addQuickAccessButton=$('addCategoryToQuickAccess');if(addQuickAccessButton)addQuickAccessButton.onclick=()=>showQuickAccessLibraryChooser(type,accountId);
+ document.querySelectorAll('[data-remove-quick]').forEach(b=>b.onclick=()=>{const scroll=$('modalRoot')?.querySelector('.modal')?.scrollTop||0;removeQuickAccessCategory(type,b.dataset.removeQuick,accountId);if(!save())return;manageCategories();requestAnimationFrame(()=>{const m=$('modalRoot')?.querySelector('.modal');if(m)m.scrollTop=scroll})});
+ document.querySelectorAll('[data-add-library-quick]').forEach(b=>b.onclick=()=>{if(b.disabled)return;const scroll=$('modalRoot')?.querySelector('.modal')?.scrollTop||0;const result=addQuickAccessCategory(type,b.dataset.addLibraryQuick,accountId);if(!result.ok){toast(result.reason==='full'?'Быстрый доступ уже заполнен (7/7).':'Не удалось добавить категорию.');return}if(!save())return;manageCategories();requestAnimationFrame(()=>{const m=$('modalRoot')?.querySelector('.modal');if(m)m.scrollTop=scroll})});
  document.querySelectorAll('[data-cat-del]').forEach(b=>b.onclick=()=>{const cid=b.dataset.catDel,c=catById(cid);if(!c)return;const referenced=data.transactions.some(t=>String(t.categoryId)===String(cid))||(data.budgets||[]).some(x=>String(x.categoryId)===String(cid))||(data.recurringRules||[]).some(x=>String(x.categoryId)===String(cid));if(referenced){if(confirm(`Категория «${c.name}» используется в данных. Архивировать её? Старые операции, бюджеты и расписания сохранят ссылку на категорию.`)){c.archived=true;normalizeCategoryQuickAccess();if(!save())return;manageCategories()}}else if(confirm(`Удалить категорию «${c.name}»? Она не используется в сохранённых операциях, бюджетах или расписаниях.`)){data.categories=data.categories.filter(x=>String(x.id)!==String(cid));if(data.categoryTags)delete data.categoryTags[cid];normalizeCategoryQuickAccess();if(!save())return;manageCategories()}});
  document.querySelectorAll('[data-restore-category]').forEach(b=>b.onclick=()=>{const c=catById(b.dataset.restoreCategory);if(c){c.archived=false;normalizeCategoryQuickAccess();if(!save())return;manageCategories()}});
 }
@@ -1584,7 +1753,7 @@ if($('periodToday'))$('periodToday').onclick=()=>{
  }else if(periodCursors[selectedPeriod])periodCursors[selectedPeriod]=new Date(now);
  render();updatePeriodTodayButton();
 };$('accountSelect').onchange=()=>{selectedAccountId=$('accountSelect').value;try{localStorage.setItem('my-finances-selected-account',selectedAccountId)}catch(e){console.warn('Не удалось сохранить выбранную кассу',e)}if(!Object.prototype.hasOwnProperty.call(recentFilterByAccount,selectedAccountId)){recentFilterByAccount[selectedAccountId]=[];try{localStorage.setItem('my-finances-recent-filters-by-account',JSON.stringify(recentFilterByAccount))}catch(e){console.warn('Не удалось сохранить фильтры главной',e)}}recentSelectedAccounts=validSelection(recentFilterByAccount[selectedAccountId]||[]);recentDraftAccounts=[...recentSelectedAccounts];render()};document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>switchTab(b.dataset.tab));document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>switchTab(b.dataset.go));document.querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>openTx(b.dataset.add));$('addFromHistory').onclick=()=>openTx();['searchTx','filterType','fromDate','toDate','analyticsMonth','analyticsAccount'].forEach(k=>$(k).addEventListener('input',render));$('recentFilterToggle').onclick=()=>{const panel=$('recentFilterPanel');if(!panel.classList.contains('hidden')){panel.classList.add('hidden');$('recentFilterToggle').setAttribute('aria-expanded','false')}else{recentDraftAccounts=[...recentSelectedAccounts];drawFilterMenu('recent')}};$('historyFilterToggle').onclick=()=>{const panel=$('historyFilterPanel');if(!panel.classList.contains('hidden')){closeFilterMenu('history',false)}else{historyDraftAccounts=[...historySelectedAccounts];drawFilterMenu('history')}};document.addEventListener('change',e=>{const input=e.target.closest('[data-cash-all],[data-cash-id]');if(!input)return;const panel=input.closest('.cash-filter-panel');if(!panel)return;updateDraftFromCheckbox(panel.id.startsWith('recent')?'recent':'history',input)});document.querySelectorAll('[data-filter-all]').forEach(b=>b.onclick=()=>{const kind=b.dataset.filterAll;if(kind==='recent')recentDraftAccounts=[];else historyDraftAccounts=[];const host=$(kind+'FilterOptions');if(host)host.innerHTML=filterOptionsHtml([])});document.querySelectorAll('[data-filter-done]').forEach(b=>b.onclick=()=>closeFilterMenu(b.dataset.filterDone,true));document.addEventListener('click',e=>{for(const kind of ['recent','history']){const panel=$(kind+'FilterPanel'),toggle=$(kind+'FilterToggle');if(panel&&!panel.classList.contains('hidden')&&!panel.contains(e.target)&&!toggle.contains(e.target))closeFilterMenu(kind,false)}});
-$('transferFeatureMode').value=transferFeatureEnabled?'on':'off';$('transferFeatureMode').onchange=()=>{data.preferences=data.preferences||{};transferFeatureEnabled=$('transferFeatureMode').value==='on';data.preferences.transfersEnabled=transferFeatureEnabled;if(!save()){transferFeatureEnabled=!!data.preferences.transfersEnabled;$('transferFeatureMode').value=transferFeatureEnabled?'on':'off';return}renderTransferShortcut();toast(transferFeatureEnabled?'Переводы включены. Кнопка появилась на главной.':'Переводы выключены. Старые записи сохранены.')};$('appearanceMode').value=appearanceMode;$('appearanceMode').onchange=()=>{applyAppearanceMode($('appearanceMode').value,true);toast(appearanceMode==='system'?'Тема следует настройке iPhone':appearanceMode==='light'?'Включена светлая тема':'Включена тёмная тема')};$('voiceSaveMode').value=voiceSaveMode;$('voiceSaveMode').onchange=()=>{voiceSaveMode=$('voiceSaveMode').value==='instant'?'instant':'review';try{localStorage.setItem('my-finances-voice-save-mode',voiceSaveMode)}catch(e){console.warn('Не удалось сохранить настройку диктовки',e);toast('Настройка применена до закрытия приложения, но не сохранена')}toast(voiceSaveMode==='review'?'Диктовка через боковую кнопку будет с подтверждением':'Диктовка через боковую кнопку будет сохраняться сразу')};$('voiceInputMode').value=voiceInputMode;$('voiceInputMode').onchange=()=>{voiceInputMode=$('voiceInputMode').value==='pause'?'pause':'manual';try{localStorage.setItem('my-finances-voice-input-mode',voiceInputMode)}catch(e){console.warn('Не удалось сохранить режим микрофона',e);toast('Настройка применена до закрытия приложения, но не сохранена')}toast(voiceInputMode==='manual'?'Микрофон будет работать до нажатия «Остановить»':'Микрофон будет останавливаться после паузы')};$('voiceMicSaveMode').value=voiceMicSaveMode;$('voiceMicSaveMode').onchange=()=>{voiceMicSaveMode=$('voiceMicSaveMode').value==='instant'?'instant':'review';try{localStorage.setItem('my-finances-voice-mic-save-mode',voiceMicSaveMode)}catch(e){console.warn('Не удалось сохранить режим голосового сохранения',e);toast('Настройка применена до закрытия приложения, но не сохранена')}toast(voiceMicSaveMode==='review'?'Голосовые операции будут требовать проверки':'Автосохранение включено при уверенном распознавании суммы и категории')};$('manageAccounts').onclick=manageAccounts;$('manageCategories').onclick=manageCategories;$('exportBtn').onclick=exportData;$('importBtn').onclick=()=>$('importFile').click();$('importFile').onchange=e=>{if(e.target.files[0])importData(e.target.files[0]);e.target.value=''};$('voiceHelp').onclick=()=>{const SR=window.SpeechRecognition||window.webkitSpeechRecognition;toast(SR?'Распознавание доступно в браузере.':'Голосовое распознавание недоступно — вводи вручную.')};$('shareReport').onclick=shareReport;$('shareSettingsReport').onclick=shareReport;$('printReport').onclick=printReport;$('reportPeriod').onchange=()=>{$('reportDates').classList.toggle('hidden',$('reportPeriod').value!=='custom')};document.addEventListener('click',e=>{const row=e.target.closest('[data-row-edit]');if(row){if(e.target.closest('button,input,select,textarea,a'))return;const tx=data.transactions.find(t=>String(t.id)===String(row.dataset.rowEdit));if(!tx)return;if(tx.type==='transfer'){if(transferFeatureEnabled)openTx('transfer',tx);else openLegacyTransferDetail(tx);return}openTx(tx.type,tx);return}const b=e.target.closest('[data-edit]');if(b){const tx=data.transactions.find(t=>t.id===b.dataset.edit);if(tx)openTx(tx.type,tx)}});
+$('transferFeatureMode').value=transferFeatureEnabled?'on':'off';$('transferFeatureMode').onchange=()=>{data.preferences=data.preferences||{};transferFeatureEnabled=$('transferFeatureMode').value==='on';data.preferences.transfersEnabled=transferFeatureEnabled;if(!save()){transferFeatureEnabled=!!data.preferences.transfersEnabled;$('transferFeatureMode').value=transferFeatureEnabled?'on':'off';return}renderTransferShortcut();toast(transferFeatureEnabled?'Переводы включены. Кнопка появилась на главной.':'Переводы выключены. Старые записи сохранены.')};$('appearanceMode').value=appearanceMode;$('appearanceMode').onchange=()=>{applyAppearanceMode($('appearanceMode').value,true);toast(appearanceMode==='system'?'Тема следует настройке iPhone':appearanceMode==='light'?'Включена светлая тема':'Включена тёмная тема')};$('voiceSaveMode').value=voiceSaveMode;$('voiceSaveMode').onchange=()=>{voiceSaveMode=$('voiceSaveMode').value==='instant'?'instant':'review';try{localStorage.setItem('my-finances-voice-save-mode',voiceSaveMode)}catch(e){console.warn('Не удалось сохранить настройку диктовки',e);toast('Настройка применена до закрытия приложения, но не сохранена')}toast(voiceSaveMode==='review'?'Диктовка через боковую кнопку будет с подтверждением':'Диктовка через боковую кнопку будет сохраняться сразу')};$('voiceInputMode').value=voiceInputMode;$('voiceInputMode').onchange=()=>{voiceInputMode=$('voiceInputMode').value==='pause'?'pause':'manual';try{localStorage.setItem('my-finances-voice-input-mode',voiceInputMode)}catch(e){console.warn('Не удалось сохранить режим микрофона',e);toast('Настройка применена до закрытия приложения, но не сохранена')}toast(voiceInputMode==='manual'?'Микрофон будет работать до нажатия «Остановить»':'Микрофон будет останавливаться после паузы')};$('voiceMicSaveMode').value=voiceMicSaveMode;$('voiceMicSaveMode').onchange=()=>{voiceMicSaveMode=$('voiceMicSaveMode').value==='instant'?'instant':'review';try{localStorage.setItem('my-finances-voice-mic-save-mode',voiceMicSaveMode)}catch(e){console.warn('Не удалось сохранить режим голосового сохранения',e);toast('Настройка применена до закрытия приложения, но не сохранена')}toast(voiceMicSaveMode==='review'?'Голосовые операции будут требовать проверки':'Автосохранение включено при уверенном распознавании суммы и категории')};$('manageAccounts')?.addEventListener('click',manageAccounts);$('manageCategories')?.addEventListener('click',manageCategories);$('exportBtn').onclick=exportData;$('importBtn').onclick=()=>$('importFile').click();$('importFile').onchange=e=>{if(e.target.files[0])importData(e.target.files[0]);e.target.value=''};$('voiceHelp').onclick=async()=>{const button=$('voiceHelp'),label=button?.textContent,SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){toast('Голосовое распознавание не поддерживается этим браузером. Попробуй Safari или введи данные вручную.');return}if(!navigator.mediaDevices||typeof navigator.mediaDevices.getUserMedia!=='function'){toast('Распознавание поддерживается, но браузер не позволяет проверить доступ к микрофону.');return}if(button){button.disabled=true;button.textContent='Проверяю…'}try{const stream=await navigator.mediaDevices.getUserMedia({audio:true});stream.getTracks().forEach(track=>track.stop());toast('Распознавание поддерживается, микрофон доступен. Запись не сохранялась.')}catch(error){console.warn('Проверка микрофона не удалась',error);if(error?.name==='NotAllowedError'||error?.name==='PermissionDeniedError')toast('Доступ к микрофону запрещён. Разреши его в настройках браузера и повтори проверку.');else if(error?.name==='NotFoundError'||error?.name==='DevicesNotFoundError')toast('Микрофон не найден. Проверь подключение устройства.');else toast('Не удалось проверить микрофон. Проверь разрешения браузера и повтори попытку.')}finally{if(button){button.disabled=false;button.textContent=label||'Проверить'}}};$('shareReport').onclick=shareReport;$('shareSettingsReport').onclick=shareReport;$('printReport').onclick=printReport;$('reportPeriod').onchange=()=>{$('reportDates').classList.toggle('hidden',$('reportPeriod').value!=='custom')};document.addEventListener('click',e=>{const row=e.target.closest('[data-row-edit]');if(row){if(e.target.closest('button,input,select,textarea,a'))return;const tx=data.transactions.find(t=>String(t.id)===String(row.dataset.rowEdit));if(!tx)return;if(tx.type==='transfer'){if(transferFeatureEnabled)openTx('transfer',tx);else openLegacyTransferDetail(tx);return}openTx(tx.type,tx);return}const b=e.target.closest('[data-edit]');if(b){const tx=data.transactions.find(t=>t.id===b.dataset.edit);if(tx)openTx(tx.type,tx)}});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('history-filter-open')){closeFilterMenu('history',false);return}});
 document.addEventListener('keydown',e=>{if(!['Enter',' '].includes(e.key))return;const row=e.target.closest('[data-row-edit]');if(row){e.preventDefault();row.click();return}const cat=e.target.closest('#operationPicker [data-category-row]');if(cat&&!e.target.closest('button,input,select,textarea')){e.preventDefault();openCategoryDetail(cat.dataset.categoryRow)}});$('analyticsMonth').value=monthNow();$('reportFrom').value=monthNow()+'-01';$('reportTo').value=today();$('reportAccount').innerHTML='<option value="all">Все кассы</option>'+data.accounts.map(a=>`<option value="${esc(a.id)}">${esc(a.name)}</option>`).join('');$('reportCategory').innerHTML='<option value="all">Все категории</option>'+data.categories.filter(c=>c.type==='expense').map(c=>`<option value="${esc(c.id)}">${esc(c.name)}</option>`).join('');
 // V10.45 quality layer: safer persistence, semantic contrast, settings hierarchy and corrected analytics scaling. Core V10.44 features remain local-only.
@@ -1659,9 +1828,8 @@ async function downloadImportRecoveryBackup(){try{const backup=await readRecover
 function registerFeatureEvents(){
  const historyPanel=$('historyFilterPanel');if(historyPanel&&!historyPanel.querySelector('#historyCategoryFilter'))historyPanel.insertAdjacentHTML('beforeend',`<div class="history-extra-filters"><label>Категория<select id="historyCategoryFilter"><option value="all">Все категории</option></select></label><label>Тег<select id="historyTagFilter"><option value="all">Все теги</option></select></label></div><div class="history-filter-summary" id="historyFilterSummary">Без дополнительных фильтров</div><div class="history-filter-actions-extra"><button type="button" class="small-quiet" id="historyResetAll">Сбросить все фильтры</button></div>`);
  if(!document.getElementById('homePlanPanels')){const home=$('homeView'),anchor=$('operationPicker');if(home&&anchor)anchor.insertAdjacentHTML('afterend','<div id="homePlanPanels"><div id="homeBudgetPanel" class="home-feature-card hidden"></div><div id="homeRecurringPanel" class="home-feature-card hidden"></div></div>')}
- const analytics=$('analyticsView');if(analytics&&!$('periodCompareContent')){const anchor=$('expenseTrend')?.closest('.trend-card');(anchor||analytics.firstElementChild)?.insertAdjacentHTML('afterend',`<section class="feature-section"><div class="sectionhead"><h2>Сравнение периодов</h2></div><div class="card feature-card" id="periodCompareContent"></div></section><section class="feature-section"><div class="sectionhead"><h2>Бюджеты</h2><button type="button" class="small-primary" id="addBudgetButton">＋ Создать</button></div><div class="feature-card-stack" id="analyticsBudgetsContent"></div></section><section class="feature-section"><div class="sectionhead"><h2>Что изменилось</h2></div><div class="card feature-card" id="analyticsInsightsContent"></div></section><section class="feature-section"><div class="sectionhead"><h2>Регулярные операции</h2><button type="button" class="small-quiet" data-open-recurring>Управлять →</button></div><div class="card feature-card" id="analyticsRecurringPreview"></div></section>`)}
- const settings=$('settingsView');if(settings&&!$('manageRecurringRules')){const other=[...settings.querySelectorAll('.sectionhead')].find(x=>x.textContent.includes('Другие функции'));if(other)other.insertAdjacentHTML('beforebegin',`<div class="sectionhead"><h2>Планирование</h2></div><div class="card"><div class="settingrow"><div><b>Регулярные операции</b><div class="muted">Подписки, зарплата, аренда и другие расписания</div></div><button class="secondary" id="manageRecurringRules">Управлять</button></div><div class="settingrow"><div><b>Бюджеты</b><div class="muted">Лимиты по категориям и контроль остатка</div></div><button class="secondary" id="settingsOpenBudgets">Открыть</button></div></div>`)}
- $('manageRecurringRules')?.addEventListener('click',openRecurringManager);$('settingsOpenBudgets')?.addEventListener('click',()=>switchTab('analytics'));$('addBudgetButton')?.addEventListener('click',()=>showBudgetEditor());
+ const analytics=$('analyticsView');if(analytics&&!$('periodCompareContent')){const anchor=$('expenseTrend')?.closest('.trend-card');(anchor||analytics.firstElementChild)?.insertAdjacentHTML('afterend',`<section class="feature-section"><div class="sectionhead"><h2>Сравнение периодов</h2></div><div class="card feature-card" id="periodCompareContent"></div></section><section class="feature-section"><div class="sectionhead"><h2>Бюджеты</h2><button type="button" class="small-primary" id="addBudgetButton">＋ Создать</button></div><div class="feature-card-stack" id="analyticsBudgetsContent"></div></section><section class="feature-section"><div class="sectionhead"><h2>Что изменилось</h2></div><div class="card feature-card" id="analyticsInsightsContent"></div></section>`)}
+ $('addBudgetButton')?.addEventListener('click',()=>showBudgetEditor());
  $('downloadImportRecoveryBackup')?.addEventListener('click',downloadImportRecoveryBackup);$('deleteImportRecoveryBackup')?.addEventListener('click',async()=>{const backup=await readRecoveryBackup();if(!backup){refreshImportRecoveryBackup();return}if(confirm('Удалить дополнительную копию перед импортом? Сначала скачай и проверь файл, если хочешь сохранить её.')){try{await deleteRecoveryBackup(backup.source);await refreshImportRecoveryBackup();toast('Дополнительная копия удалена')}catch(e){console.warn(e);toast('Не удалось удалить копию')}}});refreshImportRecoveryBackup();
  $('historyResetAll')?.addEventListener('click',()=>{historySelectedAccounts=[];historyDraftAccounts=[];try{localStorage.setItem('my-finances-history-accounts','[]')}catch(e){}$('historyCategoryFilter').value='all';$('historyTagFilter').value='all';$('searchTx').value='';$('filterType').value='all';$('fromDate').value='';$('toDate').value='';render();$('historyFilterPanel').classList.add('hidden');document.body.classList.remove('history-filter-open');$('historyFilterToggle').setAttribute('aria-expanded','false')});
  ['historyCategoryFilter','historyTagFilter'].forEach(k=>$(k)?.addEventListener('change',()=>{renderEnhancedHistory();renderInsights()}));
@@ -1672,7 +1840,14 @@ function registerFeatureEvents(){
  const categorySelect=$('historyCategoryFilter'),tagSelect=$('historyTagFilter');if(categorySelect||tagSelect)renderEnhancedHistory();
 }
 
-registerFeatureEvents();processRecurringDue();render();window.addEventListener('resize',syncPeriodLabelMask,{passive:true});window.addEventListener('load',syncPeriodLabelMask,{once:true});
+
+function setAppMenuOpen(open){const panel=$('appMenuPanel'),back=$('appMenuBackdrop'),toggle=$('appMenuToggle');if(!panel||!back)return;panel.classList.toggle('open',!!open);back.classList.toggle('open',!!open);panel.setAttribute('aria-hidden',open?'false':'true');back.setAttribute('aria-hidden',open?'false':'true');toggle?.setAttribute('aria-expanded',open?'true':'false');document.body.classList.toggle('app-menu-open',!!open)}
+function showFirstAccountSetup(){modalType='first-account-setup';openModal(`<div class="first-account-setup"><div class="first-account-icon">${iconSvg('wallet')}</div><h3>Создадим твой первый счёт</h3><p class="muted">Укажи, как назвать счёт и сколько денег уже есть на нём. Это начальный остаток, а не доход.</p><form id="firstAccountSetupForm"><label for="firstAccountName">Название счёта</label><input id="firstAccountName" required maxlength="40" value="Основной счёт" autocomplete="off"><label for="firstAccountOpening">Начальный баланс</label><input id="firstAccountOpening" type="number" inputmode="decimal" step="0.01" min="0" value="0" required><button type="submit" class="primary first-account-submit">Создать счёт</button></form></div>`);$('modalTitle').textContent='Первый запуск';$('closeModal')?.classList.add('hidden');$('firstAccountSetupForm').onsubmit=e=>{e.preventDefault();const name=$('firstAccountName').value.trim(),opening=Number($('firstAccountOpening').value);if(!name){toast('Введи название счёта.');return}if(!Number.isFinite(opening)||opening<0){toast('Проверь начальный баланс.');return}const accountId='account-'+Date.now().toString(36);data.accounts=[{id:accountId,name,opening,icon:'👛',color:'#176F68'}];selectedAccountId=accountId;categoryManagerAccountId=accountId;try{localStorage.setItem('my-finances-selected-account',accountId)}catch(e){}const qa=normalizeCategoryQuickAccess();if(qa.perAccount){qa.profiles['account:'+accountId]=JSON.parse(JSON.stringify(qa.profiles.global));qa.recent['account:'+accountId]=JSON.parse(JSON.stringify(qa.recent.global||{expense:[],income:[]}))}if(!save())return;try{localStorage.setItem('my-finances-onboarding-complete','1')}catch(e){}closeModal();toast('Счёт создан. Можно записать первую операцию.')}}
+$('appMenuToggle')?.addEventListener('click',()=>setAppMenuOpen(!$('appMenuPanel')?.classList.contains('open')));$('homeMenuToggle')?.addEventListener('click',()=>setAppMenuOpen(!$('appMenuPanel')?.classList.contains('open')));$('homeHistoryButton')?.addEventListener('click',()=>switchTab('history'));$('appMenuClose')?.addEventListener('click',()=>setAppMenuOpen(false));$('appMenuBackdrop')?.addEventListener('click',()=>setAppMenuOpen(false));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('appMenuPanel')?.classList.contains('open'))setAppMenuOpen(false)});
+document.querySelectorAll('#appMenuPanel [data-tab]').forEach(b=>b.addEventListener('click',()=>{setAppMenuOpen(false);switchTab(b.dataset.tab)}));
+document.querySelectorAll('[data-menu-action]').forEach(b=>b.addEventListener('click',()=>{const action=b.dataset.menuAction;setAppMenuOpen(false);switchTab('home');if(action==='accounts')manageAccounts();else if(action==='categories')manageCategories();else if(action==='recurring')openRecurringManager()}));
+
+registerFeatureEvents();processRecurringDue();render();if(HAD_SAVED_DATA&&CATEGORY_QA_NEEDS_MIGRATION)save();if(FRESH_INSTALL)showFirstAccountSetup();window.addEventListener('resize',syncPeriodLabelMask,{passive:true});window.addEventListener('load',syncPeriodLabelMask,{once:true});
 window.addEventListener('pageshow',()=>{if(processRecurringDue())render()});document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&processRecurringDue())render()});
 
 // iOS workaround: webapp:// can open the installed PWA while dropping query parameters.
@@ -1710,7 +1885,319 @@ function installLongPressReorder(){
  document.addEventListener('touchend',e=>{if(!state||state.inputType!=='touch')return;const remaining=Array.from(e.changedTouches||[]);if(remaining.length&&!remaining.some(t=>t.identifier===state.touchId))return;const finished=state;clear();persist(finished)},{passive:true});
  document.addEventListener('touchcancel',()=>{if(state?.inputType==='touch')clear()},{passive:true});
 }
-installLongPressReorder();})();
+installLongPressReorder();
+(()=>{
+ const originalRender=render;
+ const originalCloseModal=closeModal;
+ let customAllTime=false;
+ let pickerState=null;
+ try{customAllTime=localStorage.getItem('my-finances-custom-all-time')==='1'}catch(e){}
+ const currentISO=()=>today();
+ const isoDate= d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+ const parseISO=iso=>{const d=new Date(String(iso||today())+'T12:00:00');return Number.isNaN(d.getTime())?new Date():d};
+ const dateStartOfMonth=d=>new Date(d.getFullYear(),d.getMonth(),1,12);
+ const monthText=d=>{const s=d.toLocaleDateString('ru-RU',{month:'long',year:'numeric'});return s.charAt(0).toLocaleUpperCase('ru-RU')+s.slice(1)};
+ const shortDate=iso=>{const d=parseISO(iso);return d.toLocaleDateString('ru-RU',{day:'numeric',month:'short'}).replace(/\.$/,'')};
+ const dayName=d=>d.toLocaleDateString('ru-RU',{weekday:'short'}).replace(/\.$/,'').toLocaleLowerCase('ru-RU');
+ const isSameDate=(a,b)=>isoDate(a)===isoDate(b);
+ const getWeekStart=d=>{const x=new Date(d);x.setHours(12,0,0,0);x.setDate(x.getDate()-((x.getDay()+6)%7));return x};
+ const getWeekEnd=d=>{const x=getWeekStart(d);x.setDate(x.getDate()+6);return x};
+ const currentWeekStart=()=>getWeekStart(parseISO(currentISO()));
+ const minTransactionDate=()=>{const dates=(data.transactions||[]).map(t=>String(t.date||'')).filter(d=>/^\d{4}-\d{2}-\d{2}$/.test(d)&&d<=currentISO()).sort();return dates[0]||`${new Date().getFullYear()}-01-01`};
+ function syncTabs(){document.querySelectorAll('#periodTabs [data-period],#historyPeriodTabs [data-period]').forEach(b=>b.classList.toggle('active',b.dataset.period===selectedPeriod));}
+ function selectedRangeV1054(){
+  if(selectedPeriod==='custom'){
+   if(customAllTime)return {from:minTransactionDate(),to:currentISO()};
+   let from=$('customFrom')?.value||`${new Date().getFullYear()}-01-01`,to=$('customTo')?.value||currentISO();
+   if(from>currentISO())from=currentISO();if(to>currentISO())to=currentISO();if(from>to){const temp=from;from=to;to=temp}return {from,to};
+  }
+  const d=new Date(periodCursor);d.setHours(12,0,0,0);const now=parseISO(currentISO());
+  if(selectedPeriod==='day'){
+   if(d>now)d.setTime(now.getTime());const v=isoDate(d);return {from:v,to:v};
+  }
+  if(selectedPeriod==='week'){
+   if(getWeekStart(d)>currentWeekStart())d.setTime(now.getTime());const a=getWeekStart(d);const b=new Date(a);b.setDate(b.getDate()+6);return {from:isoDate(a),to:isoDate(b)};
+  }
+  if(selectedPeriod==='month'){
+   if(d.getFullYear()>now.getFullYear()||(d.getFullYear()===now.getFullYear()&&d.getMonth()>now.getMonth()))d.setTime(now.getTime());return {from:`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-01`,to:isoDate(new Date(d.getFullYear(),d.getMonth()+1,0,12))};
+  }
+  if(selectedPeriod==='year'){
+   if(d.getFullYear()>now.getFullYear())d.setTime(now.getTime());return {from:`${d.getFullYear()}-01-01`,to:`${d.getFullYear()}-12-31`};
+  }
+  const v=isoDate(d);return {from:v,to:v};
+ }
+ selectedPeriodRange=selectedRangeV1054;
+ function periodLabel(){
+  const r=selectedRangeV1054();
+  if(selectedPeriod==='day'){
+   const d=parseISO(r.from),y=new Date(d);y.setDate(y.getDate()-1);const base=d.toLocaleDateString('ru-RU',{day:'numeric',month:'long'}).replace(/^\s+|\s+$/g,'')+` (${dayName(d)})`;
+   if(r.from===currentISO())return `Сегодня, ${base}`;
+   if(isoDate(y)===currentISO())return `Вчера, ${base}`;
+   return base;
+  }
+  if(selectedPeriod==='week'){
+   const a=parseISO(r.from),b=parseISO(r.to);return `${shortDate(r.from)} – ${shortDate(r.to)}${a.getFullYear()!==b.getFullYear()||b.getFullYear()!==new Date().getFullYear()?' '+b.getFullYear():''}`;
+  }
+  if(selectedPeriod==='month')return monthText(periodCursor);
+  if(selectedPeriod==='year')return String(periodCursor.getFullYear());
+  if(customAllTime)return 'За всё время';
+  return r.from===r.to?prettyDate(r.from):`${shortDate(r.from)} – ${shortDate(r.to)}${r.to.slice(0,4)!==r.from.slice(0,4)?' '+r.to.slice(0,4):''}`;
+ }
+ function canShift(direction){
+  if(direction<0)return true;
+  if(selectedPeriod==='custom'){
+   if(customAllTime)return false;const r=selectedRangeV1054();const span=Math.max(1,Math.round((parseISO(r.to)-parseISO(r.from))/86400000)+1);const newEnd=new Date(parseISO(r.to));newEnd.setDate(newEnd.getDate()+span);return isoDate(newEnd)<=currentISO();
+  }
+  const now=parseISO(currentISO()),d=new Date(periodCursor);d.setHours(12,0,0,0);
+  if(selectedPeriod==='day'){d.setDate(d.getDate()+1);return d<=now;}
+  if(selectedPeriod==='week'){d.setDate(d.getDate()+7);return getWeekStart(d)<=currentWeekStart();}
+  if(selectedPeriod==='month'){d.setDate(1);d.setMonth(d.getMonth()+1);return d.getFullYear()<now.getFullYear()||(d.getFullYear()===now.getFullYear()&&d.getMonth()<=now.getMonth());}
+  if(selectedPeriod==='year')return d.getFullYear()<now.getFullYear();
+  return false;
+ }
+ function syncControls(){
+  const labels=[$('periodSummaryLabel'),$('historyPeriodLabel')].filter(Boolean);
+  const nextButtons=[$('periodNext'),$('historyPeriodNext')].filter(Boolean),prevButtons=[$('periodPrev'),$('historyPeriodPrev')].filter(Boolean);
+  nextButtons.forEach(b=>b.disabled=!canShift(1));prevButtons.forEach(b=>b.disabled=!canShift(-1));
+  labels.forEach(label=>{label.textContent=periodLabel();label.disabled=selectedPeriod==='year';label.setAttribute('aria-label',selectedPeriod==='year'?'Выбранный год':'Выбрать дату периода');label.title=selectedPeriod==='year'?'Год переключается стрелками':'Нажми, чтобы выбрать дату или период';});
+  syncTabs();
+ }
+ updatePeriodTodayButton=syncControls;
+ render=function(...args){const result=originalRender.apply(this,args);syncControls();return result;};
+ function defaultCustomRange(){
+  if(!$('customFrom')||!$('customTo'))return;
+  if(!$('customFrom').value||!$('customTo').value){const now=parseISO(currentISO());$('customFrom').value=`${now.getFullYear()}-01-01`;$('customTo').value=currentISO();}
+  if($('customFrom').value>currentISO())$('customFrom').value=currentISO();if($('customTo').value>currentISO())$('customTo').value=currentISO();if($('customFrom').value>$('customTo').value)$('customFrom').value=$('customTo').value;
+ }
+ initializeCustomDateRange=defaultCustomRange;
+ function clonePickerState(state){return {...state, draftDate:new Date(state.draftDate),monthCursor:new Date(state.monthCursor),rangeStart:state.rangeStart,rangeEnd:state.rangeEnd,previous:state.previous?{...state.previous,periodCursor:new Date(state.previous.periodCursor),customFrom:state.previous.customFrom,customTo:state.previous.customTo}:null};}
+ function snapshot(){return {selectedPeriod,periodCursor:new Date(periodCursor),customFrom:$('customFrom')?.value||'',customTo:$('customTo')?.value||'',customAllTime};}
+ function restoreSnapshot(s){if(!s)return;selectedPeriod=s.selectedPeriod;periodCursor=new Date(s.periodCursor);if($('customFrom'))$('customFrom').value=s.customFrom||'';if($('customTo'))$('customTo').value=s.customTo||'';customAllTime=!!s.customAllTime;try{localStorage.setItem('my-finances-custom-all-time',customAllTime?'1':'0')}catch(e){}if(selectedPeriod!=='custom'&&periodCursors[selectedPeriod])periodCursors[selectedPeriod]=new Date(periodCursor);syncTabs();}
+ closeModal=function(){
+  const state=pickerState,wasPicker=modalType==='period-picker';
+  if(wasPicker&&state){if(!state.committed&&state.previous)restoreSnapshot(state.previous);pickerState=null;}
+  originalCloseModal();
+  if(wasPicker){try{render()}catch(e){console.error('Не удалось обновить выбор периода',e)}}
+ };
+ function escHtml(v){return esc(String(v??''));}
+ function pickerTitle(kind){return kind==='day'?'Выбор дня':kind==='week'?'Выбор недели':kind==='month'?'Выбор месяца':'Выбор периода';}
+ function selectedSummaryForPicker(state){
+  if(state.kind==='day')return periodLabelFromDate(state.draftDate,'day');
+  if(state.kind==='week'){const a=getWeekStart(state.draftDate),b=getWeekEnd(state.draftDate);return `${shortDate(isoDate(a))} – ${shortDate(isoDate(b))}${a.getFullYear()!==b.getFullYear()?' '+b.getFullYear():''}`;}
+  if(state.kind==='month')return monthText(state.draftDate);
+  if(state.allTime)return 'За всё время';
+  if(state.rangeStart&&state.rangeEnd)return `с ${shortDate(state.rangeStart)} по ${shortDate(state.rangeEnd)}${state.rangeStart.slice(0,4)!==state.rangeEnd.slice(0,4)?', '+state.rangeEnd.slice(0,4):''}`;
+  if(state.rangeStart)return `Начало: ${shortDate(state.rangeStart)} · выбери конец периода`;
+  return 'Выбери начальную и конечную даты';
+ }
+ function periodLabelFromDate(d,kind){const iso=isoDate(d);if(kind==='day'){const todayIso=currentISO(),y=parseISO(todayIso);y.setDate(y.getDate()-1);const base=`${d.toLocaleDateString('ru-RU',{day:'numeric',month:'long'})} (${dayName(d)})`;return iso===todayIso?`Сегодня, ${base}`:iso===isoDate(y)?`Вчера, ${base}`:base;}return monthText(d);}
+ function monthNavHtml(state){const m=state.monthCursor,now=parseISO(currentISO()),isNowMonth=m.getFullYear()===now.getFullYear()&&m.getMonth()===now.getMonth(),futureMonth=m.getFullYear()>now.getFullYear()||(m.getFullYear()===now.getFullYear()&&m.getMonth()>now.getMonth());return `<div class="period-picker-nav"><button type="button" data-period-action="month-back" aria-label="Предыдущий месяц">‹</button><strong>${escHtml(monthText(m))}</strong><button type="button" data-period-action="month-forward" aria-label="Следующий месяц" ${isNowMonth||futureMonth?'disabled':''}>›</button></div>`;}
+ function renderDayGrid(state,rangeMode=false){
+  const m=state.monthCursor,first=dateStartOfMonth(m),days=new Date(m.getFullYear(),m.getMonth()+1,0,12).getDate(),offset=(first.getDay()+6)%7,nowIso=currentISO();let cells=Array(offset).fill('<span aria-hidden="true"></span>');
+  for(let day=1;day<=days;day++){
+   const d=new Date(m.getFullYear(),m.getMonth(),day,12),iso=isoDate(d),disabled=iso>nowIso;let cl='period-picker-day';
+   if(!rangeMode&&state.kind==='day'&&iso===isoDate(state.draftDate))cl+=' is-selected';
+   if(rangeMode&&state.allTime&&iso>=minTransactionDate()&&iso<=nowIso)cl+=' is-in-range';
+   if(rangeMode&&!state.allTime&&state.rangeStart&&iso>=state.rangeStart&&iso<=(state.rangeEnd||state.rangeStart))cl+=' is-in-range';
+   if(rangeMode&&!state.allTime&&iso===state.rangeStart)cl+=' is-range-start';if(rangeMode&&!state.allTime&&iso===state.rangeEnd)cl+=' is-range-end';
+   if(iso===nowIso)cl+=' is-today';
+   cells.push(`<button type="button" class="${cl}" data-period-day="${iso}" ${disabled?'disabled':''} aria-label="${escHtml(d.toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'}))}">${day}</button>`);
+  }
+  const remainder=cells.length%7;if(remainder)cells.push(...Array(7-remainder).fill('<span aria-hidden="true"></span>'));
+  return `${monthNavHtml(state)}<div class="period-picker-weekdays">${['ПН','ВТ','СР','ЧТ','ПТ','СБ','ВС'].map(x=>`<span>${x}</span>`).join('')}</div><div class="period-picker-days">${cells.join('')}</div>`;
+ }
+ function monthGridHtml(state){const now=parseISO(currentISO()),y=state.draftDate.getFullYear(),curM=now.getMonth(),curY=now.getFullYear(),months=Array.from({length:12},(_,i)=>new Date(y,i,1,12));return `<div class="period-picker-nav"><button type="button" data-period-action="year-back" aria-label="Предыдущий год">‹</button><strong>${y}</strong><button type="button" data-period-action="year-forward" aria-label="Следующий год" ${y>=curY?'disabled':''}>›</button></div><div class="period-picker-months">${months.map(d=>{const future=y>curY||(y===curY&&d.getMonth()>curM),active=d.getFullYear()===state.draftDate.getFullYear()&&d.getMonth()===state.draftDate.getMonth();return `<button type="button" class="period-picker-month ${active?'is-selected':''}" data-period-month="${y}-${String(d.getMonth()+1).padStart(2,'0')}" ${future?'disabled':''}>${escHtml(d.toLocaleDateString('ru-RU',{month:'long'}))}</button>`}).join('')}</div>`;}
+ function weekListHtml(state){
+  const m=state.monthCursor,first=dateStartOfMonth(m),last=new Date(m.getFullYear(),m.getMonth()+1,0,12),nowStart=currentWeekStart();let start=getWeekStart(first),items=[];
+  while(start<=last){const end=getWeekEnd(start),startIso=isoDate(start),endIso=isoDate(end),future=start>nowStart,active=isoDate(getWeekStart(state.draftDate))===startIso;const label=`${String(start.getDate()).padStart(2,'0')}–${String(end.getDate()).padStart(2,'0')}`;items.push(`<button type="button" class="period-picker-week ${active?'is-selected':''}" data-period-week="${startIso}" ${future?'disabled':''}>${label}</button>`);start=new Date(start);start.setDate(start.getDate()+7);}
+  return `${monthNavHtml(state)}<div class="period-picker-hint">Неделя начинается в понедельник.</div><div class="period-picker-weeks">${items.join('')}</div>`;
+ }
+ function renderPickerBody(){
+  if(!pickerState)return;const s=pickerState,host=$('periodPickerContent');if(!host)return;
+  if(s.kind==='day')host.innerHTML=`<div class="period-picker"><p class="period-picker-summary">${escHtml(periodLabelFromDate(s.draftDate,'day'))}</p>${renderDayGrid(s)}<div class="period-picker-actions"><button type="button" data-period-action="cancel">Отмена</button><button type="button" class="period-picker-confirm" data-period-action="confirm">ОК</button></div></div>`;
+  else if(s.kind==='month')host.innerHTML=`<div class="period-picker"><p class="period-picker-summary">${escHtml(monthText(s.draftDate))}</p>${monthGridHtml(s)}<div class="period-picker-actions"><button type="button" data-period-action="cancel">Отмена</button><button type="button" class="period-picker-confirm" data-period-action="confirm">ОК</button></div></div>`;
+  else if(s.kind==='week')host.innerHTML=`<div class="period-picker"><p class="period-picker-summary">${escHtml(selectedSummaryForPicker(s))}</p>${weekListHtml(s)}<div class="period-picker-actions"><button type="button" data-period-action="cancel">Отмена</button><button type="button" class="period-picker-confirm" data-period-action="confirm">ОК</button></div></div>`;
+  else host.innerHTML=`<div class="period-picker"><p class="period-picker-summary">${escHtml(selectedSummaryForPicker(s))}</p><div class="period-picker-alltime-wrap"><label class="period-picker-alltime"><input type="checkbox" id="periodPickerAllTime" ${s.allTime?'checked':''}><span>За всё время</span></label><p class="period-picker-hint">${s.allTime?'Будут учтены все операции за весь доступный период.':'Выбери начальную дату, затем конечную. Будущие даты недоступны.'}</p></div>${renderDayGrid(s,true)}<div class="period-picker-actions"><button type="button" data-period-action="cancel">Отмена</button><button type="button" class="period-picker-confirm" data-period-action="confirm" ${!s.allTime&&!s.rangeStart?'disabled':''}>ОК</button></div></div>`;
+ }
+ function openPeriodPicker(kind,previousState=null){
+  const old=previousState||snapshot();let draftDate=new Date(periodCursor);draftDate.setHours(12,0,0,0);if(draftDate>parseISO(currentISO()))draftDate=parseISO(currentISO());
+  let rangeStart=$('customFrom')?.value||'',rangeEnd=$('customTo')?.value||'';
+  if(kind==='custom'){defaultCustomRange();rangeStart=$('customFrom').value;rangeEnd=$('customTo').value;}
+  const monthCursor=kind==='custom'&&rangeEnd?dateStartOfMonth(parseISO(rangeEnd)):dateStartOfMonth(draftDate);
+  pickerState={kind,draftDate,monthCursor,rangeStart,rangeEnd,allTime:customAllTime,previous:old,committed:false};
+  modalType='period-picker';openModal(`<div id="periodPickerContent"></div>`);const title=$('modalTitle');if(title)title.textContent=pickerTitle(kind);const modal=document.querySelector('#modalRoot .modal');if(modal)modal.classList.add('period-picker-modal');
+  renderPickerBody();const host=$('periodPickerContent');
+  host.addEventListener('click',e=>{
+   const act=e.target.closest('[data-period-action]')?.dataset.periodAction;
+   if(act==='cancel'){closeModal();return;}
+   if(act==='month-back'){pickerState.monthCursor=new Date(pickerState.monthCursor.getFullYear(),pickerState.monthCursor.getMonth()-1,1,12);renderPickerBody();return;}
+   if(act==='month-forward'){const cur=pickerState.monthCursor,now=parseISO(currentISO());if(cur.getFullYear()<now.getFullYear()||(cur.getFullYear()===now.getFullYear()&&cur.getMonth()<now.getMonth()))pickerState.monthCursor=new Date(cur.getFullYear(),cur.getMonth()+1,1,12);renderPickerBody();return;}
+   if(act==='year-back'){pickerState.draftDate=new Date(pickerState.draftDate.getFullYear()-1,pickerState.draftDate.getMonth(),1,12);renderPickerBody();return;}
+   if(act==='year-forward'){const now=parseISO(currentISO());if(pickerState.draftDate.getFullYear()<now.getFullYear())pickerState.draftDate=new Date(pickerState.draftDate.getFullYear()+1,pickerState.draftDate.getMonth(),1,12);renderPickerBody();return;}
+   if(act==='confirm'){commitPicker();return;}
+   const iso=e.target.closest('[data-period-day]')?.dataset.periodDay;
+   if(iso){if(iso>currentISO())return;const s=pickerState;if(s.kind==='day'){s.draftDate=parseISO(iso);s.monthCursor=dateStartOfMonth(s.draftDate);}else if(s.kind==='custom'){
+      s.allTime=false;
+      if(!s.rangeStart||s.rangeEnd){s.rangeStart=iso;s.rangeEnd='';}
+      else if(iso<s.rangeStart){s.rangeEnd=s.rangeStart;s.rangeStart=iso;}
+      else s.rangeEnd=iso;
+      s.monthCursor=dateStartOfMonth(parseISO(iso));
+    }renderPickerBody();return;}
+   const m=e.target.closest('[data-period-month]')?.dataset.periodMonth;
+   if(m){const d=parseISO(m+'-01');if(d>dateStartOfMonth(parseISO(currentISO())))return;pickerState.draftDate=d;renderPickerBody();return;}
+   const w=e.target.closest('[data-period-week]')?.dataset.periodWeek;
+   if(w){const d=parseISO(w);if(d>currentWeekStart())return;pickerState.draftDate=d;renderPickerBody();return;}
+  });
+  host.addEventListener('change',e=>{if(e.target?.id==='periodPickerAllTime'){pickerState.allTime=e.target.checked;if(pickerState.allTime){pickerState.rangeStart=minTransactionDate();pickerState.rangeEnd=currentISO();pickerState.monthCursor=dateStartOfMonth(parseISO(currentISO()));}else{if(!pickerState.rangeStart||pickerState.rangeStart===minTransactionDate())pickerState.rangeStart=`${new Date().getFullYear()}-01-01`;pickerState.rangeEnd=currentISO();pickerState.monthCursor=dateStartOfMonth(parseISO(pickerState.rangeEnd));}renderPickerBody();}});
+ }
+ function commitPicker(){
+  const s=pickerState;if(!s)return;
+  if(s.kind==='day'){periodCursor=new Date(s.draftDate);periodCursor.setHours(12,0,0,0);periodCursors.day=new Date(periodCursor);}
+  else if(s.kind==='week'){periodCursor=new Date(s.draftDate);periodCursor.setHours(12,0,0,0);periodCursors.week=new Date(periodCursor);}
+  else if(s.kind==='month'){periodCursor=new Date(s.draftDate.getFullYear(),s.draftDate.getMonth(),1,12);periodCursors.month=new Date(periodCursor);}
+  else if(s.kind==='custom'){
+   customAllTime=!!s.allTime;
+   const end=customAllTime?currentISO():Math.min; // overwritten below to keep end-date validation explicit
+   let from,to;
+   if(customAllTime){from=minTransactionDate();to=currentISO();}
+   else{from=s.rangeStart||`${new Date().getFullYear()}-01-01`;to=s.rangeEnd||from;if(from>currentISO())from=currentISO();if(to>currentISO())to=currentISO();if(from>to){const temp=from;from=to;to=temp;}}
+   $('customFrom').value=from;$('customTo').value=to;periodCursor=parseISO(to);try{localStorage.setItem('my-finances-custom-all-time',customAllTime?'1':'0');localStorage.setItem('my-finances-custom-range',JSON.stringify({from,to}));}catch(e){}
+  }
+  s.committed=true;pickerState=null;closeModal();render();
+ }
+ function shiftSelectedPeriod(direction){
+  if(!canShift(direction))return;
+  if(selectedPeriod==='custom'){
+   if(customAllTime)return;const r=selectedRangeV1054(),span=Math.max(1,Math.round((parseISO(r.to)-parseISO(r.from))/86400000)+1),nf=parseISO(r.from),nt=parseISO(r.to);nf.setDate(nf.getDate()+span*direction);nt.setDate(nt.getDate()+span*direction);if(isoDate(nt)>currentISO())return;$('customFrom').value=isoDate(nf);$('customTo').value=isoDate(nt);periodCursor=parseISO($('customTo').value);
+  }else{
+   const d=new Date(periodCursor);d.setHours(12,0,0,0);
+   if(selectedPeriod==='day')d.setDate(d.getDate()+direction);
+   else if(selectedPeriod==='week')d.setDate(d.getDate()+7*direction);
+   else if(selectedPeriod==='month')d.setMonth(d.getMonth()+direction,1);
+   else if(selectedPeriod==='year')d.setFullYear(d.getFullYear()+direction,0,1);
+   if(d>parseISO(currentISO()))return;periodCursor=d;periodCursors[selectedPeriod]=new Date(d);
+  }
+  render();
+ }
+ function selectPeriodTab(button){
+  const next=button.dataset.period,old=snapshot();
+  if(next==='custom'){
+   if(selectedPeriod!=='custom'){if(periodCursors[selectedPeriod])periodCursors[selectedPeriod]=new Date(periodCursor);selectedPeriod='custom';defaultCustomRange();}
+   syncTabs();render();openPeriodPicker('custom',old);return;
+  }
+  if(selectedPeriod!=='custom'&&periodCursors[selectedPeriod])periodCursors[selectedPeriod]=new Date(periodCursor);
+  selectedPeriod=next;periodCursor=new Date(periodCursors[next]||initialPeriodCursor);periodCursor.setHours(12,0,0,0);
+  if(periodCursor>parseISO(currentISO()))periodCursor=parseISO(currentISO());
+  if(periodCursors[next])periodCursors[next]=new Date(periodCursor);
+  syncTabs();render();
+ }
+ document.querySelectorAll('#periodTabs [data-period],#historyPeriodTabs [data-period]').forEach(button=>button.onclick=()=>selectPeriodTab(button));
+ [$('periodSummaryLabel'),$('historyPeriodLabel')].filter(Boolean).forEach(label=>label.addEventListener('click',()=>{if(selectedPeriod==='year')return;openPeriodPicker(selectedPeriod)}));
+ [$('periodPrev'),$('historyPeriodPrev')].filter(Boolean).forEach(b=>b.onclick=()=>shiftSelectedPeriod(-1));[$('periodNext'),$('historyPeriodNext')].filter(Boolean).forEach(b=>b.onclick=()=>shiftSelectedPeriod(1));
+ // Ensure all legacy pathways into the custom range use the same non-future default.
+ $('customFrom').max=currentISO();$('customTo').max=currentISO();
+ // V10.54 history view: independent account selector, shared period/calendar, category-only filtering and export.
+ let historyAccountId=String(selectedAccountId||'all');
+ let historyType='expense';
+ let historySelectedCategoryIds=null; // null = every category; Set = explicit selection.
+ let historySortMode='date';
+ let historyRenderCache=[];
+ const originalSwitchTabV1054=switchTab;
+ function isHistoryAccountValid(id){return id==='all'||data.accounts.some(a=>String(a.id)===String(id));}
+ function historyAccountTitle(){if(historyAccountId==='all')return 'Все';const a=data.accounts.find(x=>String(x.id)===String(historyAccountId));return a?.name||'Все';}
+ function historyAccountMark(account){if(!account)return iconSvg('layers');const color=account.color||'#2F8F79';return `<span class="history-account-mark" style="background:${esc(color)}">${esc(account.icon||'👛')}</span>`;}
+ function closeHistoryPopups(){[$('historyAccountMenu'),$('historyCategoryMenu'),$('historySortMenu')].filter(Boolean).forEach(el=>el.classList.add('hidden'));$('historyAccountButton')?.setAttribute('aria-expanded','false');$('historyFilterToggle')?.setAttribute('aria-expanded','false');$('historySortToggle')?.setAttribute('aria-expanded','false');}
+ function syncHistoryAccountUI(){
+  const button=$('historyAccountButton'),name=$('historyAccountName'),icon=$('historyAccountIcon');if(!button||!name||!icon)return;
+  const account=historyAccountId==='all'?null:data.accounts.find(a=>String(a.id)===String(historyAccountId));
+  name.textContent=account?.name||'Все';icon.innerHTML=account?historyAccountMark(account):iconSvg('layers');
+  const menu=$('historyAccountMenu');if(menu){menu.innerHTML=`<button type="button" class="history-account-option ${historyAccountId==='all'?'active':''}" data-history-account="all"><span class="history-account-mark all-account">${iconSvg('layers')}</span><span>Все</span>${historyAccountId==='all'?'<b>✓</b>':''}</button>`+data.accounts.map(a=>`<button type="button" class="history-account-option ${String(a.id)===String(historyAccountId)?'active':''}" data-history-account="${esc(a.id)}">${historyAccountMark(a)}<span>${esc(a.name)}</span>${String(a.id)===String(historyAccountId)?'<b>✓</b>':''}</button>`).join('');}
+ }
+ function historyCurrentRange(){return selectedRangeV1054();}
+ function historyAccountMatches(tx){if(historyAccountId==='all')return true;return String(tx.accountId)===String(historyAccountId)||(tx.type==='transfer'&&String(tx.toAccountId)===String(historyAccountId));}
+ function historyVisibleCategories(){return data.categories.filter(c=>!c.archived&&c.type===historyType);}
+ function historyCategoryMatches(tx){return historySelectedCategoryIds===null||historySelectedCategoryIds.has(String(tx.categoryId||''));}
+ function currentHistoryFilteredTransactions(){
+  const range=historyCurrentRange(),q=String($('searchTx')?.value||'').trim().toLocaleLowerCase('ru-RU');
+  let list=data.transactions.filter(t=>{
+   if(t.type!==historyType)return false;
+   if(!t.date||String(t.date)<range.from||String(t.date)>range.to)return false;
+   if(!historyAccountMatches(t)||!historyCategoryMatches(t))return false;
+   if(q){const hay=[t.note,t.subcategory,Array.isArray(t.tags)?t.tags.join(' '):'',txCategory(t),accountName(t.accountId),accountName(t.toAccountId),String(t.amount),txTitle(t)].join(' ').toLocaleLowerCase('ru-RU');if(!hay.includes(q))return false;}
+   return true;
+  });
+  if(historySortMode==='amount')list.sort((a,b)=>Number(b.amount||0)-Number(a.amount||0)||compareTransactionsNewestFirst(a,b));else list.sort(compareTransactionsNewestFirst);
+  return list;
+ }
+ function drawHistoryCategoryMenu(){
+  const host=$('historyCategoryMenu');if(!host)return;const cats=historyVisibleCategories();const all=historySelectedCategoryIds===null;
+  host.innerHTML=`<div class="history-menu-heading">Выберите категории</div><label class="history-category-option all-categories-option"><input type="checkbox" data-history-category-all ${all?'checked':''}><span class="history-category-check"></span><span class="history-category-icon all-account">${iconSvg('layers')}</span><span class="history-category-name">Все категории</span></label>`+cats.map(c=>{const checked=all||historySelectedCategoryIds.has(String(c.id));return `<label class="history-category-option ${checked?'is-selected':''}"><input type="checkbox" data-history-category="${esc(c.id)}" ${checked?'checked':''}><span class="history-category-check"></span><span class="history-category-icon" style="${categoryStyle(c)}">${categoryGlyph(c)}</span><span class="history-category-name">${esc(c.name)}</span></label>`}).join('')+`<div class="history-menu-footer"><button type="button" id="historyCategoryReset">Сбросить</button><button type="button" id="historyCategoryDone">Готово</button></div>`;
+ }
+ function renderHistoryByAmount(list){
+  if(!list.length)return '<div class="empty history-empty">За выбранный период нет операций.</div>';
+  return `<div class="history-amount-sorted">${list.map(t=>`<div class="history-amount-item"><div class="history-amount-date">${esc(t.date===today()?'Сегодня':dateAtNoon(t.date).toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'}))}</div>${txHtml(t)}</div>`).join('')}</div>`;
+ }
+ renderEnhancedHistory=function(){
+  const host=$('historyList');if(!host)return;
+  const list=currentHistoryFilteredTransactions();historyRenderCache=list;
+  const range=historyCurrentRange();
+  if($('filterType'))$('filterType').value=historyType;
+  if($('fromDate'))$('fromDate').value=range.from||'';if($('toDate'))$('toDate').value=range.to||'';
+  const total=list.reduce((n,t)=>n+Number(t.amount||0),0);if($('historyTotalText'))$('historyTotalText').textContent=`Всего: ${money(total)}`;
+  host.innerHTML=historySortMode==='amount'?renderHistoryByAmount(list):historyHtml(list,true);
+  if(!list.length)host.innerHTML='<div class="empty history-empty">За выбранный период нет операций.</div>';
+  const toggle=$('historyFilterToggle');if(toggle){const active=historySelectedCategoryIds!==null;toggle.classList.toggle('filter-active',active);toggle.setAttribute('aria-label',active?'Фильтр по категориям применён':'Фильтр по категориям');}
+  document.querySelectorAll('[data-history-type]').forEach(b=>{const active=b.dataset.historyType===historyType;b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active));});
+  document.querySelectorAll('[data-history-sort]').forEach(b=>b.classList.toggle('active',b.dataset.historySort===historySortMode));
+  syncHistoryAccountUI();
+ };
+ // Opening history always starts with the main screen's selected account, without changing that account in return.
+ switchTab=function(tab){
+  if(tab==='history'&&activeTab!=='history'){
+   historyAccountId=isHistoryAccountValid(String(selectedAccountId||''))?String(selectedAccountId):'all';
+   syncHistoryAccountUI();closeHistoryPopups();
+  }
+  document.body.classList.toggle('history-view-active',tab==='history');
+  document.body.classList.toggle('home-view-active',tab==='home');
+  originalSwitchTabV1054(tab);
+  if(tab==='history'){syncHistoryAccountUI();renderEnhancedHistory();}
+ };
+ document.body.classList.toggle('home-view-active',activeTab==='home');
+ $('historyBackButton')?.addEventListener('click',()=>switchTab('home'));
+ $('historyAccountButton')?.addEventListener('click',()=>{const menu=$('historyAccountMenu'),opening=menu?.classList.contains('hidden');closeHistoryPopups();if(menu&&opening){syncHistoryAccountUI();menu.classList.remove('hidden');$('historyAccountButton').setAttribute('aria-expanded','true');}});
+ $('historyAccountMenu')?.addEventListener('click',e=>{const option=e.target.closest('[data-history-account]');if(!option)return;const next=String(option.dataset.historyAccount);if(!isHistoryAccountValid(next))return;historyAccountId=next;closeHistoryPopups();syncHistoryAccountUI();renderEnhancedHistory();});
+ $('historySearchToggle')?.addEventListener('click',()=>{const row=$('historySearchRow'),opening=row?.classList.contains('hidden');row?.classList.toggle('hidden',!opening);$('historySearchToggle').setAttribute('aria-expanded',String(!!opening));if(opening){setTimeout(()=>$('searchTx')?.focus(),30)}else{$('searchTx').value='';renderEnhancedHistory();}});
+ $('historySearchClose')?.addEventListener('click',()=>{$('historySearchRow')?.classList.add('hidden');$('historySearchToggle')?.setAttribute('aria-expanded','false');$('searchTx').value='';renderEnhancedHistory();});
+ $('historySearchClear')?.addEventListener('click',()=>{$('searchTx').value='';$('searchTx').focus();renderEnhancedHistory();});
+ if($('historyFilterToggle'))$('historyFilterToggle').onclick=null;
+ $('historyFilterToggle')?.addEventListener('click',()=>{const menu=$('historyCategoryMenu'),opening=menu?.classList.contains('hidden');closeHistoryPopups();if(menu&&opening){drawHistoryCategoryMenu();menu.classList.remove('hidden');$('historyFilterToggle').setAttribute('aria-expanded','true');}});
+ $('historySortToggle')?.addEventListener('click',()=>{const menu=$('historySortMenu'),opening=menu?.classList.contains('hidden');closeHistoryPopups();if(menu&&opening){menu.classList.remove('hidden');$('historySortToggle').setAttribute('aria-expanded','true');}});
+ $('historyCategoryMenu')?.addEventListener('change',e=>{
+  const all=e.target.closest('[data-history-category-all]');if(all){historySelectedCategoryIds=all.checked?null:new Set();drawHistoryCategoryMenu();renderEnhancedHistory();return;}
+  const input=e.target.closest('[data-history-category]');if(!input)return;const validIds=historyVisibleCategories().map(c=>String(c.id));let next=historySelectedCategoryIds===null?new Set(validIds):new Set(historySelectedCategoryIds);if(input.checked)next.add(String(input.dataset.historyCategory));else next.delete(String(input.dataset.historyCategory));historySelectedCategoryIds=next.size===validIds.length?null:next;drawHistoryCategoryMenu();renderEnhancedHistory();
+ });
+ $('historyCategoryMenu')?.addEventListener('click',e=>{if(e.target.closest('#historyCategoryDone')){closeHistoryPopups();return;}if(e.target.closest('#historyCategoryReset')){historySelectedCategoryIds=null;drawHistoryCategoryMenu();renderEnhancedHistory();return;}});
+ $('historySortMenu')?.addEventListener('click',e=>{const b=e.target.closest('[data-history-sort]');if(!b)return;historySortMode=b.dataset.historySort==='amount'?'amount':'date';closeHistoryPopups();renderEnhancedHistory();});
+ document.addEventListener('click',e=>{const inside=e.target.closest('#historyAccountMenu,#historyAccountButton,#historyCategoryMenu,#historyFilterToggle,#historySortMenu,#historySortToggle');if(!inside){closeHistoryPopups();}});
+ document.querySelectorAll('[data-history-type]').forEach(b=>b.addEventListener('click',()=>{historyType=b.dataset.historyType==='income'?'income':'expense';historySelectedCategoryIds=null;renderEnhancedHistory();}));
+ // Export current history selection to Excel-compatible CSV or printable PDF.
+ function csvCell(v){const x=String(v??'');return '"'+x.replace(/"/g,'""')+'"';}
+ function historyExportRows(){return currentHistoryFilteredTransactions().map(t=>[t.date,historyType==='income'?'Доход':'Расход',accountName(t.accountId),txCategory(t),(Array.isArray(t.tags)?t.tags:[]).join(', '),t.note||t.subcategory||'',Number(t.amount||0)]);}
+ function downloadHistoryCsv(){const rows=[['Дата','Тип','Счёт','Категория','Теги','Описание','Сумма'],...historyExportRows()];const body='\ufeff'+rows.map(r=>r.map(csvCell).join(';')).join('\r\n');const blob=new Blob([body],{type:'text/csv;charset=utf-8;'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`my-finances-history-${today()}.csv`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Файл для Excel подготовлен');}
+ function openHistoryPdf(){const rows=historyExportRows(),range=historyCurrentRange(),total=rows.reduce((n,r)=>n+Number(r[6]||0),0),w=window.open('','_blank');if(!w){toast('Браузер заблокировал окно PDF. Разреши всплывающие окна и повтори.');return;}const table=rows.map(r=>`<tr>${r.map((cell,i)=>`<td>${esc(i===6?money(cell):cell)}</td>`).join('')}</tr>`).join('');w.document.write(`<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Операции MyFinances</title><style>body{font:14px -apple-system,BlinkMacSystemFont,Arial,sans-serif;color:#202622;padding:24px;max-width:1100px;margin:auto}h1{font-size:24px}.meta{color:#5f6f65;margin-bottom:20px}table{width:100%;border-collapse:collapse;font-size:12px}th,td{padding:8px 6px;border-bottom:1px solid #d8e1da;text-align:left;overflow-wrap:anywhere}th{background:#eef4ef}tfoot{font-weight:700}@media print{body{padding:0}}</style><h1>Операции</h1><div class="meta">Счёт: ${esc(historyAccountTitle())}<br>Период: ${esc(range.from)} — ${esc(range.to)}<br>Тип: ${historyType==='expense'?'Расходы':'Доходы'}<br>Операций: ${rows.length}</div><table><thead><tr><th>Дата</th><th>Тип</th><th>Счёт</th><th>Категория</th><th>Теги</th><th>Описание</th><th>Сумма</th></tr></thead><tbody>${table||'<tr><td colspan="7">За выбранный период нет операций.</td></tr>'}</tbody><tfoot><tr><td colspan="6">Всего</td><td>${money(total)}</td></tr></tfoot></table><script>window.onload=()=>setTimeout(()=>window.print(),250)<\/script></html>`);w.document.close();}
+ $('historyExportButton')?.addEventListener('click',()=>{modalType='history-export';openModal(`<div class="history-export-choice"><p class="muted">Экспортировать текущий список операций за выбранный период.</p><button type="button" class="history-export-option" data-history-export="excel"><span class="history-export-symbol">XLS</span><span><b>Excel</b><small>Таблица CSV, совместимая с Excel</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button><button type="button" class="history-export-option" data-history-export="pdf"><span class="history-export-symbol">PDF</span><span><b>PDF</b><small>Печатная версия для сохранения в PDF</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button></div>`);$('modalTitle').textContent='Экспорт операций';});
+ document.addEventListener('click',e=>{const b=e.target.closest('[data-history-export]');if(!b)return;const kind=b.dataset.historyExport;closeModal();if(kind==='excel')downloadHistoryCsv();else openHistoryPdf();});
+ $('historyResetAll')?.addEventListener('click',()=>{historySelectedCategoryIds=null;historySortMode='date';$('searchTx').value='';historyType='expense';renderEnhancedHistory();closeHistoryPopups();});
+ // Override legacy history filtering: account and date selection now live in the header/period controls.
+ const legacyHistoryRender=renderEnhancedHistory;
+ // Entering history refreshes only the local account choice; it never writes the home account preference.
+ $('historyAccountButton')?.setAttribute('title','Выбрать счёт для истории');
+ syncHistoryAccountUI();
+
+ // Sync the card after existing renders, including renders initiated by transaction/category changes.
+ syncTabs();try{render()}catch(e){console.error('Не удалось обновить объединённый выбор периода',e)}
+})();
+})();
 </script><script>
 (function(){
   const iconKey='my-finances-app-icon-v1';
@@ -2385,6 +2872,302 @@ body.history-filter-open:before{content:"";position:fixed;inset:0;z-index:9;back
 .history-filter-actions-extra button{min-height:42px!important;border-radius:13px!important;font-weight:650!important}
 @media(prefers-color-scheme:dark){.cash-filter-panel{background:var(--panel,#17211B)!important}.cash-filter-option{color:var(--text,#EAF2EC)!important;border-bottom-color:var(--line,#344239)!important}.cash-filter-option.is-selected{background:#1E4038!important;color:#E7F8F0!important;border-bottom-color:#2D5C4F!important}.cash-filter-option .cash-filter-check{background:var(--panel,#17211B);border-color:#7D8D82}.cash-filter-option.is-selected .cash-filter-check{background:#176F68;border-color:#176F68}.cash-filter-account-icon{background:#24382E;color:#BDE5D6}.cash-filter-reset{background:#26362D!important;border-color:#405447!important;color:#E7F0E9!important}}
 
+
+/* V10.52 — compact navigation, direct-access drawer, first-run account setup, category grid. */
+.app{padding-bottom:calc(16px + env(safe-area-inset-bottom))!important}
+.app-nav-header{position:sticky;top:0;z-index:6;display:grid;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;gap:10px;min-height:58px;margin:calc(-1 * env(safe-area-inset-top)) -2px 10px;padding:calc(7px + env(safe-area-inset-top)) 2px 7px;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.app-nav-title{min-width:0;text-align:center;font-size:16px;font-weight:800;letter-spacing:-.025em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.app-nav-icon{display:grid;place-items:center;width:42px;height:42px;border:1px solid var(--line);border-radius:14px;background:var(--panel);color:var(--text);box-shadow:0 3px 12px rgba(20,48,34,.04)}
+.app-nav-icon svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.app-menu-backdrop{position:fixed;inset:0;z-index:30;background:rgba(8,20,15,.36);opacity:0;pointer-events:none;transition:opacity .2s ease}
+.app-menu-panel{position:fixed;z-index:31;top:0;bottom:0;left:0;width:min(340px,88vw);padding:calc(20px + env(safe-area-inset-top)) 16px calc(22px + env(safe-area-inset-bottom));overflow-y:auto;background:var(--panel);border-right:1px solid var(--line);box-shadow:18px 0 50px rgba(10,30,20,.16);transform:translateX(-105%);transition:transform .22s ease;visibility:hidden}
+.app-menu-backdrop.open{opacity:1;pointer-events:auto}.app-menu-panel.open{transform:translateX(0);visibility:visible}.app-menu-head{display:flex;align-items:center;justify-content:space-between;padding:6px 3px 19px;border-bottom:1px solid var(--line);margin-bottom:10px}.app-menu-eyebrow{font-size:10px;letter-spacing:.14em;font-weight:800;color:var(--accent-strong)}.app-menu-head h2{margin:5px 0 0;font-size:24px;letter-spacing:-.04em}.app-menu-close{width:38px;height:38px;border:1px solid var(--line);border-radius:12px;background:var(--panel2);color:var(--text);font-size:25px;line-height:1}.app-menu-list{display:grid;gap:4px}.app-menu-item{display:flex;align-items:center;gap:13px;min-height:48px;width:100%;padding:10px 12px;border:1px solid transparent;border-radius:14px;background:transparent;text-align:left;color:var(--text);font-size:15px;font-weight:650}.app-menu-item>span:first-child{display:grid;place-items:center;flex:0 0 25px;width:25px;height:25px;color:var(--accent-strong)}.app-menu-item svg{display:block;width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.app-menu-item:active,.app-menu-item:focus-visible{background:var(--selected-bg);border-color:var(--accent-border);outline:none}.app-menu-open{overflow:hidden}
+#voiceView .voice-view-intro{margin:0 2px 14px;font-size:13px;line-height:1.5}#voiceView .sectionhead{margin:8px 2px 12px}#voiceView .settings-utility-row{margin-top:4px}
+.quick-chooser-help{font-size:12px;line-height:1.5;margin:0 0 10px}.quick-chooser-search{margin:8px 0 12px}.quick-category-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;max-height:min(56vh,560px);overflow-y:auto;overscroll-behavior:contain;padding:2px 0 5px;align-content:start}.quick-category-card{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:6px;min-width:0;width:100%;min-height:78px;padding:8px 3px 7px;border:1px solid transparent;border-radius:13px;background:transparent;color:var(--text);text-align:center}.quick-category-card:active,.quick-category-card:focus-visible{background:var(--selected-bg);border-color:var(--accent-border);outline:none}.quick-category-card .tx-category-icon{flex:0 0 43px;width:43px;height:43px;border-radius:14px}.quick-category-name,.one-line-category-name{display:block;width:100%;min-width:0;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:clip;mask-image:linear-gradient(to right,#000 0%,#000 83%,transparent 100%);-webkit-mask-image:linear-gradient(to right,#000 0%,#000 83%,transparent 100%);font-size:11px;line-height:1.2;font-weight:650;text-align:center}.one-line-category-name{text-align:left;font-size:14px;font-weight:700}.quick-chooser-actions{margin-top:12px}.category-manager-list .catline .grow{min-width:0;max-width:100%}.category-manager-list .catline .grow b{max-width:100%}.quick-library-action{display:grid;place-items:center;flex:0 0 33px;width:33px;height:33px;border:1px solid var(--accent-border);border-radius:10px;background:var(--selected-bg);color:var(--accent-strong);font-size:21px;font-weight:700;line-height:1}.quick-library-action:disabled{opacity:.55;cursor:default}.quick-library-action.is-selected{background:var(--panel2);border-color:var(--line);font-size:18px}
+.first-account-setup{padding:4px 0 6px}.first-account-icon{display:grid;place-items:center;width:58px;height:58px;margin:0 auto 14px;border-radius:18px;background:var(--selected-bg);color:var(--accent-strong)}.first-account-icon svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.first-account-setup h3{margin:0 0 8px;text-align:center;font-size:22px;letter-spacing:-.035em}.first-account-setup>p{font-size:13px;line-height:1.5;text-align:center;margin:0 0 20px}.first-account-setup form{display:grid;gap:8px}.first-account-setup label{margin-top:5px;color:var(--muted);font-size:13px;font-weight:700}.first-account-setup input{width:100%;min-width:0;padding:13px 12px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--text);font:inherit}.first-account-submit{width:100%;margin-top:10px;min-height:46px}.modal #closeModal.hidden{display:none!important}
+@media(max-width:380px){.app-nav-header{gap:5px}.app-nav-title{font-size:15px}.quick-category-grid{gap:3px}.quick-category-card .tx-category-icon{width:39px;height:39px;flex-basis:39px}.quick-category-name{font-size:10px}}
+
+
+/* V10.53 — home spacing polish: keep each action independent, simplify period label and empty state. */
+#homeView .op-tabs-row{
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  outline:0!important;
+  padding:0!important;
+  overflow:visible!important;
+}
+#homeView .op-tabs-row .op-tabs{
+  background:var(--panel)!important;
+  border:1px solid var(--line)!important;
+  box-shadow:none!important;
+}
+#homeView .op-tabs-row #clipboardShortcutButton{
+  flex:0 0 44px!important;
+  min-width:44px!important;
+  width:44px!important;
+  margin:0!important;
+  align-self:stretch!important;
+  border:1px solid var(--accent-border)!important;
+  border-radius:14px!important;
+  background:var(--selected-bg)!important;
+  box-shadow:none!important;
+}
+#homeView #operationPicker .category-list.is-empty-period{
+  padding:4px 12px!important;
+}
+#homeView #operationPicker .category-empty.home-empty-period{
+  padding:9px 3px!important;
+  margin:0!important;
+  font-size:13px!important;
+  line-height:1.35!important;
+}
+#homeView #operationPicker .category-empty.home-empty-period b{
+  display:block!important;
+  margin:0!important;
+  color:var(--muted)!important;
+  font-size:13px!important;
+  font-weight:750!important;
+  line-height:1.35!important;
+}
+@media(max-width:380px){
+  #homeView .op-tabs-row #clipboardShortcutButton{flex-basis:40px!important;min-width:40px!important;width:40px!important;border-radius:12px!important}
+  #homeView #operationPicker .category-list.is-empty-period{padding:3px 10px!important}
+  #homeView #operationPicker .category-empty.home-empty-period{padding:8px 3px!important}
+}
+</style>
+
+
+<style id="v10-54-unified-period-card">
+/* One unified period card: period tabs, clickable date, total and actions share a single surface. */
+#homeView .period-summary{display:flex!important;flex-direction:column!important;gap:12px!important;padding:14px 14px 13px!important;margin:0 0 10px!important;background:var(--panel)!important;border:1px solid var(--line)!important;border-radius:20px!important;overflow:visible!important;}
+#homeView .period-summary .period-tabs{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:3px!important;width:100%!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}
+#homeView .period-summary .period-tabs button{min-width:0!important;min-height:39px!important;padding:8px 2px!important;border:1px solid transparent!important;border-radius:10px!important;background:transparent!important;color:var(--muted)!important;font-size:clamp(11px,3vw,13px)!important;font-weight:650!important;white-space:nowrap!important;box-shadow:none!important;}
+#homeView .period-summary .period-tabs button.active{background:var(--selected-bg)!important;color:var(--selected-text)!important;border-color:var(--accent-border)!important;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 10%,transparent)!important;}
+#homeView .period-summary-head{display:grid!important;grid-template-columns:32px minmax(0,1fr) 32px!important;align-items:center!important;gap:4px!important;width:100%!important;min-width:0!important;min-height:38px!important;margin:0!important;}
+#homeView .period-summary-head #periodPrev,#homeView .period-summary-head .period-arrows>button{display:grid!important;place-items:center!important;width:32px!important;min-width:32px!important;max-width:32px!important;height:36px!important;min-height:36px!important;margin:0!important;padding:0!important;border:1px solid transparent!important;border-radius:10px!important;background:transparent!important;color:var(--muted)!important;font-size:28px!important;font-weight:400!important;line-height:1!important;box-shadow:none!important;}
+#homeView .period-summary-head #periodPrev:active,#homeView .period-summary-head .period-arrows>button:active,#homeView .period-summary-head #periodPrev:focus-visible,#homeView .period-summary-head .period-arrows>button:focus-visible{background:var(--selected-bg)!important;border-color:var(--accent-border)!important;outline:none!important;}
+#homeView .period-summary-head #periodSummaryLabel{display:block!important;width:100%!important;min-width:0!important;max-width:100%!important;margin:0!important;padding:5px 2px!important;border:0!important;border-radius:9px!important;background:transparent!important;color:var(--text)!important;text-align:center!important;text-decoration:underline!important;text-decoration-color:color-mix(in srgb,var(--text) 55%,transparent)!important;text-underline-offset:3px!important;font-size:clamp(13px,3.7vw,16px)!important;font-weight:550!important;line-height:1.35!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;box-shadow:none!important;cursor:pointer!important;}
+#homeView .period-summary-head #periodSummaryLabel:disabled{opacity:1!important;cursor:default!important;text-decoration:none!important;}
+#homeView .period-summary-head .period-arrows{display:flex!important;align-items:center!important;justify-content:flex-end!important;width:32px!important;min-width:32px!important;margin:0!important;gap:0!important;}
+#homeView .period-summary-head #periodNext:disabled,#homeView .period-summary-head #periodPrev:disabled{opacity:.28!important;pointer-events:none!important;}
+#homeView .period-summary-bottom{display:grid!important;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;align-items:center!important;justify-content:stretch!important;gap:8px!important;width:100%!important;min-width:0!important;margin:0!important;padding-top:1px!important;}
+#homeView #periodSummaryTotal{grid-column:2!important;grid-row:1!important;justify-self:center!important;align-self:center!important;max-width:min(50vw,240px)!important;text-align:center!important;font-size:clamp(23px,6.4vw,29px)!important;line-height:1.15!important;letter-spacing:-.04em!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;font-variant-numeric:tabular-nums!important;}
+#homeView .period-primary-actions{grid-column:3!important;grid-row:1!important;justify-self:end!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important;flex:initial!important;width:104px!important;min-width:104px!important;max-width:100%!important;margin:0!important;}
+#homeView .period-primary-actions.has-transfer{grid-template-columns:repeat(3,minmax(0,1fr))!important;width:154px!important;min-width:154px!important;}
+#homeView .period-primary-actions .add-main,#homeView .period-primary-actions .voice-main,#homeView .period-primary-actions .transfer-main{display:grid!important;place-items:center!important;width:100%!important;min-width:0!important;height:42px!important;min-height:42px!important;margin:0!important;padding:0!important;border:1px solid var(--accent-border)!important;border-radius:12px!important;background:var(--selected-bg)!important;color:var(--accent-strong)!important;box-shadow:none!important;}
+#homeView .period-primary-actions .transfer-main.hidden{display:none!important;}
+#homeView .period-primary-actions .add-main svg,#homeView .period-primary-actions .voice-main svg,#homeView .period-primary-actions .transfer-main svg{width:21px!important;height:21px!important;}
+#homeView .custom-dates{display:none!important;}
+@media(max-width:380px){#homeView .period-summary{padding:12px 11px 11px!important;gap:10px!important}#homeView .period-summary .period-tabs button{font-size:10px!important;min-height:36px!important;padding:7px 1px!important}#homeView .period-summary-head{grid-template-columns:28px minmax(0,1fr) 28px!important}#homeView .period-summary-head #periodPrev,#homeView .period-summary-head .period-arrows>button{width:28px!important;min-width:28px!important;height:33px!important;min-height:33px!important;font-size:25px!important}#homeView .period-summary-head .period-arrows{width:28px!important;min-width:28px!important}#homeView .period-summary-bottom{gap:5px!important}#homeView #periodSummaryTotal{max-width:42vw!important;font-size:clamp(21px,6vw,25px)!important}#homeView .period-primary-actions{width:92px!important;min-width:92px!important;gap:5px!important}#homeView .period-primary-actions.has-transfer{width:136px!important;min-width:136px!important}}
+/* Calendar-style period pickers. */
+.period-picker{display:grid;gap:14px;padding:2px 0 4px;min-width:0;}
+.period-picker-summary{font-size:14px;line-height:1.4;color:var(--text);margin:0;}
+.period-picker-hint{font-size:12px;line-height:1.45;color:var(--muted);margin:0;}
+.period-picker-nav{display:grid;grid-template-columns:42px minmax(0,1fr) 42px;align-items:center;gap:6px;}
+.period-picker-nav strong{font-size:15px;font-weight:700;text-align:center;min-width:0;}
+.period-picker-nav button{display:grid;place-items:center;width:40px;height:40px;border:1px solid var(--line);border-radius:12px;background:var(--panel2);color:var(--text);font-size:24px;line-height:1;}
+.period-picker-nav button:disabled{opacity:.25;}
+.period-picker-weekdays{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px;text-align:center;color:var(--muted);font-size:11px;font-weight:650;}
+.period-picker-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px 3px;}
+.period-picker-day{display:grid;place-items:center;min-width:0;aspect-ratio:1/1;border:1px solid transparent;border-radius:50%;background:transparent;color:var(--text);font-size:13px;font-weight:550;}
+.period-picker-day:disabled{opacity:.22;cursor:default;}
+.period-picker-day.is-selected,.period-picker-day.is-range-start,.period-picker-day.is-range-end{background:var(--accent)!important;border-color:var(--accent)!important;color:#fff!important;font-weight:800!important;}
+.period-picker-day.is-in-range{background:color-mix(in srgb,var(--accent) 21%,transparent);border-radius:10px;}
+.period-picker-day.is-today:not(.is-selected){border-color:var(--accent-border);}
+.period-picker-months{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px 5px;}
+.period-picker-month{min-width:0;min-height:46px;padding:7px 2px;border:1px solid transparent;border-radius:13px;background:transparent;color:var(--text);font-size:12px;font-weight:600;}
+.period-picker-month:disabled{opacity:.22;cursor:default;}
+.period-picker-month.is-selected{background:var(--accent)!important;color:#fff!important;border-color:var(--accent)!important;font-weight:800!important;}
+.period-picker-weeks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;}
+.period-picker-week{min-width:0;min-height:46px;padding:8px 4px;border:1px solid var(--line);border-radius:12px;background:var(--panel2);color:var(--text);font-size:12px;font-weight:650;}
+.period-picker-week:disabled{opacity:.22;cursor:default;}
+.period-picker-week.is-selected{background:var(--accent)!important;border-color:var(--accent)!important;color:#fff!important;}
+.period-picker-alltime{display:flex;align-items:center;gap:11px;padding:11px 2px;font-size:15px;font-weight:600;color:var(--text);}
+.period-picker-alltime input{width:20px;height:20px;accent-color:var(--accent);}
+.period-picker-actions{display:flex;align-items:center;justify-content:flex-end;gap:10px;padding-top:3px;}
+.period-picker-actions button{min-width:92px;min-height:42px;padding:10px 13px;border:1px solid var(--line);border-radius:12px;background:var(--panel2);color:var(--text);font-size:13px;font-weight:750;}
+.period-picker-actions .period-picker-confirm{background:var(--accent)!important;border-color:var(--accent)!important;color:#fff!important;}
+.period-picker-actions .period-picker-confirm:disabled{opacity:.45;}
+.period-picker-alltime-wrap{padding-bottom:3px;border-bottom:1px solid var(--line);}
+@media(min-width:700px){.modal.period-picker-modal{width:min(510px,100%);border-radius:24px!important;}}
+</style>
+
+
+
+<style id="v10-54-history-period-and-hero">
+/* Main balance card: full-bleed teal hero, compact frame around the account selector and balance. */
+body.home-view-active .app-nav-header{display:none!important;}
+body.history-view-active .app-nav-header{display:none!important;}
+#homeView .balance.balance-platinum.balance-emerald-final{position:relative;width:calc(100% + 32px);max-width:none;margin:calc(-1 * env(safe-area-inset-top)) -16px 14px!important;padding:calc(17px + env(safe-area-inset-top)) 16px 23px!important;border-radius:0 0 38px 38px!important;min-height:0!important;overflow:hidden!important;box-shadow:none!important;background:linear-gradient(145deg,#255D54 0%,#17463F 56%,#123A34 100%)!important;border:0!important;color:#F6FFF8!important;}
+#homeView .balance .balance-art,#homeView .balance .balance-emblem,#homeView .balance .balance-magstripe,#homeView .balance .balance-caption{display:none!important;}
+#homeView .balance-topline.balance-account-row{position:relative;display:grid!important;grid-template-columns:38px minmax(0,1fr) 38px!important;align-items:start!important;gap:8px!important;width:100%!important;margin:0!important;padding:0!important;}
+#homeView .home-hero-icon{display:grid!important;place-items:center!important;width:38px!important;height:40px!important;min-height:40px!important;padding:0!important;margin:17px 0 0!important;border:1px solid transparent!important;border-radius:11px!important;background:transparent!important;color:#F0F7EF!important;box-shadow:none!important;}
+#homeView .home-hero-icon svg{width:25px!important;height:25px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.7!important;stroke-linecap:round!important;stroke-linejoin:round!important;}
+#homeView .balance-main-selector{width:100%!important;max-width:500px!important;min-width:0!important;justify-self:center!important;align-self:start!important;border:1px solid rgba(191,224,208,.72)!important;border-radius:17px!important;background:rgba(8,42,36,.2)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.08)!important;padding:8px 11px 10px!important;}
+#homeView .balance-main-selector .account-switch{position:relative!important;display:block!important;width:100%!important;max-width:100%!important;min-width:0!important;margin:0!important;padding:0 23px 0 0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;}
+#homeView .balance-main-selector #accountSelect{display:block!important;width:100%!important;max-width:100%!important;min-width:0!important;height:34px!important;min-height:34px!important;margin:0!important;padding:2px 0!important;border:0!important;border-radius:0!important;appearance:none!important;-webkit-appearance:none!important;background:transparent!important;color:#F5FBF6!important;text-align:center!important;text-align-last:center!important;font-size:clamp(16px,4.2vw,20px)!important;font-weight:750!important;line-height:1.25!important;box-shadow:none!important;}
+#homeView .balance-select-caret{pointer-events:none;position:absolute;right:1px;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:22px;height:24px;color:#F6FFF8;}
+#homeView .balance-select-caret svg{width:21px;height:21px;fill:currentColor;stroke:none;}
+#homeView .balance-main-selector .big,#homeView #totalBalance{display:block!important;margin:1px 0 0!important;padding:0!important;text-align:center!important;color:#FFFFFF!important;font-size:clamp(29px,7.8vw,36px)!important;font-weight:820!important;line-height:1.14!important;letter-spacing:-.045em!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;font-variant-numeric:tabular-nums!important;}
+#homeView .balance-motto-sticker{position:static!important;display:flex!important;justify-content:flex-end!important;align-items:center!important;gap:0!important;margin:16px 7px 0 auto!important;max-width:max-content!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;color:rgba(224,244,232,.67)!important;font-size:11px!important;line-height:1.24!important;letter-spacing:.01em!important;}
+#homeView .balance-motto-sticker .sticker-spark,#homeView .balance-motto-sticker .sticker-line{display:none!important;}
+#homeView .balance-motto-sticker strong{font-size:12px!important;font-weight:800!important;letter-spacing:.03em!important;}
+#homeView .balance .big{color:#fff!important;}
+@media(min-width:700px){#homeView .balance.balance-platinum.balance-emerald-final{width:calc(100% + 48px);margin-left:-24px!important;margin-right:-24px!important;padding-left:24px!important;padding-right:24px!important;border-radius:0 0 42px 42px!important;}#homeView .balance-topline.balance-account-row{grid-template-columns:44px minmax(0,520px) 44px!important;justify-content:space-between!important;}#homeView .balance-main-selector{max-width:520px!important}}
+
+/* History header and account picker. */
+#historyView.history-screen{position:relative;padding-top:0!important;}
+#historyView .history-hero{position:relative;width:calc(100% + 32px);margin:calc(-1 * env(safe-area-inset-top)) -16px 12px!important;padding:calc(10px + env(safe-area-inset-top)) 16px 24px!important;background:linear-gradient(145deg,#285A4B 0%,#234A3E 100%)!important;border:0!important;border-radius:0 0 38px 38px!important;color:#F4F8F0!important;}
+#historyView .history-topbar{display:grid;grid-template-columns:36px minmax(0,1fr) 38px 38px;gap:6px;align-items:center;margin:0 0 8px;padding:0;min-height:42px;}
+#historyView .history-topbar h1{margin:0;text-align:center;font-size:clamp(21px,5.8vw,25px);font-weight:650;letter-spacing:-.035em;color:#F6FBF6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+#historyView .history-back,#historyView .history-top-icon{display:grid;place-items:center;width:36px;height:38px;min-height:38px;margin:0;padding:0;border:1px solid transparent;border-radius:10px;background:transparent;color:#F4F8F0;box-shadow:none;}
+#historyView .history-top-icon{width:38px;height:38px;}
+#historyView .history-back svg,#historyView .history-top-icon svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+#historyView .history-search-row{display:grid;grid-template-columns:28px minmax(0,1fr) 28px;gap:8px;align-items:center;margin:3px 0 12px;}
+#historyView .history-search-row.hidden{display:none!important;}
+#historyView .history-search-row button{width:28px;height:34px;border:0;background:transparent;color:#D8E7DD;font-size:24px;line-height:1;}
+#historyView .history-search-row input{width:100%;min-width:0;padding:6px 2px;border:0;border-bottom:1px solid rgba(230,244,235,.6);border-radius:0;background:transparent;color:#F6FBF6;font-size:16px;outline:none;box-shadow:none;}
+#historyView .history-search-row input::placeholder{color:rgba(223,238,226,.6);}
+#historyView .history-account-wrap{position:relative;display:flex;justify-content:center;margin:0 0 8px;}
+#historyView .history-account-button{display:flex;align-items:center;justify-content:center;gap:9px;width:min(100%,370px);min-width:0;min-height:39px;padding:3px 12px;border:1px solid transparent;border-radius:12px;background:transparent;color:#F4F8F0;font-size:19px;font-weight:750;box-shadow:none;}
+#historyView .history-account-name{min-width:0;max-width:64vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+#historyView .history-account-button>svg{width:20px;height:20px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+#historyView .history-account-symbol{display:grid;place-items:center;flex:0 0 28px;width:28px;height:28px;}
+#historyView .history-account-symbol>svg{width:27px;height:27px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+#historyView .history-account-mark{display:grid;place-items:center;flex:0 0 32px;width:32px;height:32px;border-radius:50%;color:#fff;font-size:18px;line-height:1;}
+#historyView .history-account-mark>svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+#historyView .history-account-menu{position:absolute;z-index:12;top:calc(100% + 3px);left:50%;transform:translateX(-50%);width:min(340px,100%);max-height:48vh;overflow:auto;padding:7px;border:1px solid #426455;border-radius:17px;background:#18271F;box-shadow:0 18px 38px #0007;}
+#historyView .history-account-menu.hidden{display:none!important;}
+#historyView .history-account-option{display:flex;align-items:center;gap:10px;width:100%;min-width:0;min-height:44px;padding:6px 9px;border:0;border-radius:11px;background:transparent;color:#EDF7EF;text-align:left;font-size:14px;}
+#historyView .history-account-option>span:nth-child(2){min-width:0;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+#historyView .history-account-option.active{background:#2B4D3C;color:#F4FFF6;}
+#historyView .history-account-option b{font-size:15px;color:#78D4A3;}
+#historyView .history-account-option .all-account{background:#329F82;}
+#historyView .history-type-tabs{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:stretch;margin:3px 0 0;}
+#historyView .history-type-tabs button{min-width:0;min-height:43px;padding:6px 3px 8px;border:0;border-bottom:3px solid transparent;border-radius:0;background:transparent;color:rgba(235,245,235,.65);font-size:clamp(16px,4.4vw,20px);font-weight:750;}
+#historyView .history-type-tabs button.active{border-bottom-color:#E9F3E9;color:#F5FAF3;}
+#historyView .history-period-card{margin:0 0 12px;padding:10px 12px 9px;border:1px solid var(--line);border-radius:21px;background:var(--panel);color:var(--text);}
+#historyView .history-period-card .period-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;margin:0;padding:0;background:transparent;border:0;box-shadow:none;}
+#historyView .history-period-card .period-tabs button{min-width:0;min-height:37px;padding:7px 1px;border:1px solid transparent;border-radius:10px;background:transparent;color:var(--muted);font-size:clamp(11px,3.1vw,13px);font-weight:650;white-space:nowrap;box-shadow:none;}
+#historyView .history-period-card .period-tabs button.active{background:var(--selected-bg);border-color:var(--accent-border);color:var(--selected-text);}
+#historyView .history-period-head{display:grid!important;grid-template-columns:34px minmax(0,1fr) 34px!important;gap:4px!important;align-items:center!important;margin:4px 0 0!important;min-height:38px;}
+#historyView .history-period-head>button{display:grid;place-items:center;width:34px;height:35px;min-height:35px;padding:0;border:0;border-radius:9px;background:transparent;color:var(--muted);font-size:27px;line-height:1;box-shadow:none;}
+#historyView #historyPeriodLabel{display:block;width:100%;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;text-decoration:underline;text-underline-offset:3px;font-size:clamp(13px,3.8vw,16px);font-weight:550;padding:5px 1px;color:var(--text);}
+#historyView #historyPeriodLabel:disabled{opacity:1;text-decoration:none;}
+#historyView .history-results-toolbar{position:relative;display:flex;align-items:center;justify-content:space-between;gap:10px;margin:6px 2px 8px;min-height:40px;}
+#historyView .history-results-toolbar>strong{font-size:16px;font-weight:750;letter-spacing:-.02em;font-variant-numeric:tabular-nums;}
+#historyView .history-result-actions{display:flex;align-items:center;gap:6px;}
+#historyView .history-filter-button{display:grid;place-items:center;width:36px;height:36px;min-height:36px;padding:0;border:1px solid transparent;border-radius:10px;background:transparent;color:var(--muted);box-shadow:none;}
+#historyView .history-filter-button svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+#historyView .history-filter-button[aria-expanded="true"],#historyView .history-filter-button.filter-active{background:var(--selected-bg);border-color:var(--accent-border);color:var(--selected-text);}
+#historyView .history-popup-menu{margin:0 0 10px;padding:10px;border:1px solid var(--line);border-radius:15px;background:var(--panel2);box-shadow:0 8px 22px #0002;}
+#historyView .history-popup-menu.hidden{display:none!important;}
+#historyView .history-menu-heading{margin:1px 2px 8px;color:var(--text);font-size:14px;font-weight:750;}
+#historyView .history-category-option{display:flex;align-items:center;gap:9px;min-width:0;min-height:42px;padding:5px 3px;border-bottom:1px solid var(--line);color:var(--text);}
+#historyView .history-category-option:last-of-type{border-bottom:0;}
+#historyView .history-category-option input{position:absolute;opacity:0;width:1px;height:1px;}
+#historyView .history-category-check{display:grid;place-items:center;flex:0 0 18px;width:18px;height:18px;border:1.5px solid var(--muted);border-radius:5px;color:#102016;}
+#historyView .history-category-option input:checked+.history-category-check{background:var(--accent);border-color:var(--accent);}
+#historyView .history-category-option input:checked+.history-category-check:after{content:'✓';font-size:13px;font-weight:850;}
+#historyView .history-category-icon{display:grid;place-items:center;flex:0 0 31px;width:31px;height:31px;border-radius:50%;background:var(--selected-bg);color:var(--selected-text);font-size:17px;overflow:hidden;}
+#historyView .history-category-icon svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.6;}
+#historyView .history-category-name{min-width:0;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;}
+#historyView .history-menu-footer{display:flex;justify-content:flex-end;gap:8px;padding-top:10px;}
+#historyView .history-menu-footer button{min-height:34px;padding:7px 12px;border:1px solid var(--line);border-radius:9px;background:transparent;color:var(--muted);font-size:12px;font-weight:700;}
+#historyView .history-menu-footer button:last-child{background:var(--accent);border-color:var(--accent);color:#fff;}
+#historyView .history-sort-menu{display:grid;gap:4px;}
+#historyView .history-sort-menu button{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:44px;padding:7px 8px;border:0;border-radius:10px;background:transparent;color:var(--text);text-align:left;}
+#historyView .history-sort-menu button.active{background:var(--selected-bg);color:var(--selected-text);font-weight:750;}
+#historyView .history-sort-menu button svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;}
+#historyView #historyList.history-list-card{padding:0!important;margin:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;overflow:visible!important;}
+#historyView .history-empty{padding:30px 12px;border:1px solid var(--line);border-radius:18px;background:var(--panel);color:var(--muted);}
+#historyView .history-day{margin:0 0 12px!important;padding:0!important;border:0!important;background:transparent!important;}
+#historyView .history-day-head{padding:8px 12px 9px!important;border:0!important;background:transparent!important;color:var(--muted)!important;}
+#historyView .history-day-head b{font-size:14px!important;font-weight:750!important;color:var(--muted)!important;}
+#historyView .history-day-head span{font-size:11px!important;color:var(--muted)!important;}
+#historyView .history-day .rowitem{padding:12px 12px!important;margin:0!important;border:0!important;border-bottom:1px solid color-mix(in srgb,var(--line) 75%,transparent)!important;background:var(--panel2)!important;gap:10px!important;}
+#historyView .history-day .rowitem:first-of-type{border-radius:16px 16px 0 0!important;}
+#historyView .history-day .rowitem:last-child{border-bottom:0!important;border-radius:0 0 16px 16px!important;}
+#historyView .history-day .rowitem:only-of-type{border-radius:16px!important;}
+#historyView .history-day .rowitem .bubble{width:40px!important;height:40px!important;flex-basis:40px!important;border-radius:50%!important;}
+#historyView .history-day .rowitem .grow>b{font-size:14px!important;font-weight:750!important;}
+#historyView .history-day .rowitem .grow>small{font-size:11px!important;color:var(--muted)!important;}
+#historyView .history-day .rowitem .amount{font-size:14px!important;font-weight:750!important;}
+#historyView .history-amount-item{margin:0 0 10px;padding:0;}
+#historyView .history-amount-date{padding:7px 10px;color:var(--muted);font-size:12px;font-weight:700;}
+#historyView .history-amount-item .rowitem{padding:12px!important;border:0!important;border-radius:15px!important;background:var(--panel2)!important;}
+#historyView .history-floating-add{position:fixed;z-index:5;left:50%;bottom:calc(16px + env(safe-area-inset-bottom));transform:translateX(-50%);display:grid;place-items:center;width:58px;height:58px;min-height:58px;padding:0;border:0;border-radius:50%;background:#F7C84B;color:#1B251D;font-size:32px;font-weight:400;line-height:1;box-shadow:0 8px 25px #0002;}
+#historyView .history-legacy-controls{display:none!important;}
+.history-export-choice{display:grid;gap:9px;}
+.history-export-choice>p{margin:0 0 4px;font-size:13px;}
+.history-export-option{display:grid;grid-template-columns:42px minmax(0,1fr) 20px;align-items:center;gap:12px;width:100%;min-height:64px;padding:10px;border:1px solid var(--line);border-radius:14px;background:var(--panel2);color:var(--text);text-align:left;}
+.history-export-symbol{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--selected-bg);color:var(--selected-text);font-size:11px;font-weight:850;}
+.history-export-option b,.history-export-option small{display:block;}
+.history-export-option small{margin-top:3px;color:var(--muted);font-size:11px;line-height:1.35;}
+.history-export-option>svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;}
+@media(max-width:380px){#historyView .history-hero{padding-left:13px!important;padding-right:13px!important;}#historyView .history-topbar{grid-template-columns:32px minmax(0,1fr) 34px 34px;gap:3px;}#historyView .history-top-icon{width:34px;}#historyView .history-account-button{font-size:17px;}#historyView .history-type-tabs button{font-size:16px;}#historyView .history-period-card{padding-left:8px;padding-right:8px;}#historyView .history-period-card .period-tabs button{font-size:10px;}}
+</style>
+
+
+<style id="v10-54-period-history-final-polish">
+/* Keep the home controls semantically grouped, without adding an extra joined outline. */
+#homeView .home-period-workspace{display:flex!important;flex-direction:column!important;gap:8px!important;min-width:0!important;}
+#homeView .home-period-workspace .op-tabs-row{margin:0!important;gap:8px!important;}
+#homeView .home-period-workspace .op-tabs{flex:1 1 auto!important;min-width:0!important;}
+#homeView .home-period-workspace #homePeriodCard{margin:0 0 10px!important;}
+#homeView .home-period-workspace #customDates{display:none!important;}
+#homeView .period-summary-head{display:grid!important;grid-template-columns:30px minmax(0,1fr) 30px!important;align-items:center!important;gap:5px!important;}
+#homeView .period-summary-head #periodSummaryLabel{min-width:0!important;max-width:100%!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;}
+#homeView .period-summary-head #periodPrev,#homeView .period-summary-head .period-arrows>button:not(.add-main):not(.voice-main){width:30px!important;min-width:30px!important;}
+/* The history period, date, total and compact actions form one card. */
+#historyView .history-period-card{display:flex!important;flex-direction:column!important;gap:5px!important;margin:0 0 12px!important;padding:10px 12px 9px!important;border:1px solid var(--line)!important;border-radius:21px!important;background:var(--panel)!important;color:var(--text)!important;}
+#historyView .history-period-card .history-results-toolbar{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;margin:5px 0 0!important;padding-top:8px!important;border-top:1px solid color-mix(in srgb,var(--line) 72%,transparent)!important;min-height:38px!important;}
+#historyView .history-results-toolbar>strong{font-size:16px!important;font-weight:750!important;letter-spacing:-.02em!important;}
+#historyView .history-result-actions{display:flex!important;align-items:center!important;gap:5px!important;flex:0 0 auto!important;}
+#historyView .history-filter-button{width:34px!important;height:34px!important;min-height:34px!important;}
+#historyView .history-period-card #historyPeriodLabel{font-variant-numeric:tabular-nums!important;}
+#historyView .history-results-toolbar .history-filter-button:focus-visible{outline:2px solid var(--accent-strong)!important;outline-offset:2px!important;}
+/* A custom date range is chosen in the calendar modal; obsolete date-field frames stay hidden. */
+#customDates.hidden,#historyView .history-date-grid{display:none!important;}
+@media(max-width:380px){
+ #homeView .home-period-workspace{gap:7px!important;}
+ #homeView .period-summary-head{grid-template-columns:26px minmax(0,1fr) 26px!important;}
+ #historyView .history-period-card{padding-left:8px!important;padding-right:8px!important;}
+ #historyView .history-results-toolbar>strong{font-size:14px!important;}
+ #historyView .history-filter-button{width:32px!important;height:32px!important;min-height:32px!important;}
+}
+</style>
+
+
+<style id="v10-54-expanded-category-tags">
+/* Expanded tag list: show every tag unless there are more than ten. Keep the no-tag total pinned below it. */
+#homeView .category-sublist{display:flex!important;flex-direction:column!important;gap:0!important;min-width:0!important;}
+#homeView .subcategory-scroll{min-width:0!important;max-height:none!important;overflow:visible!important;overscroll-behavior:auto!important;touch-action:auto!important;}
+#homeView .subcategory-scroll.has-many{max-height:calc(10 * 31px + 15px)!important;overflow-y:auto!important;overscroll-behavior-y:contain!important;touch-action:pan-y!important;scrollbar-width:none!important;-webkit-overflow-scrolling:touch!important;}
+#homeView .subcategory-scroll.has-many::-webkit-scrollbar{display:none!important;width:0!important;height:0!important;}
+#homeView .subcategory-scroll .subcategory-row{box-sizing:border-box!important;min-height:31px!important;height:31px!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(76px,auto)!important;align-items:center!important;gap:8px!important;padding:5px 0 5px 10px!important;overflow:hidden!important;}
+#homeView .subcategory-name{display:block!important;min-width:0!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;}
+#homeView .subcategory-scroll.has-many .subcategory-row{height:31px!important;min-height:31px!important;}
+#homeView .subcategory-no-tags{flex:0 0 auto!important;border-left:2px solid var(--line)!important;font-weight:700!important;background:color-mix(in srgb,var(--panel2) 55%,transparent)!important;}
+#homeView .subcategory-no-tags .subcategory-name{color:var(--text)!important;font-weight:700!important;}
+
+/* V10.56: align the operations header with the open centered home hero. */
+#historyView .history-hero{padding-top:calc(10px + env(safe-area-inset-top))!important;padding-bottom:23px!important;}
+#historyView .history-titlebar{display:flex!important;justify-content:center!important;align-items:center!important;min-height:39px!important;margin:0 0 1px!important;padding:0!important;}
+#historyView .history-titlebar h1{margin:0!important;text-align:center!important;font-size:clamp(21px,5.8vw,25px)!important;font-weight:650!important;letter-spacing:-.035em!important;line-height:1.2!important;color:#F6FBF6!important;}
+#historyView .history-topbar{display:grid!important;grid-template-columns:36px minmax(0,1fr) 34px 34px!important;gap:5px!important;align-items:center!important;margin:0 0 7px!important;padding:0!important;min-height:42px!important;}
+#historyView .history-topbar h1{display:none!important;}
+#historyView .history-back,#historyView .history-top-icon{width:36px!important;height:38px!important;min-height:38px!important;}
+#historyView .history-topbar .history-account-wrap{grid-column:2;grid-row:1;justify-content:center!important;min-width:0!important;width:100%!important;margin:0!important;}
+#historyView .history-topbar .history-account-button{width:100%!important;max-width:100%!important;min-width:0!important;min-height:40px!important;padding:2px 0!important;gap:6px!important;font-size:clamp(16px,4.5vw,20px)!important;}
+#historyView .history-topbar .history-account-name{max-width:calc(100% - 60px)!important;}
+#historyView .history-topbar .history-account-symbol{flex-basis:26px!important;width:26px!important;height:26px!important;}
+#historyView .history-topbar .history-account-symbol>svg{width:25px!important;height:25px!important;}
+#historyView .history-topbar .history-account-menu{width:min(340px,calc(100vw - 52px))!important;}
+#historyView .history-search-row{margin-top:1px!important;}
+@media(max-width:380px){#historyView .history-topbar{grid-template-columns:32px minmax(0,1fr) 31px 31px!important;gap:3px!important;}#historyView .history-back,#historyView .history-top-icon{width:32px!important;height:36px!important;min-height:36px!important;}#historyView .history-topbar .history-account-button{font-size:15px!important;gap:4px!important;}#historyView .history-topbar .history-account-symbol{flex-basis:23px!important;width:23px!important;height:23px!important;}#historyView .history-topbar .history-account-symbol>svg{width:22px!important;height:22px!important;}}
 </style>
 
 </body>
