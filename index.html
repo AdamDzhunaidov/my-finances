@@ -1077,7 +1077,7 @@ body :not(input):not(textarea):not([contenteditable="true"]){-webkit-user-select
    <div class="settingrow settings-action-row"><div><b>Поделиться отчётом о расходах</b><div class="muted">Текст для сообщений или почты</div></div><button type="button" class="secondary settings-action" id="shareSettingsReport">Поделиться</button></div>
    <div class="settings-recovery-row hidden" id="importRecoveryBackupRow"><div class="settings-recovery-copy"><b>Копия перед последним импортом</b><p class="muted">Дополнительная копия в этом браузере. Её можно скачать перед очисткой места.</p></div><div class="settings-recovery-actions"><button type="button" class="secondary settings-action" id="downloadImportRecoveryBackup">Скачать</button><button type="button" class="small-quiet" id="deleteImportRecoveryBackup">Удалить копию</button></div></div>
   </div>
-  <div class="settings-about"><div class="sectionhead settings-subhead"><h2>О приложении</h2></div><p>Мои финансы · V10.62 · Данные хранятся на устройстве.</p></div>
+  <div class="settings-about"><div class="sectionhead settings-subhead"><h2>О приложении</h2></div><p>Мои финансы · V10.64 · Данные хранятся на устройстве.</p></div>
  </div>
 </section>
 </main>
@@ -1097,7 +1097,7 @@ body :not(input):not(textarea):not([contenteditable="true"]){-webkit-user-select
 <div id="modalRoot"></div><div id="toast" class="toast hidden" role="status"></div>
 <script>
 (()=>{'use strict';
-const KEY='my-finances-v1';const APP_VERSION='10.62';const HAD_SAVED_DATA=!!readOptionalStorage(KEY);const FRESH_INSTALL=!HAD_SAVED_DATA&&!readOptionalStorage('my-finances-onboarding-complete');const BACKUP_FORMAT_VERSION=3;const APPEARANCE_KEY='my-finances-appearance-mode';function readOptionalStorage(key){try{return localStorage.getItem(key)}catch(e){console.warn('Не удалось прочитать настройку из локального хранилища',e);return null}}let appearanceMode=readOptionalStorage(APPEARANCE_KEY)||'system';if(!['system','light','dark'].includes(appearanceMode))appearanceMode='system';function updateThemeColorMeta(){const meta=document.querySelector('meta[name="theme-color"]');if(!meta)return;const dark=appearanceMode==='dark'||(appearanceMode==='system'&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);const heroActive=!!(document.body&&(document.body.classList.contains('home-view-active')||document.body.classList.contains('history-view-active')));meta.setAttribute('content',heroActive?'#1C5047':dark?'#101512':'#F3F6F3')}function applyAppearanceMode(mode,persist=true){appearanceMode=['system','light','dark'].includes(mode)?mode:'system';if(appearanceMode==='system')document.documentElement.removeAttribute('data-theme');else document.documentElement.setAttribute('data-theme',appearanceMode);if(persist){try{localStorage.setItem(APPEARANCE_KEY,appearanceMode)}catch(e){console.warn('Не удалось сохранить предпочтение темы',e);toast('Тема переключена, но сохранить выбор не удалось')}}updateThemeColorMeta()}applyAppearanceMode(appearanceMode,false);if(window.matchMedia){const themeMedia=window.matchMedia('(prefers-color-scheme: dark)');const onThemeChange=()=>{if(appearanceMode==='system')updateThemeColorMeta()};if(themeMedia.addEventListener)themeMedia.addEventListener('change',onThemeChange);else if(themeMedia.addListener)themeMedia.addListener(onThemeChange)};
+const KEY='my-finances-v1';const APP_VERSION='10.64';const HAD_SAVED_DATA=!!readOptionalStorage(KEY);const FRESH_INSTALL=!HAD_SAVED_DATA&&!readOptionalStorage('my-finances-onboarding-complete');const BACKUP_FORMAT_VERSION=3;const APPEARANCE_KEY='my-finances-appearance-mode';function readOptionalStorage(key){try{return localStorage.getItem(key)}catch(e){console.warn('Не удалось прочитать настройку из локального хранилища',e);return null}}let appearanceMode=readOptionalStorage(APPEARANCE_KEY)||'system';if(!['system','light','dark'].includes(appearanceMode))appearanceMode='system';function updateThemeColorMeta(){const meta=document.querySelector('meta[name="theme-color"]');if(!meta)return;const dark=appearanceMode==='dark'||(appearanceMode==='system'&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);const heroActive=!!(document.body&&(document.body.classList.contains('home-view-active')||document.body.classList.contains('history-view-active')));meta.setAttribute('content',heroActive?'#1C5047':dark?'#101512':'#F3F6F3')}function applyAppearanceMode(mode,persist=true){appearanceMode=['system','light','dark'].includes(mode)?mode:'system';if(appearanceMode==='system')document.documentElement.removeAttribute('data-theme');else document.documentElement.setAttribute('data-theme',appearanceMode);if(persist){try{localStorage.setItem(APPEARANCE_KEY,appearanceMode)}catch(e){console.warn('Не удалось сохранить предпочтение темы',e);toast('Тема переключена, но сохранить выбор не удалось')}}updateThemeColorMeta()}applyAppearanceMode(appearanceMode,false);if(window.matchMedia){const themeMedia=window.matchMedia('(prefers-color-scheme: dark)');const onThemeChange=()=>{if(appearanceMode==='system')updateThemeColorMeta()};if(themeMedia.addEventListener)themeMedia.addEventListener('change',onThemeChange);else if(themeMedia.addListener)themeMedia.addListener(onThemeChange)};
 const defaultData={accounts:[{id:'cash',name:'Наличные',opening:0,icon:'👛',color:'#43A047'},{id:'card',name:'Банковская карта',opening:0,icon:'💳',color:'#039BE5'}],categories:[
 {id:'home',name:'Дом',type:'expense',icon:'🏠',color:'#FB8C00',favorite:true,favoriteOrder:0,subs:['Коммунальные услуги','Покупки для дома']},
 {id:'investments',name:'Инвестиции',type:'expense',icon:'📈',color:'#039BE5',favorite:true,favoriteOrder:1,subs:[]},
@@ -1120,6 +1120,8 @@ const defaultData={accounts:[{id:'cash',name:'Наличные',opening:0,icon:'
 let data=load();const CATEGORY_QA_NEEDS_MIGRATION=Number(data.categoryQuickAccess?.schemaVersion||0)<3;if(!Array.isArray(data.recurringRules))data.recurringRules=[];if(!Array.isArray(data.pendingRecurring))data.pendingRecurring=[];if(!Array.isArray(data.budgets))data.budgets=[];data.categories.forEach(c=>{if(!c.icon)c.icon=c.type==='income'?'💰':(/транспорт|transport|авто|такси|топлив/i.test(c.name)?'🚗':/здоров|аптек|врач|health/i.test(c.name)?'💊':/дом|home|ремонт/i.test(c.name)?'🏠':/покуп|одеж|shop/i.test(c.name)?'🛍️':/продукт|еда|food|кафе/i.test(c.name)?'🛒':'🧾');if(!c.color)c.color=c.type==='income'?'#25C985':(/транспорт|transport|авто|такси|топлив/i.test(c.name)?'#35A7FF':/здоров|аптек|врач|health/i.test(c.name)?'#FF5C93':/дом|home|ремонт/i.test(c.name)?'#9A7BFF':/покуп|одеж|shop/i.test(c.name)?'#F5B942':'#25C985')});let activeTab='home';let activeOperationType='expense';let modalType='';let editingId=null;let modalTxType='expense';let txReopenDraft=null;let selectedAccountId=readOptionalStorage('my-finances-selected-account')||data.accounts[0]?.id||'';
 let homeAccountViewId=readOptionalStorage('my-finances-home-account-view')||'all';
 let homeBalanceHidden=readOptionalStorage('my-finances-home-balance-hidden')==='1';
+// Preserve Accounts as the return destination when a transfer is opened from its screen.
+let txReturnToAccountsScreen=null;
 
 // Account appearance is additive: existing backups and transactions remain compatible.
 const accountIconDefaults=[['лич','👛','#43A047'],['дом','🏠','#039BE5'],['врем','🗂️','#8E24AA'],['налич','💵','#FB8C00'],['карт','💳','#3949AB'],['банк','🏦','#039BE5'],['копил','🐷','#D9C3A0']];
@@ -1350,7 +1352,7 @@ function openModal(html){
  back.addEventListener('touchmove',e=>{if(!e.target.closest('.modal'))e.preventDefault()},{passive:false});
 }
 function cancelActiveVoice(){if(activeVoiceSession){activeVoiceSession.cancelled=true;activeVoiceSession=null}if(voiceRestartTimer){clearTimeout(voiceRestartTimer);voiceRestartTimer=null}if(activeVoiceRecognition){try{activeVoiceRecognition.abort()}catch(e){}activeVoiceRecognition=null}}
-function closeModal(){cancelActiveVoice();if((modalType==='favorite-replace'||modalType==='favorite-replace-choice'||modalType==='quick-category-chooser'||modalType==='categories')&&txReopenDraft){const draft=txReopenDraft;txReopenDraft=null;openTx(draft.type,draft,draft.categoryId||'');return}$('modalRoot').innerHTML='';modalType='';editingId=null;unlockModalBackgroundScroll()}
+function closeModal(){cancelActiveVoice();if((modalType==='favorite-replace'||modalType==='favorite-replace-choice'||modalType==='quick-category-chooser'||modalType==='categories')&&txReopenDraft){const draft=txReopenDraft;txReopenDraft=null;openTx(draft.type,draft,draft.categoryId||'');return}const restoreAccounts=modalType==='tx'&&txReturnToAccountsScreen!==null;const accountsReturnScreen=txReturnToAccountsScreen; if(restoreAccounts)txReturnToAccountsScreen=null;$('modalRoot').innerHTML='';modalType='';editingId=null;unlockModalBackgroundScroll();if(restoreAccounts)manageAccounts(accountsReturnScreen||'list')}
 function openTx(type='expense',tx=null,categoryId=''){
  
  modalType='tx';editingId=tx?.id||null;modalTxType=(tx?.type||type||'expense');
@@ -1532,34 +1534,34 @@ function handleShortcutVoice(raw){
  statusVoice($('voiceStatus'),`Не удалось уверенно определить сумму из фразы: «${prepared.raw}». Операция не сохранена. Проверь поля, укажи сумму и нажми «Сохранить».`,'warning');
 }
 const accountFinanceIcons=[
- ['cash','Денежные купюры','<path d="M5 16 24 6l19 10-19 10L5 16Z"/><path d="m5 22 19 10 19-10M5 28l19 10 19-10"/><circle cx="24" cy="16" r="3"/><path d="M11 16h1m24 0h1"/>'],
- ['bank','Банк','<path d="M4 17 24 5l20 12H4Z"/><path d="M8 21v15m10-15v15m12-15v15m10-15v15M5 40h38M8 44h32"/><circle cx="24" cy="12" r="1.5"/>'],
- ['pound','Фунт','<path d="M29 9c-2-3-8-3-11 1-3 4 0 8 0 12 0 4-3 7-6 8m0 0h22m-22 0c-3 0-5 3-5 6h29"/><path d="M15 23h13"/>'],
- ['cards','Банковские карты','<rect x="5" y="9" width="34" height="23" rx="3"/><path d="M5 16h34M11 25h11"/><rect x="10" y="15" width="33" height="22" rx="3"/><path d="M10 22h33M16 30h10"/>'],
- ['percent-card','Карта с процентом','<rect x="5" y="8" width="38" height="28" rx="3"/><path d="M5 16h38M13 29l12-9m-11 0h.1M28 30h.1"/><circle cx="13" cy="29" r="2.4"/><circle cx="28" cy="30" r="2.4"/>'],
- ['money-bag','Денежный мешок','<path d="M18 10c4 2 8 2 12 0l4 6c5 5 6 10 4 17-2 8-9 11-14 11S12 41 10 33c-2-7-1-12 4-17l4-6Z"/><path d="m18 10-4-5m18 5 4-5M18 24c2-4 10-4 12 0 1 3-1 5-6 6-5 1-6 5-2 7 3 2 7 1 9-1m-7-15v16"/>'],
- ['dollar','Доллар','<circle cx="24" cy="24" r="19"/><path d="M31 15c-2-3-10-4-13 0-4 5 1 8 7 9 7 1 9 7 4 11-4 3-11 2-14-1m9-23v26"/>'],
- ['euro','Евро','<circle cx="24" cy="24" r="19"/><path d="M34 14c-2-3-5-4-9-3-6 2-9 8-9 13s3 11 9 13c4 1 7 0 9-3M12 21h15m-15 6h14"/>'],
- ['chart','График','<path d="M7 40V9m0 31h35"/><path d="M12 32l9-10 7 5 12-16"/><path d="M31 11h9v9"/>'],
- ['mobile-wallet','Кошелёк в телефоне','<rect x="7" y="4" width="23" height="40" rx="3"/><path d="M12 9h13M12 37h5"/><rect x="22" y="17" width="19" height="14" rx="3"/><path d="M22 21h19m-7 6h2"/>'],
- ['paypal','Платёжный сервис','<path d="M14 42 20 7h13c8 0 12 5 10 12-2 8-7 11-15 11h-5l-2 12Z"/><path d="M10 42 16 18h12c5 0 8 3 7 8-1 6-6 9-12 9h-5l-1 7Z"/>'],
- ['piggy','Копилка','<path d="M7 20c1-8 9-13 19-12 8 0 13 4 15 10l4 2-3 8-5 1c-2 5-7 8-13 8H14l-4 5-3-1 1-7c-3-3-4-7-3-11l-3-4 5-3Z"/><circle cx="33" cy="18" r="1.5"/><path d="M18 36v5m12-5v5"/>'],
- ['wallet','Кошелёк','<path d="M7 12h31a4 4 0 0 1 4 4v22H8a4 4 0 0 1-4-4V10a5 5 0 0 1 5-5h28"/><path d="M30 21h12v10H30a5 5 0 0 1 0-10Z"/><circle cx="34" cy="26" r="1"/>'],
- ['safe','Сейф','<rect x="6" y="5" width="36" height="38" rx="3"/><rect x="12" y="10" width="24" height="28" rx="2"/><circle cx="24" cy="24" r="7"/><path d="M24 18v12m-6-6h12m12-13h3m-3 26h3"/>'],
- ['bitcoin','Bitcoin','<circle cx="24" cy="24" r="19"/><path d="M20 12v24m8-24v24M16 17h13c8 0 8 9 0 9H16h14c9 0 9 10 0 10H16"/>'],
- ['ethereum','Ethereum','<path d="m24 4 13 20-13 7-13-7L24 4Z"/><path d="m11 28 13 7 13-7-13 16-13-16Z"/>'],
- ['tether','Tether','<circle cx="24" cy="24" r="19"/><path d="M12 14h24M24 14v26m-13-19c7 4 17 4 26 0M18 19v7c4 2 9 2 13 0v-7"/>'],
- ['solana','Solana','<circle cx="24" cy="24" r="19"/><path d="M15 15h19l-4 4H11l4-4Zm0 9h19l-4 4H11l4-4Zm0 9h19l-4 4H11l4-4Z"/>'],
- ['tron','Tron','<circle cx="24" cy="24" r="19"/><path d="m10 13 27 4-11 22L10 13Zm0 0 16 26 1-19m10-3L26 20"/>'],
- ['litecoin','Litecoin','<circle cx="24" cy="24" r="19"/><path d="m28 10-7 18 8-4m-8 4-3 8h17"/>'],
- ['ton','Toncoin','<circle cx="24" cy="24" r="19"/><path d="M13 13h22L24 38 13 13Zm0 0 11 25m11-25L24 38"/>'],
- ['zcash','Zcash','<circle cx="24" cy="24" r="19"/><path d="M15 14h19l-18 20h18M24 9v5m0 20v5"/>'],
- ['yen','Йена','<circle cx="24" cy="24" r="19"/><path d="m14 11 10 13 10-13M24 24v17m-9-12h18m-18 5h18"/>'],
- ['coins','Монеты','<ellipse cx="17" cy="14" rx="10" ry="5"/><path d="M7 14v8c0 3 20 3 20 0v-8M7 18c0 3 20 3 20 0M27 23c7 0 14-1 14-5s-14-5-14-5m0 11c7 0 14-1 14-5v10c0 3-7 5-14 5"/>'],
+ ['cash','Денежные купюры','<rect x="4.5" y="10" width="39" height="28" rx="3"/><path d="M10 15h.1M38 33h.1M10 33h.1M38 15h.1"/><ellipse cx="24" cy="24" rx="7.5" ry="5.5"/><path d="M21 24h6"/>'],
+ ['bank','Банк','<path d="m4 16 20-11 20 11H4Z"/><path d="M8 20v15M18.5 20v15M29.5 20v15M40 20v15M5 39h38M8 43h32"/>'],
+ ['pound','Фунт','<path d="M30.5 11c-2-2.3-4.3-3.2-7.3-2.8-4.4.6-6.8 4-6.8 8.2 0 4.5 2.5 7 2.5 11.2 0 4.6-2.5 7.6-6.7 10.4"/><path d="M14 26h15M10 39h28"/>'],
+ ['cards','Банковские карты','<rect x="5" y="8" width="34" height="25" rx="3.5"/><path d="M5 15h34M11 25h10"/><rect x="9" y="15" width="34" height="25" rx="3.5"/><path d="M9 22h34M15 32h10"/>'],
+ ['percent-card','Карта с процентом','<rect x="5" y="8" width="38" height="31" rx="4"/><path d="M5 16h38M15 31l12-10"/><circle cx="15" cy="31" r="2.7"/><circle cx="28" cy="21" r="2.7"/>'],
+ ['money-bag','Денежный мешок','<path d="M18 9c3.5 2 8.5 2 12 0l3 6c5.2 4.7 7 10.2 5 17.2C36 39 30.5 43 24 43S12 39 10 32.2C8 25.2 9.8 19.7 15 15l3-6Z"/><path d="m18 9-3-4m15 4 3-4M30 22c-2.4-2.6-9-2.1-10.4 1.1-1.2 2.8 1.7 4.2 5 4.9 3.1.7 5.6 2.1 4.8 4.8-.9 3.2-7.3 3.8-10.7 1M24 19v17"/>'],
+ ['dollar','Доллар','<circle cx="24" cy="24" r="19"/><path d="M31.5 15.5c-2-3-9.3-4-13.1-.7-4 3.5-1.5 7.7 5.1 9.1 6.5 1.3 9.3 4.2 6.1 8.2-3 3.8-10.5 3.7-14.5.4M24 9v30"/>'],
+ ['euro','Евро','<circle cx="24" cy="24" r="19"/><path d="M33 14.5c-2.2-2.1-4.4-3-7.3-2.5-5.9 1-9.3 6.3-9.3 12s3.4 11 9.3 12c2.9.5 5.1-.4 7.3-2.5M11 21.5h17M11 27h16"/>'],
+ ['chart','График','<path d="M7 6v35h35"/><path d="m12 31 9-10 7 5 12-15"/><path d="M31 11h9v9"/>'],
+ ['mobile-wallet','Кошелёк в телефоне','<rect x="7" y="4.5" width="22" height="39" rx="4"/><path d="M13 9h10M13 37h4"/><rect x="22" y="17" width="20" height="14" rx="3"/><path d="M22 21h20M34 25h2"/>'],
+ ['paypal','Платёжный сервис','<path d="M13 42 19.2 7h11.5c6.7 0 10 3.8 8.7 10.1-1.3 6.3-5.8 10-12.2 10h-5.3L19.4 42Z"/><path d="m8.5 42 4.6-25.2h10.1c4.9 0 7.3 2.5 6.4 6.8-.9 4.4-3.9 6.7-8.6 6.7h-3.7L15 42Z"/>'],
+ ['piggy','Копилка','<path d="M9 20c2.3-6.6 8.3-10 16-10 7.5 0 12.3 3.2 14.5 9l4 2.5-3 7-4.8 1.2c-2.6 5.1-7.4 8.3-14 8.3h-6.2l-4.3 4.5-3-1 1-7C6.5 31 5 27 6 23l-2-3 5-2Z"/><circle cx="33" cy="18" r="1.5"/><path d="M17 37v5m13-5v5M15 15l-3-4"/>'],
+ ['wallet','Кошелёк','<path d="M9 8h28a4 4 0 0 1 4 4v27H9a5 5 0 0 1-5-5V13a5 5 0 0 1 5-5Z"/><path d="M4.5 14H41M29 22h12v10H29a5 5 0 0 1 0-10Z"/><circle cx="32" cy="27" r="1"/>'],
+ ['safe','Сейф','<rect x="6" y="5" width="36" height="38" rx="4"/><rect x="11" y="10" width="26" height="28" rx="2.5"/><circle cx="24" cy="24" r="7"/><path d="M24 19v10M19 24h10M42 14h2M42 34h2"/>'],
+ ['bitcoin','Bitcoin','<circle cx="24" cy="24" r="19"/><path d="M19 12v24M25 9v3M25 36v3M19 14h10a5 5 0 0 1 0 10H19m0 0h11a5 5 0 0 1 0 10H19"/>'],
+ ['ethereum','Ethereum','<path d="m24 4 12 20-12 7-12-7L24 4Z"/><path d="m12 28 12 7 12-7-12 16-12-16Z"/>'],
+ ['tether','Tether','<circle cx="24" cy="24" r="19"/><path d="M12 14h24M24 14v26M13 20c6.2 3.4 15.8 3.4 22 0M18 20v7c4 2.4 8 2.4 12 0v-7"/>'],
+ ['solana','Solana','<path d="M14 12h24l-4 5H10l4-5ZM14 22h24l-4 5H10l4-5ZM14 32h24l-4 5H10l4-5Z"/>'],
+ ['tron','Tron','<path d="M8 10 39 15 27 42 8 10Z"/><path d="m8 10 19 32 3-22 9-5M27 42l3-22"/>'],
+ ['litecoin','Litecoin','<circle cx="24" cy="24" r="19"/><path d="m28 10-8 19 7-3m-7 3-3 8h17"/>'],
+ ['ton','Toncoin','<path d="M9 13h30L24 41 9 13Z"/><path d="m9 13 15 7 15-7M24 20v21"/>'],
+ ['zcash','Zcash','<circle cx="24" cy="24" r="19"/><path d="M15 14h19L15 34h19M24.5 9v5m0 20v5"/>'],
+ ['yen','Йена','<circle cx="24" cy="24" r="19"/><path d="m14 11 10 13 10-13M24 24v17M15 30h18M15 35h18"/>'],
+ ['coins','Монеты','<ellipse cx="16" cy="13" rx="10" ry="5"/><path d="M6 13v8c0 3 20 3 20 0v-8M6 17c0 3 20 3 20 0M26 20c7-2 16-1 16 3s-9 5-16 3M26 26c7 2 16 1 16-3M26 26v7c0 3-9 5-16 2"/>'],
  ['receipt','Квитанция','<path d="M10 5h28v38l-5-3-5 3-5-3-5 3-8-3V5Z"/><path d="M16 14h16M16 21h16M16 28h11M16 34h13"/>'],
- ['piggybank','Накопления','<path d="M8 19c2-7 9-10 17-9 7 1 11 4 13 10l4 3-3 6-5 1c-3 4-7 6-13 6h-7l-4 4-3-2 1-6-4-5 2-5-3-3 5-2Z"/><circle cx="32" cy="18" r="1.4"/><path d="M18 36v5m12-5v5"/>'],
- ['briefcase','Портфель','<rect x="5" y="14" width="38" height="26" rx="3"/><path d="M16 14V9h16v5M5 24h38m-23 0v4h8v-4"/>'],
- ['safe-wallet','Сейф-кошелёк','<rect x="5" y="5" width="32" height="38" rx="3"/><circle cx="21" cy="24" r="8"/><path d="M21 18v12m-6-6h12M37 15h6v18h-6"/>']
+ ['piggybank','Накопления','<path d="M12 15h24l-2 25H14l-2-25Z"/><path d="M10 15h28M17 10h14M21 10V6h6v4M17 24h14"/><circle cx="24" cy="32" r="5"/><path d="M24 29v6m-3-3h6"/>'],
+ ['briefcase','Портфель','<rect x="5" y="14" width="38" height="27" rx="4"/><path d="M16 14V9a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5M5 24h38M20 24v5h8v-5"/>'],
+ ['safe-wallet','Сейф-кошелёк','<rect x="5" y="5" width="31" height="38" rx="4"/><circle cx="20.5" cy="24" r="7"/><path d="M20.5 19v10m-5-5h10M36 15h7v18h-7M39 20h1m-1 8h1"/>']
 ];
 const accountIconLegacyMap={'👛':'wallet','💳':'cards','💵':'cash','🏦':'bank','🐷':'piggy','🏠':'bank','💰':'money-bag','🪙':'coins','📈':'chart','📦':'briefcase','🛒':'wallet','💼':'briefcase'};
 function accountIconKey(value){const v=String(value||'');if(accountFinanceIcons.some(x=>x[0]===v))return v;return accountIconLegacyMap[v]||'cash'}
@@ -1569,7 +1571,7 @@ function accountIconPickerEmoji(value){const map={cash:'💵',bank:'🏦',pound:
 function accountBalanceIsExcluded(account){return !!(account&&(account.excludeFromTotal===true||account.excludeFromBalance===true||account.excludeFromOverallBalance===true))}
 function compactAllAccountsBalance(value){return new Intl.NumberFormat('ru-RU',{notation:'compact',compactDisplay:'short',maximumFractionDigits:2}).format(Number(value)||0)+' ₽'}
 
-function manageAccounts(){
+function manageAccounts(initialScreen='list'){
  modalType='accounts';
  const managerState={screen:'list',editingId:null};
  const closeAccounts=()=>closeModal();
@@ -1592,19 +1594,17 @@ function manageAccounts(){
   const editorTitle=account?account.name:'Добавить счёт';
   const iconChoices=accountFinanceIcons.map(([key,label])=>`<button type="button" class="account-finance-icon-choice ${key===chosenIcon?'selected':''}" data-account-icon="${key}" aria-label="${esc(label)}" title="${esc(label)}"><span>${accountIconSvg(key,44)}</span></button>`).join('');
   const colorChoices=accountColors.map(c=>`<button type="button" class="account-color-choice ${c.toLowerCase()===chosenColor.toLowerCase()?'selected':''}" style="--swatch:${c}" data-account-color="${c}" aria-label="Цвет ${c}" title="${c}"></button>`).join('');
-  const customColorIsSelected=!accountColors.some(c=>c.toLowerCase()===chosenColor.toLowerCase());
-  openModal(`<div class="account-screen account-editor-screen">${topHeader(account?'Счёт':'Новый счёт')}<main class="account-screen-content account-editor-content"><form id="accountFullForm" novalidate><section class="account-opening-hero"><label for="accountFullOpening">Начальный баланс, ₽</label><input id="accountFullOpening" type="number" step="0.01" inputmode="decimal" value="${esc(String(Number(account?.opening)||0))}" placeholder="0" aria-label="Начальный баланс в рублях"></section><div class="field account-editor-field account-name-field"><label for="accountFullName">Название счёта <span class="required-mark">*</span></label><input id="accountFullName" type="text" required maxlength="40" autocomplete="off" value="${esc(account?.name||'')}" placeholder="Например, Накопления"></div><section class="account-live-preview-wrap"><div class="account-preview-label">Предпросмотр оформления</div><div class="account-live-preview" id="accountLivePreview"><span class="account-live-preview-icon" id="accountPreviewIcon" style="--account-color:${esc(chosenColor)}">${accountIconMarkup(chosenIcon,30)}</span><span class="account-live-preview-name" id="accountPreviewName">${esc(account?.name||'Название счёта')}</span></div></section><div class="field account-editor-field"><label>Иконка счёта <span class="required-mark">*</span></label><div class="account-icon-scroll" id="accountIconScroll"><div class="account-finance-icon-picker" id="accountFullIconPicker">${iconChoices}</div></div></div><div class="field account-editor-field account-color-field"><label>Цвет счёта <span class="required-mark">*</span></label><div class="account-colors" id="accountFullColorPicker">${colorChoices}</div><button type="button" class="account-custom-color-button ${customColorIsSelected?'selected':''}" id="accountPickCustomColor" aria-label="Выбрать собственный цвет" title="Выбрать собственный цвет"><span>＋</span><span>Свой цвет</span></button><input type="color" id="accountFullCustomColor" value="${esc(chosenColor)}" aria-label="Свой цвет" class="account-custom-color-input ${customColorIsSelected?'':'hidden'}"><div class="account-custom-color-help">Можно выбрать любой собственный оттенок</div></div><label class="account-exclude-control" for="accountFullExclude"><span>Не учитывать в общем балансе</span><input id="accountFullExclude" type="checkbox" ${accountBalanceIsExcluded(account)?'checked':''}><span class="account-switch-track" aria-hidden="true"></span></label><div class="field account-editor-field account-note-field"><label for="accountFullNote">Примечание</label><textarea id="accountFullNote" rows="2" maxlength="300" placeholder="Введите примечание">${esc(account?.note||'')}</textarea></div>${account?`<button type="button" class="account-delete-inline" id="accountFullDelete">Удалить счёт</button>`:''}<div class="account-editor-actions"><button type="submit" class="account-save-button">${account?'Сохранить изменения':'Добавить счёт'}</button></div></form></main></div>`);
+  openModal(`<div class="account-screen account-editor-screen">${topHeader(account?'Счёт':'Новый счёт')}<main class="account-screen-content account-editor-content"><form id="accountFullForm" novalidate><section class="account-opening-hero"><label for="accountFullOpening">Начальный баланс, ₽</label><input id="accountFullOpening" type="number" step="0.01" inputmode="decimal" value="${esc(String(Number(account?.opening)||0))}" placeholder="0" aria-label="Начальный баланс в рублях"></section><div class="field account-editor-field account-name-field"><label for="accountFullName">Название счёта <span class="required-mark">*</span></label><input id="accountFullName" type="text" required maxlength="40" autocomplete="off" value="${esc(account?.name||'')}" placeholder="Например, Накопления"></div><section class="account-live-preview-wrap"><div class="account-preview-label">Предпросмотр оформления</div><div class="account-live-preview" id="accountLivePreview"><span class="account-live-preview-icon" id="accountPreviewIcon" style="--account-color:${esc(chosenColor)}">${accountIconMarkup(chosenIcon,30)}</span><span class="account-live-preview-name" id="accountPreviewName">${esc(account?.name||'Название счёта')}</span></div></section><div class="field account-editor-field"><label>Иконка счёта <span class="required-mark">*</span></label><div class="account-icon-scroll" id="accountIconScroll"><div class="account-finance-icon-picker" id="accountFullIconPicker">${iconChoices}</div></div></div><div class="field account-editor-field account-color-field"><label>Цвет счёта <span class="required-mark">*</span></label><div class="account-colors" id="accountFullColorPicker">${colorChoices}</div><input type="color" id="accountFullCustomColor" value="${esc(chosenColor)}" aria-label="Выбрать произвольный цвет счёта" title="Выбрать произвольный цвет" class="account-custom-color-input"><div class="account-custom-color-help">Можно выбрать любой собственный оттенок</div></div><label class="account-exclude-control" for="accountFullExclude"><span>Не учитывать в общем балансе</span><input id="accountFullExclude" type="checkbox" ${accountBalanceIsExcluded(account)?'checked':''}><span class="account-switch-track" aria-hidden="true"></span></label><div class="field account-editor-field account-note-field"><label for="accountFullNote">Примечание</label><textarea id="accountFullNote" rows="2" maxlength="300" placeholder="Введите примечание">${esc(account?.note||'')}</textarea></div>${account?`<button type="button" class="account-delete-inline" id="accountFullDelete">Удалить счёт</button>`:''}<div class="account-editor-actions"><button type="submit" class="account-save-button">${account?'Сохранить изменения':'Добавить счёт'}</button></div></form></main></div>`);
   prepareFullscreen();wireScreen();
-  const iconPicker=$('accountFullIconPicker'),colorPicker=$('accountFullColorPicker'),customColor=$('accountFullCustomColor'),customColorBtn=$('accountPickCustomColor');
+  const iconPicker=$('accountFullIconPicker'),colorPicker=$('accountFullColorPicker'),customColor=$('accountFullCustomColor');
   const previewIcon=$('accountPreviewIcon'),previewName=$('accountPreviewName'),nameInput=$('accountFullName');
   const updatePreview=()=>{if(previewIcon){previewIcon.style.setProperty('--account-color',chosenColor);previewIcon.innerHTML=accountIconMarkup(chosenIcon,30)}if(previewName)previewName.textContent=nameInput.value.trim()||'Название счёта';};
   const updateIconSelection=()=>{iconPicker.querySelectorAll('[data-account-icon]').forEach(b=>b.classList.toggle('selected',b.dataset.accountIcon===chosenIcon));updatePreview();};
-  const updateColorSelection=()=>{colorPicker.querySelectorAll('[data-account-color]').forEach(b=>b.classList.toggle('selected',b.dataset.accountColor.toLowerCase()===chosenColor.toLowerCase()));const isCustom=!accountColors.some(c=>c.toLowerCase()===chosenColor.toLowerCase());customColor.classList.toggle('hidden',!isCustom);customColorBtn.classList.toggle('selected',isCustom);customColor.value=chosenColor;updatePreview();};
+  const updateColorSelection=()=>{colorPicker.querySelectorAll('[data-account-color]').forEach(b=>b.classList.toggle('selected',b.dataset.accountColor.toLowerCase()===chosenColor.toLowerCase()));if(customColor&&customColor.value.toLowerCase()!==chosenColor.toLowerCase())customColor.value=chosenColor;updatePreview();};
   nameInput.addEventListener('input',updatePreview);
   iconPicker.addEventListener('click',e=>{const b=e.target.closest('[data-account-icon]');if(!b)return;chosenIcon=b.dataset.accountIcon;updateIconSelection();});
   colorPicker.addEventListener('click',e=>{const b=e.target.closest('[data-account-color]');if(!b)return;chosenColor=b.dataset.accountColor;updateColorSelection();});
-  customColorBtn.addEventListener('click',()=>{customColor.classList.remove('hidden');try{customColor.click();}catch(e){} });
-  customColor.addEventListener('input',()=>{chosenColor=customColor.value;updateColorSelection();});
+  const syncCustomColor=()=>{chosenColor=customColor.value;updateColorSelection();};customColor.addEventListener('input',syncCustomColor);customColor.addEventListener('change',syncCustomColor);
   updatePreview();
   $('accountFullForm').addEventListener('submit',e=>{e.preventDefault();const name=$('accountFullName').value.trim();const openingText=$('accountFullOpening').value.trim();const opening=openingText===''?0:Number(openingText);if(!name){$('accountFullName').focus();toast('Укажи название счёта.');return}if(!chosenIcon||!chosenColor){toast('Выбери иконку и цвет счёта.');return}if(!Number.isFinite(opening)){toast('Проверь начальный баланс.');return}const exclude=!!$('accountFullExclude').checked;const note=$('accountFullNote').value.trim();if(account){const target=data.accounts.find(x=>String(x.id)===String(account.id));if(!target){toast('Счёт не найден.');return}target.name=name;target.opening=opening;target.icon=chosenIcon;target.color=chosenColor;target.excludeFromTotal=exclude;target.note=note;}else{const newAccount={id:id(),name,opening,icon:chosenIcon,color:chosenColor,excludeFromTotal:exclude,note};data.accounts.push(newAccount)}if(!save())return;toast(account?'Счёт сохранён':'Счёт добавлен');renderList();});
   $('accountFullDelete')?.addEventListener('click',()=>{if(data.accounts.length<=1){toast('Нужен хотя бы один счёт.');return}if(data.transactions.some(t=>String(t.accountId)===String(account.id)||String(t.toAccountId)===String(account.id))||(data.recurringRules||[]).some(r=>String(r.accountId)===String(account.id))){toast('Этот счёт используется в операциях или регулярных платежах. Сначала перенеси или исправь их.');return}if(!confirm(`Удалить счёт «${account.name}»?`))return;data.accounts=data.accounts.filter(a=>String(a.id)!==String(account.id));if(String(selectedAccountId)===String(account.id)){selectedAccountId=data.accounts[0]?.id||'';try{localStorage.setItem('my-finances-selected-account',selectedAccountId)}catch(e){}}if(!save())return;toast('Счёт удалён');renderList();});
@@ -1617,10 +1617,10 @@ function manageAccounts(){
  };
  function wireScreen(){
   const screenBack=$('modalBack');if(!screenBack||screenBack.dataset.accountScreenWired==='1')return;screenBack.dataset.accountScreenWired='1';
-  screenBack.addEventListener('click',e=>{const back=e.target.closest('[data-accounts-back]');if(back){if(managerState.screen==='editor')renderList();else if(managerState.screen==='transfers')renderList();else closeAccounts();return}const add=e.target.closest('[data-account-add]');if(add){renderEditor();return}const toggle=e.target.closest('[data-account-visibility]');if(toggle){e.preventDefault();e.stopPropagation();const a=data.accounts.find(x=>String(x.id)===String(toggle.dataset.accountVisibility));if(!a)return;a.excludeFromTotal=!accountBalanceIsExcluded(a);if(!save())return;renderList();return}const open=e.target.closest('[data-account-open]');if(open){if(e.target.closest('button'))return;renderEditor(open.dataset.accountOpen);return}const history=e.target.closest('[data-accounts-history]');if(history){renderTransferHistory();return}const create=e.target.closest('[data-accounts-create-transfer]');if(create){closeAccounts();openTx('transfer');return}const transfer=e.target.closest('[data-transfer-open]');if(transfer){const t=data.transactions.find(x=>String(x.id)===String(transfer.dataset.transferOpen));closeAccounts();if(t)openTx('transfer',t);return}});
+  screenBack.addEventListener('click',e=>{const back=e.target.closest('[data-accounts-back]');if(back){if(managerState.screen==='editor')renderList();else if(managerState.screen==='transfers')renderList();else closeAccounts();return}const add=e.target.closest('[data-account-add]');if(add){renderEditor();return}const toggle=e.target.closest('[data-account-visibility]');if(toggle){e.preventDefault();e.stopPropagation();const a=data.accounts.find(x=>String(x.id)===String(toggle.dataset.accountVisibility));if(!a)return;a.excludeFromTotal=!accountBalanceIsExcluded(a);if(!save())return;renderList();return}const open=e.target.closest('[data-account-open]');if(open){if(e.target.closest('button'))return;renderEditor(open.dataset.accountOpen);return}const history=e.target.closest('[data-accounts-history]');if(history){renderTransferHistory();return}const create=e.target.closest('[data-accounts-create-transfer]');if(create){txReturnToAccountsScreen=managerState.screen;openTx('transfer');return}const transfer=e.target.closest('[data-transfer-open]');if(transfer){const t=data.transactions.find(x=>String(x.id)===String(transfer.dataset.transferOpen));if(t){txReturnToAccountsScreen=managerState.screen;openTx('transfer',t)}return}});
   screenBack.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-account-open]')){e.preventDefault();renderEditor(e.target.dataset.accountOpen)}});
  }
- renderList();
+ if(initialScreen==='transfers')renderTransferHistory();else renderList();
 }
 const categoryIcons=['🛒','🛍️','🚗','🚕','🚌','🚆','✈️','🚲','⛽','🏠','🛋️','🔧','💡','🧹','🧺','🛏️','💊','🩺','🦷','❤️','🏋️','⚽','🎮','🎬','🎵','📚','🎓','💻','📱','🎧','📷','🎁','☕','🍽️','🍕','🥗','🍎','🥦','🥩','🛒','🐶','🐱','🌿','🌸','🏖️','🏕️','🎟️','🧳','💼','💰','💵','💳','🏦','📈','🪙','🧾','📦','🧴','👕','👟','💄','💈','🧸','👶','🛡️','🔑','🧯','🚿','⚡','💧','🌍','📅','⏰','📡','📺','🖨️','✏️','🖊️','🧠','🤝','💐','🕌','🚘','🛵','🧑‍🍳','🧑‍⚕️','🏢','🏫','🏥','🏪','🏨','🏟️','🎨','🧩','♻️','🔋','🪫','📌','⭐','✨','🔔','📣','🧰'];
 const categoryColors=['#E53935','#FB8C00','#FDD835','#43A047','#039BE5','#3949AB','#8E24AA','#D9C3A0'];
@@ -3464,6 +3464,10 @@ body.home-view-active .app-nav-header,body.history-view-active .app-nav-header{d
 #historyView .history-period-arrows button{display:grid!important;place-items:center!important;width:30px!important;min-width:30px!important;height:34px!important;min-height:34px!important;border:1px solid transparent!important;border-radius:10px!important;background:transparent!important;color:var(--muted)!important;font-size:25px!important;line-height:1!important;padding:0!important;}
 #historyView .history-period-arrows #historyPeriodToday svg{width:18px!important;height:18px!important;fill:none!important;stroke:currentColor!important;stroke-width:2!important;stroke-linecap:round!important;stroke-linejoin:round!important;}
 #historyView .history-period-arrows #historyPeriodToday.hidden{display:none!important;}
+/* A high-specificity arrow layout previously overrode the generic .hidden rule on Home. */
+#homeView .period-summary-head .period-arrows #periodToday.hidden,
+#homeView .period-summary-head .period-arrows #periodToday[hidden]{display:none!important;visibility:hidden!important;pointer-events:none!important;}
+#homeView .period-summary-head .period-arrows #periodToday:not(.hidden){display:grid!important;visibility:visible!important;}
 </style>
 <script id="v10-62-period-fit">
 (function(){
@@ -3488,6 +3492,63 @@ body.home-view-active .app-nav-header,body.history-view-active .app-nav-header{d
  setTimeout(fitPeriodSummaryTotal,0);
 })();
 </script>
+
+
+<style id="v10-64-account-icons-inputs-period-fix">
+/* V10.64: shared hero palette, compact account editor, coherent icon picker and non-neon focus states. */
+:root{--account-hero-bg:linear-gradient(145deg,#255D54 0%,#17463F 56%,#123A34 100%)}
+.account-screen-header{background:var(--account-hero-bg)!important;box-shadow:none!important}
+/* Opening balance is a real, centered field: comfortable height, narrower than the content column. */
+.account-editor-screen .account-opening-hero{padding:5px 0 9px!important;margin:0 0 1px!important;gap:0!important}
+.account-editor-screen .account-opening-hero>label{margin:0 0 6px!important;font-size:14px!important;line-height:1.35!important}
+.account-editor-screen .account-opening-hero>input{box-sizing:border-box!important;width:min(100%,340px)!important;height:58px!important;min-height:58px!important;padding:8px 14px!important;border:1px solid var(--line)!important;border-radius:16px!important;background:var(--panel)!important;color:var(--text)!important;font-size:clamp(27px,7.5vw,34px)!important;font-weight:750!important;letter-spacing:-.035em!important;line-height:1.1!important;text-align:center!important;box-shadow:none!important;outline:none!important}
+.account-editor-screen .account-opening-hero>input:focus,.account-editor-screen .account-opening-hero>input:focus-visible{border-color:var(--line)!important;box-shadow:none!important;outline:none!important}
+/* Four icons per row; show two full rows and the upper half of row three. */
+.account-icon-scroll{height:auto!important;max-height:min(27vh,236px)!important;overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior:contain!important;touch-action:pan-y!important;scrollbar-width:thin!important}
+.account-finance-icon-picker{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:7px!important;padding:2px 0 5px!important}
+.account-finance-icon-choice{aspect-ratio:1/1!important;min-width:0!important;min-height:0!important;padding:4px!important;border:1px solid transparent!important;border-radius:14px!important;background:transparent!important;box-shadow:none!important;color:var(--muted)!important}
+.account-finance-icon-choice>span{display:grid!important;place-items:center!important;width:100%!important;max-width:none!important;aspect-ratio:1/1!important;border-radius:12px!important;background:transparent!important;color:var(--muted)!important}
+.account-finance-icon-choice svg{display:block!important;width:74%!important;height:74%!important;max-width:58px!important;max-height:58px!important;stroke:currentColor!important;stroke-width:1.9!important;stroke-linecap:round!important;stroke-linejoin:round!important;fill:none!important;overflow:visible!important}
+.account-finance-icon-choice.selected{border:1px solid var(--accent-strong)!important;background:var(--selected-bg)!important;box-shadow:none!important;padding:4px!important}
+.account-finance-icon-choice.selected>span{background:transparent!important;color:var(--accent-strong)!important}
+/* Make the arbitrary color picker match the existing Category editor's full-width color bar. */
+.account-colors{grid-template-columns:repeat(8,minmax(0,1fr))!important;gap:8px!important;margin:2px 0 0!important}
+.account-color-choice{width:100%!important;max-width:44px!important;aspect-ratio:1/1!important;border:2px solid var(--panel)!important;outline:none!important;box-shadow:none!important}
+.account-color-choice.selected{outline:2px solid var(--accent-strong)!important;outline-offset:2px!important}
+.account-custom-color-button{display:none!important}
+.account-custom-color-input{display:block!important;width:100%!important;height:42px!important;min-height:42px!important;margin:0!important;padding:3px!important;border:1px solid var(--line)!important;border-radius:12px!important;background:var(--panel2)!important;cursor:pointer!important;overflow:hidden!important;box-sizing:border-box!important;appearance:none!important;-webkit-appearance:none!important}
+.account-custom-color-input.hidden{display:block!important}
+.account-custom-color-input::-webkit-color-swatch-wrapper{padding:0!important}
+.account-custom-color-input::-webkit-color-swatch{border:0!important;border-radius:8px!important}
+.account-custom-color-input::-moz-color-swatch{border:0!important;border-radius:8px!important}
+.account-custom-color-help{margin-top:5px!important;font-size:11px!important;color:var(--muted)!important}
+/* Remove oversized empty space after the account-editor action while respecting the iPhone safe area. */
+.account-editor-screen{padding-bottom:0!important}
+.account-editor-screen .account-editor-content{padding-top:8px!important;padding-bottom:calc(8px + env(safe-area-inset-bottom))!important}
+.account-editor-screen .account-name-field{margin-bottom:10px!important}
+.account-editor-screen .account-live-preview-wrap{margin-bottom:12px!important}
+.account-editor-screen .account-editor-field:has(#accountIconScroll){margin-bottom:10px!important}
+.account-editor-screen .account-color-field{margin-bottom:10px!important}
+.account-editor-screen .account-editor-actions{margin-top:6px!important;padding:8px 0 calc(8px + env(safe-area-inset-bottom))!important;background:linear-gradient(to bottom,transparent 0%,var(--bg) 16%)!important}
+.account-editor-screen .account-save-button{min-height:58px!important;font-weight:750!important;letter-spacing:-.02em!important}
+/* Bright green focus rings were scattered across successive stylesheets. Avoid neon rings on touch input. */
+input:focus,textarea:focus,select:focus,
+#modalRoot .modal input:focus,#modalRoot .modal textarea:focus,#modalRoot .modal select:focus,
+#accountFullForm input:focus,#accountFullForm textarea:focus{outline:none!important;box-shadow:none!important;border-color:var(--line)!important}
+button:focus-visible,[role="button"]:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:1px solid var(--muted-2)!important;outline-offset:1px!important;box-shadow:none!important}
+#modalRoot .modal #txAmount:focus,#modalRoot .modal #txAccount:focus{outline:none!important;box-shadow:none!important;border-color:var(--line)!important}
+/* Selected states still have a visible border; only keyboard focus loses the old neon treatment. */
+.account-finance-icon-choice:focus-visible,.account-color-choice:focus-visible{outline:1px solid var(--muted-2)!important;outline-offset:1px!important}
+@media(max-width:380px){
+ .account-icon-scroll{max-height:min(27vh,220px)!important}
+ .account-finance-icon-picker{gap:5px!important}
+ .account-finance-icon-choice{border-radius:12px!important}
+ .account-colors{gap:5px!important}
+ .account-editor-screen .account-opening-hero>input{width:min(100%,320px)!important}
+ .account-editor-screen .account-save-button{min-height:56px!important;font-size:18px!important}
+}
+@media(prefers-reduced-motion:reduce){.account-finance-icon-choice>span{transition:none!important}}
+</style>
 
 </body>
 </html>
